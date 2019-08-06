@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    "Pssssst! hail hydra"
+    erb :index
   end
 
 end

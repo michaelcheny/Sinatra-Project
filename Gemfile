@@ -14,3 +14,4 @@ gem 'pry'
 gem 'sinatra-activerecord'
 gem 'shotgun'
 gem 'require_all'
+gem "bcrypt", "~> 3.1"

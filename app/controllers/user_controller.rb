@@ -9,4 +9,8 @@ class UserController < ApplicationController
     erb :"/users/register"
   end
 
+  get '/login' do 
+    
+  end
+
 end

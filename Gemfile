@@ -8,10 +8,10 @@ source "https://rubygems.org"
 
 gem 'sinatra'
 gem 'sqlite3'
-gem 'activerecord'
+gem 'activerecord', :require => 'active_record'
 gem 'rake'
 gem 'pry'
-gem 'sinatra-activerecord'
+gem 'sinatra-activerecord', :require => 'sinatra/activerecord'
 gem 'shotgun'
 gem 'require_all'
 gem "bcrypt", "~> 3.1"

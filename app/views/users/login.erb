@@ -1,13 +1,16 @@
 <form action="/login" method="post">
 
+  <p>Please Sign In</p>
   <input type="text" name="username" id="username" placeholder="Username"><br>
 
   <input type="password" name="password" id="password" placeholder="Password"><br>
 
-  <input type="submit" value="login">
-
   <% if @failed %>
     <h5 class="messedup">You messed up bro, try again</h5>
   <% end %>
+
+  <input type="submit" value="login">
+
+
 
 </form>

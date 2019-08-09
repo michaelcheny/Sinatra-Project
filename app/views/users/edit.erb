@@ -1,4 +1,25 @@
-Edit User Info Here
+Edit User Info Here <br><br>
 
+<form action="/users/<%= @user.id %>" method="post">
+
+<input id="hidden" type="hidden" name="_method" value="patch">
+
+<label for="gender">Gender:</label><br>
+
+<input type="radio" name="male" id="gender" value="<%= @user.gender %>">
+<label for="gender">Male</label><br>
+
+<input type="radio" name="female" id="gender" value="<%= @user.gender %>">
+<label for="gender">Female</label><br><br>
+
+<input type="text" name="age" id="age" value="<%= @user.age %>" placeholder="Age" required><br><br>
+
+<input type="text" name="height" id="height" value="<%= @user.height %>" placeholder="Height in inches" required><br><br>
+
+<input type="text" name="weight" id="weight" value="<%= @user.weight %>" placeholder="Weight in pounds" required><br><br>
+
+<input type="submit" value="submit">
+
+</form><br>
 
 Every chance I get, I water the plants, Lion! Let’s see what Chef Dee got that they don’t want us to eat. Fan luv. We the best. The key to more success is to have a lot of pillows. Special cloth alert. Learning is cool, but knowing is better, and I know the key to success. Stay focused. Surround yourself with angels. Lion! Every chance I get, I water the plants, Lion! Find peace, life is like a water fall, you’ve gotta flow. Watch your back, but more importantly when you get out the shower, dry your back, it’s a cold world out there.

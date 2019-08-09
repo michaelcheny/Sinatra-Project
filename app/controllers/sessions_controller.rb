@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     
     authenticate
     current_user
-    
+
     erb :'/users/home'
   end
 
@@ -37,14 +37,25 @@ class SessionsController < ApplicationController
     end
 
   end
-
+  ## edit user and finish adding info
   get '/users/:id/edit' do
     
-      @user = User.find_by(id: params[:id])
+      @user = User.find_by_id(params[:id])
 
       erb :'/users/edit'
+   
+  end
 
-    
+  ## update
+  patch '/users/:id' do
+
+    current_user
+    # @user = User.find_by_id(params[:id])
+
+    @current_user.update(age: params[:age].to_i, height: params[:height].to_i, weight: params[:weight].to_i)
+    # @user.save
+
+    erb :'/users/home'
   end
   
 

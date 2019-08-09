@@ -1,10 +1,10 @@
- <p center><a href="/home">Home</a> | <a href="/users/<%= @current_user.id %>/edit">Edit User</a> | placeholder | placeholder | placeholder | placeholder</p>
+ <p center><a href="/home">Home</a> | <a href="/users/<%= @current_user.id %>/edit">Edit User</a> | placeholder | placeholder | placeholder | placeholder</p><br>
 
 This is the home page for user once they've logged in. This should display user's stats and stuff. Their daily caloric intake, current progress, and all the good good.
 
 
-<p><%= @current_user.name %></p>
-<p><%= @current_user.weight %> pounds</p>
-<p><%= @current_user.height %> inches</p>
+<p>Hello, <%= @current_user.name %>!</p>
+<p>You currently weight <%= @current_user.weight %> pounds</p>
+<p>You are <%= @current_user.height %> inches tall.</p>
 
-<p>You BMR is <%= CalculationHelpers.calculate_bmr(@current_user.gender, @current_user.age, @current_user.height, @current_user.weight)  %></p>
+<p>You BMR is <%= CalculationHelpers.calculate_bmr(@current_user.gender, @current_user.age, @current_user.height, @current_user.weight)  %> Calories. (Your body naturally burns that much in a day!)</p>

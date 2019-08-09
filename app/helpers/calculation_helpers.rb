@@ -7,11 +7,11 @@ class CalculationHelpers
     elsif gender == "female"
       @bmr = (10 * (weight * 0.4535934)) + (6.25 * (height * 2.54)) - (5 * age) - 161
     end
-    return @bmr
+    return @bmr.to_i
   end
 
-  def self.testing
-    "testing"
+  def self.calculate_tdee()
+    
   end
 
 end

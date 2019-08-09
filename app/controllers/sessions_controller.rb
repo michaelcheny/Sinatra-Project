@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     
     authenticate
     current_user
+    
     erb :'/users/home'
   end
 

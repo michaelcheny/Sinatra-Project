@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_221222) do
     t.string "name"
     t.string "username"
     t.string "password_digest"
+    t.string "gender"
     t.integer "age"
     t.integer "height"
     t.integer "weight"

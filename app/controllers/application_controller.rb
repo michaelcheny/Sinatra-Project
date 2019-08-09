@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
 
     ## gives us the current user to work with
     def current_user
-      User.find_by(id: session[:user_id])
+      @current_user = User.find_by(id: session[:user_id])
     end
 
     ## checks to see if user is authorized. If they're not logged in, they get redirected to log in page

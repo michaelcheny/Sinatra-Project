@@ -3,8 +3,9 @@ class SessionsController < ApplicationController
   ## Home page for the user. Checks to see if user is logged in, if not, will redirect to login page ##
   get '/home' do
     # @users = User.all
+    
     authenticate
-
+    current_user
     erb :'/users/home'
   end
 
@@ -34,6 +35,15 @@ class SessionsController < ApplicationController
       erb :'/users/login'
     end
 
+  end
+
+  get '/users/:id/edit' do
+    
+      @user = User.find_by(id: params[:id])
+
+      erb :'/users/edit'
+
+    
   end
   
 

@@ -1,23 +1,30 @@
 Edit User Info Here <br><br>
 
-<form action="/users/<%= @user.id %>" method="post">
+<form action="/home" method="post">
 
 <input id="hidden" type="hidden" name="_method" value="patch">
 
+
+<input type="text" name="age" id="age" value="<%= @user.age %>" placeholder="Age" required><br><br>
+<input type="text" name="height" id="height" value="<%= @user.height %>" placeholder="Height in inches" required><br><br>
+<input type="text" name="weight" id="weight" value="<%= @user.weight %>" placeholder="Weight in pounds" required><br><br>
+
+
 <label for="gender">Gender:</label><br>
-
-<input type="radio" name="gender" id="gender" value="male">
+<input type="radio" name="gender" id="gender" value="male" required>
 <label for="gender">Male</label><br>
-
 <input type="radio" name="gender" id="gender" value="female">
 <label for="gender">Female</label><br><br>
 
-<input type="text" name="age" id="age" value="<%= @user.age %>" placeholder="Age" required><br><br>
-
-<input type="text" name="height" id="height" value="<%= @user.height %>" placeholder="Height in inches" required><br><br>
-
-<input type="text" name="weight" id="weight" value="<%= @user.weight %>" placeholder="Weight in pounds" required><br><br>
-
+<label for="activity_level">Activity level:</label><br>
+<input type="radio" name="activity_level" id="activity_level_1" value="1" required>
+<label for="activity_level_1">Sedentary</label><br>
+<input type="radio" name="activity_level" id="activity_level_2" value="2">
+<label for="activity_level_2">Low-Active</label><br>
+<input type="radio" name="activity_level" id="activity_level_3" value="3">
+<label for="activity_level_3">Active</label><br>
+<input type="radio" name="activity_level" id="activity_level_4" value="4">
+<label for="activity_level_4">Very Active</label><br><br>
 <input type="submit" value="submit">
 
 </form><br>

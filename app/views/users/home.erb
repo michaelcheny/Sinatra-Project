@@ -4,9 +4,14 @@ This is the home page for user once they've logged in. This should display user'
 
 
 <p>Hello, <%= @current_user.name %>!</p>
-<p>You currently weight <%= @current_user.weight %> pounds</p>
-<p>You are <%= @current_user.height %> inches tall.</p>
 
-<p>You BMR is <%= CalculationHelpers.calculate_bmr(@current_user.gender, @current_user.age, @current_user.height, @current_user.weight)  %> Calories. (Your body naturally burns that much in a day!)</p>
 
-<p>Your TDEE is ADD THE METHOD HERE!!!!!!!!!!! </p>
+<% if @filled = true %>
+  <p>You currently weight is <%= @current_user.weight %> pounds</p>
+  <p>You are <%= @current_user.height %> inches tall.</p>
+
+  <p>You BMR is <%= bmr = CalculationHelpers.calculate_bmr(@current_user.gender, @current_user.age, @current_user.height, @current_user.weight)  %> Calories. (Your body naturally burns that much in a day!)</p>
+
+  <p>Your TDEE is <%= CalculationHelpers.calculate_tdee(@current_user.activity_level, bmr) %> Calories. (This is your total daily energy expedenture - You caloric maintenace.) </p>
+
+<% end %>

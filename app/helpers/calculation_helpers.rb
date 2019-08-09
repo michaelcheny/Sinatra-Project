@@ -11,7 +11,21 @@ class CalculationHelpers
   end
 
   ## calculates total daily energy expedenture using BMR and activity level of user
-  def self.calculate_tdee()
+  def self.calculate_tdee(activity_level, bmr)
+    case activity_level
+    when "1"
+      multiplier = 1.25
+    when "2" 
+      multiplier = 1.475
+    when "3"
+      multiplier = 1.72
+    when "4"
+      multiplier = 2.35
+    end
+
+    tdee = bmr * multiplier
+
+    return tdee.to_i
     
   end
 

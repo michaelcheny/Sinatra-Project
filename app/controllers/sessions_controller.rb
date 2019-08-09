@@ -52,7 +52,8 @@ class SessionsController < ApplicationController
     current_user
     # @user = User.find_by_id(params[:id])
 
-    @current_user.update(age: params[:age].to_i, height: params[:height].to_i, weight: params[:weight].to_i)
+    @current_user.update(gender: params[:gender], age: params[:age].to_i, height: params[:height].to_i, weight: params[:weight].to_i)
+    # binding.pry
     # @user.save
 
     erb :'/users/home'

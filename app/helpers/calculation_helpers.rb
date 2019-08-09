@@ -10,6 +10,7 @@ class CalculationHelpers
     return @bmr.to_i
   end
 
+  ## calculates total daily energy expedenture using BMR and activity level of user
   def self.calculate_tdee()
     
   end

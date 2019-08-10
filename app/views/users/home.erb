@@ -1,18 +1,52 @@
- <p center><a href="/users/<%= @current_user.id %>">Home</a> | <a href="/users/<%= @current_user.id %>/edit">Edit User</a> | placeholder | placeholder | placeholder | placeholder</p><br>
+ <p center><a href="/users/<%= @current_user.id %>">Home</a> | <a href="/users/<%= @current_user.id %>/edit">Edit User</a> | placeholder | placeholder | placeholder | addLOGOUT</p><br>
 
-This is the home page for user once they've logged in. This should display user's stats and stuff. Their daily caloric intake, current progress, and all the good good.
 
 
 <p>Hello, <%= @current_user.name %>!</p>
 
+<!-- This conditional may need to get updated later. test again after new users -->
+<% if !@current_user.activity_level == nil %>
 
+  <p>You currently weight is <%= @current_user.weight %> pounds</p>
+  <p>You are <%= @current_user.height %> inches tall.</p>
 
-<p>You currently weight is <%= @current_user.weight %> pounds</p>
-<p>You are <%= @current_user.height %> inches tall.</p>
+  <p>You BMR is <%= bmr = CalculationHelpers.calculate_bmr(@current_user.gender, @current_user.age, @current_user.height, @current_user.weight)  %> Calories. (Your body naturally burns that much in a day!)</p>
 
-<p>You BMR is <%= bmr = CalculationHelpers.calculate_bmr(@current_user.gender, @current_user.age, @current_user.height, @current_user.weight)  %> Calories. (Your body naturally burns that much in a day!)</p>
-
-<% if !@current_user.activity_level.nil? %>
   <p>Your TDEE is <%= CalculationHelpers.calculate_tdee(@current_user.activity_level, bmr) %> Calories. (This is your total daily energy expedenture - You caloric maintenace.) </p>
+
+
+<% else %>
+
+  <p>You need to complete filling up your profile:</p>
+
+  <form action="/users/<%= @current_user.id %>" method="post">
+
+  <input id="hidden" type="hidden" name="_method" value="patch">
+
+
+  <input type="text" name="user[age]" id="age" value="<%= @current_user.age %>" placeholder="Age" required><br><br>
+  <input type="text" name="user[height]" id="height" value="<%= @current_user.height %>" placeholder="Height in inches" required><br><br>
+  <input type="text" name="user[weight]" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds" required><br><br>
+
+
+  <label for="gender">Gender:</label><br>
+  <input type="radio" name="user[gender]" id="gender" value="male" required>
+  <label for="gender">Male</label><br>
+  <input type="radio" name="user[gender]" id="gender" value="female">
+  <label for="gender">Female</label><br><br>
+
+  <label for="activity_level">Activity level:</label><br>
+  <input type="radio" name="user[activity_level]" id="activity_level_1" value="1" required>
+  <label for="activity_level_1">Sedentary</label><br>
+  <input type="radio" name="user[activity_level]" id="activity_level_2" value="2">
+  <label for="activity_level_2">Low-Active</label><br>
+  <input type="radio" name="user[activity_level]" id="activity_level_3" value="3">
+  <label for="activity_level_3">Active</label><br>
+  <input type="radio" name="user[activity_level" id="activity_level_4" value="4">
+  <label for="activity_level_4">Very Active</label><br><br>
+  <input type="submit" value="Complete Profile">
+
+  </form><br>
+
 <% end %>
 

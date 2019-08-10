@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :name, length: { minimum: 2 }, presence: true
   validates :username, presence: true, uniqueness: true
-  validates :password, length: { in: 6..20 }
+  validates :password, presence: true, length: { minimum: 6 }
 end

@@ -34,7 +34,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def authorized?
-      !logged_in? && !current_user.nil?
+      !!logged_in? && !current_user.nil?
     end
 
   end

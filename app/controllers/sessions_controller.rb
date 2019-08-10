@@ -52,13 +52,13 @@ class SessionsController < ApplicationController
     
     authenticate
     current_user
-
-    @current_user.update(params[:user])
     binding.pry
+    @current_user.update(params[:user])
+    
 
 
-    erb :"users/home"
-    # redirect :"/users/#{@current_user.id}"
+    # erb :"users/home"
+    redirect :"/users/#{@current_user.id}"
   end
 
   

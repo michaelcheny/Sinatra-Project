@@ -6,9 +6,16 @@ class SessionsController < ApplicationController
     
     authenticate
     current_user
-    @filled = false
 
-    erb :'/users/home'
+    if @current_user.weight.nil? 
+      binding.pry
+      redirect "/users/#{@current_user.id}/edit"
+    else
+      erb :'/users/home'
+    end
+    
+
+    
   end
 
   ## Registration page, allows user to create a new account ##
@@ -53,9 +60,8 @@ class SessionsController < ApplicationController
     authenticate
     current_user
 
-    @filled = true
-
     @current_user.update(gender: params[:gender], age: params[:age].to_i, height: params[:height].to_i, weight: params[:weight].to_i, activity_level: params[:activity_level])
+
 
     erb :'/users/home'
   end

@@ -28,9 +28,13 @@ class ApplicationController < Sinatra::Base
 
     ## checks to see if user is authorized. If they're not logged in, they get redirected to log in page
     def authenticate
-      if !logged_in?
+      if !logged_in? || current_user.nil?
         redirect '/login'
       end
+    end
+
+    def authorized?
+      !logged_in? && !current_user.nil?
     end
 
   end

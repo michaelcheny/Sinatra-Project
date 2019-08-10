@@ -54,11 +54,13 @@ class SessionsController < ApplicationController
     current_user
 
     @current_user.update(params[:user])
-binding.pry
+    binding.pry
 
-    redirect :"/users/#{@current_user.id}"
+
+    erb :"users/home"
+    # redirect :"/users/#{@current_user.id}"
   end
-  
+
   
   post '/register' do
     redirect '/users/:id' if authorized?

@@ -1,13 +1,13 @@
 Edit User Info Here <br><br>
 
-<form action="/home" method="post">
+<form action="/users/<%= @user.id %>" method="post">
 
 <input id="hidden" type="hidden" name="_method" value="patch">
 
 
-<input type="text" name="age" id="age" value="<%= @user.age %>" placeholder="Age" required><br><br>
-<input type="text" name="height" id="height" value="<%= @user.height %>" placeholder="Height in inches" required><br><br>
-<input type="text" name="weight" id="weight" value="<%= @user.weight %>" placeholder="Weight in pounds" required><br><br>
+<input type="text" name="age" id="age" value="<%= @current_user.age %>" placeholder="Age" required><br><br>
+<input type="text" name="height" id="height" value="<%= @current_user.height %>" placeholder="Height in inches" required><br><br>
+<input type="text" name="weight" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds" required><br><br>
 
 
 <label for="gender">Gender:</label><br>

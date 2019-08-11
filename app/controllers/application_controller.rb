@@ -33,7 +33,8 @@ class ApplicationController < Sinatra::Base
       end
     end
 
-    def authorized?
+    ## checks to see if user is logged in and current user is available
+    def check_if_user_authorized?
       !!logged_in? && !current_user.nil?
     end
 

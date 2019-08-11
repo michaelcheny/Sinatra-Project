@@ -5,6 +5,7 @@ require_relative './config/environment'
 # end
 
 use Rack::MethodOverride
-use MealController
 use SessionsController
+use UserController
+use MealController
 run ApplicationController

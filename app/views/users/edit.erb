@@ -1,4 +1,10 @@
-Edit User Info Here <br><br>
+<p center><a href="/users/<%= @current_user.id %>">Home</a> | <a href="/meals">Add Meals</a> | placeholder | placeholder |       <form method="post" action="/logout">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit" value="Logout">
+      </form></p>
+
+
+<p>Edit User Info Here</p>
 
 <form action="/users/<%= @current_user.id %>" method="post">
 

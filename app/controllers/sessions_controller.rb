@@ -71,7 +71,7 @@ class SessionsController < ApplicationController
   end
 
 
-  ## update
+  ## update users info like age, height, weight, activity level
   patch '/users/:id' do
     
     authenticate
@@ -91,12 +91,5 @@ class SessionsController < ApplicationController
     session.clear if logged_in?
     redirect '/'
   end
-  
-
-
-
-
-
-
 
 end

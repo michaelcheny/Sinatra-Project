@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_221222) do
     t.string "name"
     t.integer "serving_size"
     t.integer "calories"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

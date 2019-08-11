@@ -14,11 +14,7 @@ class SessionsController < ApplicationController
     authenticate
     current_user
     # binding.pry
-    # if @current_user.weight.nil? 
-    #   redirect "/users/#{@current_user.id}/edit"
-    # else
     erb :"/users/home"
-    # end
   end
 
 

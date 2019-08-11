@@ -1,11 +1,15 @@
- <p center><a href="/users/<%= @current_user.id %>">Home</a> | <a href="/users/<%= @current_user.id %>/edit">Edit User</a> | placeholder | placeholder | placeholder | addLOGOUT</p><br>
+ <p center><a href="/users/<%= @current_user.id %>">Home</a> | <a href="/users/<%= @current_user.id %>/edit">Edit User</a> | placeholder | placeholder | placeholder |       <form method="post" action="/logout">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input type="submit" value="Logout">
+      </form></p><br>
 
 
 
 <p>Hello, <%= @current_user.name %>!</p>
 
 <!-- This conditional may need to get updated later. test again after new users -->
-<% if !@current_user.activity_level == nil %>
+
+<% if !@current_user.weight.nil? %>
 
   <p>You currently weight is <%= @current_user.weight %> pounds</p>
   <p>You are <%= @current_user.height %> inches tall.</p>
@@ -14,8 +18,8 @@
 
   <p>Your TDEE is <%= CalculationHelpers.calculate_tdee(@current_user.activity_level, bmr) %> Calories. (This is your total daily energy expedenture - You caloric maintenace.) </p>
 
-
 <% else %>
+
 
   <p>You need to complete filling up your profile:</p>
 
@@ -49,4 +53,3 @@
   </form><br>
 
 <% end %>
-

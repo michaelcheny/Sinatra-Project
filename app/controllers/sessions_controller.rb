@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     # @users = User.all
     authenticate
     current_user
-    binding.pry
+    # binding.pry
     # if @current_user.weight.nil? 
     #   redirect "/users/#{@current_user.id}/edit"
     # else
@@ -56,7 +56,7 @@ class SessionsController < ApplicationController
     end
   end
 
-
+  ## Post request for after a user is created. If user is able to save, then session id is linked to current user and gets redirected to home.
   post '/register' do
     redirect '/users/:id' if authorized?
 
@@ -76,7 +76,7 @@ class SessionsController < ApplicationController
     
     authenticate
     current_user
-    binding.pry
+    # binding.pry
     @current_user.update(params[:user])
     binding.pry
 
@@ -85,6 +85,12 @@ class SessionsController < ApplicationController
     redirect :"/users/#{@current_user.id}"
   end
 
+
+  ## DEDEDEDELETEEEEEEEEEEEEEEEEEEEEE
+  delete '/logout' do
+    session.clear if logged_in?
+    redirect '/'
+  end
   
 
 

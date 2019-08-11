@@ -11,9 +11,9 @@ class SessionsController < ApplicationController
   ## Home page for the user. Checks to see if user is logged in, if not, will redirect to login page ##
   get '/users/:id' do
     # @users = User.all
-    authenticate
-    current_user
-    # binding.pry
+
+    authorized?
+
     erb :"/users/home"
   end
 
@@ -29,13 +29,9 @@ class SessionsController < ApplicationController
 
   ## edit user and finish adding info
   get '/users/:id/edit' do
-      authenticate
-      @user = User.find_by_id(params[:id])
-
-      current_user
+      authorized?
 
       erb :'/users/edit'
-   
   end
 
 
@@ -57,7 +53,6 @@ class SessionsController < ApplicationController
     redirect '/users/:id' if authorized?
 
     user = User.new(params[:user])
-    # binding.pry
     if user.save
       session[:user_id] = user.id
       redirect '/users/:id'
@@ -69,15 +64,12 @@ class SessionsController < ApplicationController
 
   ## update users info like age, height, weight, activity level
   patch '/users/:id' do
+
+    authorized?
     
-    authenticate
-    current_user
-    # binding.pry
     @current_user.update(params[:user])
     binding.pry
 
-
-    # erb :"users/home"
     redirect :"/users/#{@current_user.id}"
   end
 

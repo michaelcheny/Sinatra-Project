@@ -7,7 +7,8 @@ class MealController < ApplicationController
     authenticate
     # check_if_user_authorized?
     # binding.pry
-    @meals = Meal.all
+    ## Grabs the meals for the current user only
+    @meals = current_user.meals
     erb :"/meals/meals_index"
   end
 
@@ -27,8 +28,8 @@ class MealController < ApplicationController
     current_user.meals << meal
     current_user.save
 
+    # binding.pry
     redirect '/meals'
-
   end
 
 

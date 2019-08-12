@@ -74,6 +74,11 @@ class SessionsController < ApplicationController
   #   redirect :"/users/#{@current_user.id}"
   # end
 
+  get '/logout' do
+    session.clear if logged_in?
+    redirect '/'
+  end
+
 
   ## DEDEDEDELETEEEEEEEEEEEEEEEEEEEEE
   delete '/logout' do

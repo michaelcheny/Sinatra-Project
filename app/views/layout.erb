@@ -9,8 +9,29 @@
 </head>
 <body>
 
+  <!-- Titlebar.. remember to change this -->
   <h1>HUBBADUBBA</h1>
+
+   <!-- Ghetto navigation bar.. for now -->
+  <% if logged_in? %>
+    <p center>
+    <a href="/users/<%= @current_user.id %>">Home</a> |
+    <a href="/users/<%= @current_user.id %>/edit">Edit User</a> | 
+    <a href="/meals">Logged Meals</a> |
+    <a href="/meals/new">Add a Meal</a> | 
+    <a href="/logout">Log Out</a> | 
+    placeholder 
+    </p>
+  <% else %>
+    <p center>
+    <a href="/">Home</a> | 
+    <a href="/login">Log in</a> |
+    <a href="/register">Register</a>
+    </p>
+  <% end %>
+  <br>
   
+  <!-- Every page in the app follows this layout -->
   <%= yield %>
 
   <br><br><br><br><br>

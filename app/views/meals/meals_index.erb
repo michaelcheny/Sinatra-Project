@@ -1,9 +1,3 @@
- <!-- Ghetto navigation bar.. for now -->
- <p center><a href="/users/<%= @current_user.id %>">Home</a> | <a href="/users/<%= @current_user.id %>/edit">Edit User</a> | <a href="/meals/new">Add Meals</a> | placeholder | placeholder |  <form method="post" action="/logout">
-  <input id="hidden" type="hidden" name="_method" value="delete">
-  <input type="submit" value="Logout">
-</form></p><br>
-
 
 <% if @meals.empty? %>
 
@@ -17,7 +11,7 @@
 
       <p>Name: <%= meal.name %></p>
       <p>Calories: <%= meal.calories %> Calories.</p>
-      <p>Time Added: <%= meal.created_at %></p>
+      <p>Time Added: <%= meal.created_at %></p> <br><br>
 
     <% end %>
 

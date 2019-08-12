@@ -1,8 +1,4 @@
- <!-- Ghetto navigation bar.. for now -->
- <p center><a href="/users/<%= @current_user.id %>">Home</a> | <a href="/users/<%= @current_user.id %>/edit">Edit User</a> | <a href="/meals">Logged Meals</a> | placeholder | placeholder |  <form method="post" action="/logout">
-  <input id="hidden" type="hidden" name="_method" value="delete">
-  <input type="submit" value="Logout">
-</form></p><br>
+
 
 <h3>Hello <%= @current_user.name %>, Add a new meal</h3>
 <form action="/meals" method="post">

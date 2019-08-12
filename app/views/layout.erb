@@ -14,16 +14,17 @@
 
    <!-- Ghetto navigation bar.. for now -->
   <% if logged_in? %>
-    <p center>
+    <div class="nav">
     <a href="/users/<%= @current_user.id %>">Home</a> |
     <a href="/users/<%= @current_user.id %>/edit">Edit User</a> |
     <a href="/meals">Logged Meals</a> |
     <a href="/meals/new">Add a Meal</a> | 
     <a href="/logout">Log Out</a> | 
-    placeholder 
-    </p>
+    placeholder <br>
+    <p><%= @current_user.name %>'s profile</p>
+    </div>
   <% else %>
-    <p center>
+    <p class="nav">
     <a href="/">Welcome</a> | 
     <a href="/login">Log in</a> |
     <a href="/register">Register</a>

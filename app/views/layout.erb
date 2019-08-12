@@ -21,7 +21,7 @@
     <a href="/meals/new">Add a Meal</a> | 
     <a href="/logout">Log Out</a> | 
     placeholder <br>
-    <p><%= @current_user.name %>'s profile</p>
+    <p><%= @current_user.username.capitalize %>'s profile</p>
     </div>
   <% else %>
     <p class="nav">

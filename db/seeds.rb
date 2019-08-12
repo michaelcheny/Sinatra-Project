@@ -1,3 +1,5 @@
+## Create some dummy models
+
 michael = User.create(name: "Michael", username: "michael", password: "password1")
 
 fat_michael = User.create(name: "Future Michael", username: "fat michael", password: "password1", gender: "male", age: 57, height: 69, weight: 288, activity_level: "1")
@@ -20,6 +22,7 @@ food4 = Meal.create(name: "Overnight Oats with Blueberries", calories: 550)
 
 food5 = Meal.create(name: "Swedish Meatballs", calories: 800)
 
+## preload user's meal array with some food
 michael.meals << food3
 fat_michael.meals << food1
 fat_michael.meals << food2

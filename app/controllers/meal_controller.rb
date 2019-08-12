@@ -5,9 +5,30 @@ class MealController < ApplicationController
 
     ## checks if user is logged in and if current user is current user
     authenticate
-    check_if_user_authorized?
+    # check_if_user_authorized?
     # binding.pry
-    erb :"/meals/index"
+    @meals = Meal.all
+    erb :"/meals/meals_index"
+  end
+
+  ## Page to add a new meal
+  get '/meals/new' do
+    authenticate
+    # check_if_user_authorized?
+
+    erb :'/meals/new'
+  end
+
+  
+  ## post request from new meal form
+  post '/meals' do
+
+    meal = Meal.new(params[:meal])
+    current_user.meals << meal
+    current_user.save
+
+    redirect '/meals'
+
   end
 
 

@@ -10,7 +10,7 @@ class UserController < ApplicationController
   end
 
 
-  ## edit user and finish adding info
+  ## edit user info like weight, height, etc.
   get '/users/:id/edit' do
     authenticate
     check_if_user_authorized?

@@ -24,7 +24,11 @@ class MealController < ApplicationController
     authenticate
     
     @meal = Meal.find_by(id: params[:id])
-
+    if @meal
+      erb :"meals/edit"
+    else
+      erb :"error"
+    end
   end
   
   ## post request from new meal form

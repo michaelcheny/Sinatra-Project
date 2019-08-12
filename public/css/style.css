@@ -12,6 +12,11 @@ html {
   border: 1px solid #000;
 }
 
+.meal_content{
+  margin: 10px;
+  padding: 10px;
+}
+
 #nav {
 
   padding: 10px;

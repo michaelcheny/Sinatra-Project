@@ -1,0 +1,16 @@
+<div class="meals">
+<p class="meal_content"><%= @meal.name %></p>
+<p class="meal_content"><%= @meal.calories %></p>
+<p class="meal_content"><%= @meal.created_at %></p>
+
+
+<% if @meal.user == current_user %>
+  <form action="/meals/<%= @meal.id %>/delete" method="post">
+  
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete Meal">
+  
+  </form>
+<% end %>
+
+</div>

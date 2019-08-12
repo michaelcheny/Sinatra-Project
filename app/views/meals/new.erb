@@ -1,8 +1,9 @@
 
 
-<h3>Hello <%= @current_user.name %>, add a new meal</h3>
-<form action="/meals" method="post">
 
+<form action="/meals" method="post" class="forms">
+
+<h3>Hello <%= @current_user.name %>, add a new meal</h3>
   
   <input type="text" name="meal[name]" id="name" placeholder="Name of Meal" required><br>
 

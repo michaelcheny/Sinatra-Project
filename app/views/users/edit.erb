@@ -1,7 +1,9 @@
 
-<p>Edit User Info Here</p>
 
-<form action="/users/<%= @current_user.id %>" method="post">
+
+<form action="/users/<%= @current_user.id %>" method="post" class="forms">
+
+<p>Edit User Info Here</p>
 
 <input id="hidden" type="hidden" name="_method" value="patch">
 

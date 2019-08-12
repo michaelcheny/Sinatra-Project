@@ -10,6 +10,8 @@ witch = User.create(name: "Wanda Maximoff", username: "scarlet witch", password:
 
 draymond = User.create(name: "Draymond Green", username: "dayday", password: "watchyournuts", gender: "male", age: 29, height: 79, weight: 230, activity_level: "4")
 
+simone = User.create(name: "Simone Biles", username: "spin2win", password: "password1", gender: "female", age: 22, height: 57, weight: 115, activity_level: "4")
+
 hotdog = User.create(name: "Joey Chestnut", username: "hot dog eater", password: "hotdogs", gender: "male", age: 35, height: 73, weight: 230, activity_level: "3")
 
 food1 = Meal.create(name: "scrambled eggs cooked in bacon fat", calories: 800)

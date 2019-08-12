@@ -39,6 +39,7 @@ class SessionsController < ApplicationController
     redirect '/users/:id' if check_if_user_authorized?
 
     user = User.new(params[:user])
+    binding.pry
     if user.save
       session[:user_id] = user.id
       redirect '/users/:id'

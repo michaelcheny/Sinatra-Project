@@ -16,7 +16,7 @@
   <% if logged_in? %>
     <p center>
     <a href="/users/<%= @current_user.id %>">Home</a> |
-    <a href="/users/<%= @current_user.id %>/edit">Edit User</a> | 
+    <a href="/users/<%= @current_user.id %>/edit">Edit User</a> |
     <a href="/meals">Logged Meals</a> |
     <a href="/meals/new">Add a Meal</a> | 
     <a href="/logout">Log Out</a> | 
@@ -24,7 +24,7 @@
     </p>
   <% else %>
     <p center>
-    <a href="/">Home</a> | 
+    <a href="/">Welcome</a> | 
     <a href="/login">Log in</a> |
     <a href="/register">Register</a>
     </p>

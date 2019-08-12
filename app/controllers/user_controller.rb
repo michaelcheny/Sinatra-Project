@@ -6,7 +6,7 @@ class UserController < ApplicationController
     authenticate
     check_if_user_authorized?
 
-    erb :"/users/home"
+    erb :'/users/home'
   end
 
 
@@ -17,6 +17,7 @@ class UserController < ApplicationController
 
     erb :'/users/edit'
   end
+
 
   ## update users info like age, height, weight, activity level
   patch '/users/:id' do

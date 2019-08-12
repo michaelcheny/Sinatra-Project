@@ -6,7 +6,9 @@
 <% if !@current_user.weight.nil? %>
 
   <p>You current weight is <%= @current_user.weight %> pounds</p>
-  <p>You are <%= @current_user.height %> inches tall.</p>
+
+  <!--<p>You are <%= @current_user.height %> inches tall.</p>-->
+  
 
   <p>Your BMR is <%= bmr = CalculationHelpers.calculate_bmr(@current_user.gender, @current_user.age, @current_user.height, @current_user.weight)  %> Calories. (Your body naturally burns that much in a day!)</p>
 

@@ -8,10 +8,12 @@ class ApplicationController < Sinatra::Base
     set :session_secret, SESSION_SECRET  ## sets the secret hex key for password security
   end
 
+  
   ## the very first page of our app. Kind of like our welcome page that leads to log in or registration
   get '/' do
     erb :index
   end
+
 
   ## helper methods for our controllers
   helpers do
@@ -21,10 +23,12 @@ class ApplicationController < Sinatra::Base
       !!session[:user_id]
     end
 
+
     ## gives us the current user to work with
     def current_user
       @current_user = User.find_by(id: session[:user_id])
     end
+
 
     ## checks to see if user is authorized. If they're not logged in, they get redirected to log in page
     def authenticate
@@ -32,6 +36,7 @@ class ApplicationController < Sinatra::Base
         redirect '/login'
       end
     end
+
 
     ## checks to see if user is logged in and current user is available
     def check_if_user_authorized?

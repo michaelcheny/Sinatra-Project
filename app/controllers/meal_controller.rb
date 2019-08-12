@@ -21,12 +21,18 @@ class MealController < ApplicationController
   
   ## post request from new meal form
   post '/meals' do
+    authenticate
 
     meal = Meal.new(params[:meal])
     current_user.meals << meal
-    current_user.save
-    # binding.pry
-    redirect '/meals'
+    if meal.save
+      current_user.save
+      # binding.pry
+      redirect '/meals'
+    else
+      @error_message = "You messed up, bro"
+      erb :"/meals/new"
+    end
   end
 
 

@@ -26,6 +26,8 @@ html {
 }
 
 .nav_bar {
+
+  margin: 3px;
   display: inline-block;
   align-items: center;
   text-align: center

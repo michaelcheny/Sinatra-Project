@@ -5,3 +5,7 @@ html {
 .messedup {
   color: red; 
 }
+
+.meals {
+  border: 1px, solid, #000;
+}

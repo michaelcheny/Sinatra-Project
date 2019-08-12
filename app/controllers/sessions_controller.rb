@@ -3,6 +3,9 @@ class SessionsController < ApplicationController
   ## Registration page, allows user to create a new account ##
   get '/register' do
     redirect '/users/:id' if check_if_user_authorized?
+
+    @failed = false
+
     erb :"/users/register"
   end
 
@@ -40,6 +43,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect '/users/:id'
     else
+      @failed = true
       erb :'/users/register'
     end
   end

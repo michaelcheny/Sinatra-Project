@@ -7,7 +7,11 @@
 
 <input type="text" name="user[username]" placeholder="Username" required><br>
 
-<input type="password" name="user[password]" placeholder="Password(6-20)"><br>
+<input type="password" name="user[password]" placeholder="Password(6-20)" required><br>
+
+<% if @failed %>
+  <p class="messedup">Password must be between 6-20 letters long</p>
+<% end %>
 
 <input type="submit" value="Create Account">
 

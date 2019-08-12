@@ -5,8 +5,9 @@
 
 <% else %>
 
-    <h3>Logged Meals</h3>
+  <h3>Logged Meals</h3>
 
+  <div class="meals">
     <% @meals.each do |meal| %>
 
       <p>Name: <%= meal.name %></p>
@@ -14,5 +15,5 @@
       <p>Time Added: <%= meal.created_at %></p> <br><br>
 
     <% end %>
-
+  </div>
 <% end %>

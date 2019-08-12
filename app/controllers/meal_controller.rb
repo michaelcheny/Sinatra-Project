@@ -2,7 +2,6 @@ class MealController < ApplicationController
   
   ## Gets the /meal request and displays the meal page
   get '/meals' do
-
     ## checks if user is logged in and if current user is current user
     authenticate
     # check_if_user_authorized?
@@ -11,6 +10,7 @@ class MealController < ApplicationController
     @meals = current_user.meals
     erb :"/meals/meals_index"
   end
+
 
   ## Page to add a new meal
   get '/meals/new' do
@@ -27,7 +27,6 @@ class MealController < ApplicationController
     meal = Meal.new(params[:meal])
     current_user.meals << meal
     current_user.save
-
     # binding.pry
     redirect '/meals'
   end

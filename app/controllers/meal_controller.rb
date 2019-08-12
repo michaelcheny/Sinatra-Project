@@ -18,6 +18,14 @@ class MealController < ApplicationController
     erb :'/meals/new'
   end
 
+
+  ## Edit page for meals
+  get '/meals/:id/edit' do
+    authenticate
+    
+    @meal = Meal.find_by(id: params[:id])
+
+  end
   
   ## post request from new meal form
   post '/meals' do
@@ -36,6 +44,18 @@ class MealController < ApplicationController
   end
 
 
+  ## DELETE THIS 
+  delete '/meals/:id' do
+    authenticate
+    meal = Meal.find_by(id: params[:id])
+    if meal
+      meal.destroy
+      redirect "/meals"
+    
+
+
+    end
+  end
 
 
 end

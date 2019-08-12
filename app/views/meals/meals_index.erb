@@ -13,6 +13,17 @@
         <p>Name: <%= meal.name %></p>
         <p>Calories: <%= meal.calories %> Calories.</p>
         <p>Time Added: <%= meal.created_at %></p> <br><br>
+
+        <% if meal.user == current_user %>
+          <a href="/meals/<%= meal.id %>/edit">Edit</a>
+          <form action="/meals/<%= meal.id %>/delete" method="post">
+          
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="Delete Meal">
+          
+          </form>
+        <% end %>
+
       </div>
     <% end %>
   

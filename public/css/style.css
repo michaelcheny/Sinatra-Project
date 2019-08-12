@@ -2,7 +2,7 @@ html {
   background-color: #778899;
 }
 
-.messedup {
+.errors {
   color: red; 
 }
 
@@ -12,7 +12,8 @@ html {
   border: 1px solid #000;
 }
 
-.nav {
+#nav {
+
   padding: 10px;
   margin: 5px;
   background-color: #657485;
@@ -22,4 +23,11 @@ html {
 .forms {
   margin: 5px;
   padding: 10px; 
+}
+
+.nav_bar {
+  display: inline-block;
+  align-items: center;
+  text-align: center
+  
 }

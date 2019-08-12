@@ -10,18 +10,25 @@
 <body>
 
   <!-- Titlebar.. remember to change this -->
-  <h1>HUBBADUBBA</h1>
+  <h1>HUBBADUBBA (think of a clever name)</h1>
 
    <!-- Ghetto navigation bar.. for now -->
   <% if logged_in? %>
-    <div class="nav">
-    <a href="/users/<%= @current_user.id %>">Home</a> |
-    <a href="/users/<%= @current_user.id %>/edit">Edit User</a> |
-    <a href="/meals">Logged Meals</a> |
-    <a href="/meals/new">Add a Meal</a> | 
-    <a href="/logout">Log Out</a> | 
-    placeholder <br>
-    <p><%= @current_user.username.capitalize %>'s profile</p>
+    <div id="nav">
+      <a class="nav_bar" href="/home/<%= @current_user.id %>">Home</a> |
+      <a class="nav_bar" href="/users/<%= @current_user.id %>/edit">Edit User</a> |
+      <a class="nav_bar" href="/meals">Logged Meals</a> |
+      <a class="nav_bar" href="/meals/new">Add a Meal</a> | 
+      <a class="nav_bar" href="/logout">Log Out</a> | 
+
+      <!--wtf logout button-->
+      <form action="/logout" method="post">
+        <input id="hidden" type="hidden" name="_method" value="delete">
+        <input class="nav_bar" type="submit" value="Log Out">
+      </form> 
+        
+      <br>
+      <p><%= @current_user.username.capitalize %>'s profile</p>
     </div>
   <% else %>
     <p class="nav">

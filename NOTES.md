@@ -26,4 +26,15 @@ views:
 
 
 
+    # change index file name to something else
+    # change name of all the routes to fit app better
+    # for users
+    # homepage should be /home/:id
+    # meal should follow same structure
+
+
+
+make the text forms bigger
+
+
 

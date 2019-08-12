@@ -4,7 +4,6 @@ class MealController < ApplicationController
   get '/meals' do
     ## checks if user is logged in and if current user is current user
     authenticate
-    # check_if_user_authorized?
     # binding.pry
     ## Grabs the meals for the current user only
     @meals = current_user.meals
@@ -15,7 +14,6 @@ class MealController < ApplicationController
   ## Page to add a new meal
   get '/meals/new' do
     authenticate
-    # check_if_user_authorized?
 
     erb :'/meals/new'
   end
@@ -32,11 +30,6 @@ class MealController < ApplicationController
   end
 
 
-    # change index file name to something else
-    # change name of all the routes to fit app better
-    # for users
-    # homepage should be /home/:id
-    # meal should follow same structure
 
 
 end

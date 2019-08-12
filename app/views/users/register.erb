@@ -14,7 +14,9 @@
 <input type="password" name="user[password_confirmation]" placeholder="Confirm your password" required><br>
 
 <% if @failed %>
-  <p class="messedup">Password must be between 6-20 letters long</p>
+  <% @user.errors.full_messages.each do |error| %>
+    <p class="messedup"><%= error %></p>
+  <% end %>
 <% end %>
 
 <input type="submit" value="Create Account">

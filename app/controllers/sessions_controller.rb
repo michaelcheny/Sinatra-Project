@@ -38,12 +38,13 @@ class SessionsController < ApplicationController
   post '/register' do
     redirect '/users/:id' if check_if_user_authorized?
 
-    user = User.new(params[:user])
+    @user = User.new(params[:user])
     binding.pry
-    if user.save
-      session[:user_id] = user.id
+    if @user.save
+      session[:user_id] = @user.id
       redirect '/users/:id'
     else
+      binding.pry
       @failed = true
       erb :'/users/register'
     end

@@ -23,7 +23,7 @@ class MealController < ApplicationController
   get '/meals/:id/edit' do
     
     @meal = Meal.find_by(id: params[:id])
-    authenticate_user(@meal)
+    authenticate_user_for_editing_meals(@meal)
     # if @meal
       erb :"/meals/edit"
     # else
@@ -58,7 +58,7 @@ class MealController < ApplicationController
 
   patch '/meals' do
     @meal = Meal.find_by(id: params[:id])
-    authenticate_user(@meal)
+    authenticate_user_for_editing_meals(@meal)
 
 
   end
@@ -71,9 +71,6 @@ class MealController < ApplicationController
     if meal
       meal.destroy
       redirect "/meals"
-    
-
-
     end
   end
 

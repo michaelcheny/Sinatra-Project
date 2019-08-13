@@ -12,7 +12,8 @@ class UserController < ApplicationController
   ## edit user info like weight, height, etc.
   get '/users/:id/edit' do
     authenticate
-    check_if_user_authorized?
+    # check_if_user_authorized?
+    # authenticate_user_for_editing_user(current_user)
 
     erb :'/users/edit'
   end

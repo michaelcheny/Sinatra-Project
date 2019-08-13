@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2019_08_07_221222) do
     t.integer "height"
     t.integer "weight"
     t.string "activity_level"
+    t.integer "bmr"
+    t.integer "tdee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

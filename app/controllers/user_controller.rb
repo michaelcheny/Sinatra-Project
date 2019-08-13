@@ -24,7 +24,7 @@ class UserController < ApplicationController
     authenticate
     
     @current_user.update(params[:user])
-    # binding.pry
+    binding.pry
 
     redirect :"/home/#{@current_user.id}"
   end

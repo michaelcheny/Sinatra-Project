@@ -38,3 +38,4 @@ make the text forms bigger
 
 
 
+TIL if I put password confirmation thing, I need to seed my users with password: "blahblah", password_confirmation: "blahblah" as well

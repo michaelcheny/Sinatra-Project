@@ -5,9 +5,9 @@
 
 <% else %>
 
-  <h3>Logged Meals for <%= Date.today.strftime("%A, %B %d, %Y") %></h3>
+  <h3 class="meal_content">All Logged Meals</h3>
 
-    <a href="/meals/today">sort by meals from today only</a>
+    <a class="meal_content" href="/meals/today">sort by meals from today only</a>
 
 
   
@@ -15,7 +15,7 @@
       <div class="meals">
         <p class="meal_content">Name: <%= meal.name %></p>
         <p class="meal_content">Calories: <%= meal.calories %> Calories.</p>
-        <p class="meal_content">Added on: <%= meal.created_at.strftime("%A, %B %d, %Y") %></p> 
+        <p class="meal_content">Added on: <%= meal.created_at %></p> 
         <a  class="meal_content" href="/meals/<%= meal.id %>/edit">Edit</a>
         <br><br>
       </div>

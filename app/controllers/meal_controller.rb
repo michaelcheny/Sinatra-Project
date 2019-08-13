@@ -36,7 +36,6 @@ class MealController < ApplicationController
   get '/meals/today' do
     authenticate
     @meals = current_user.meals
-    binding.pry
     erb :"/meals/today"
   end
 

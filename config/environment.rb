@@ -17,4 +17,5 @@ if ENV['SINATRA_ENV'] == 'development'
 end
 
 require_relative '../constants'
+require_relative './initializers/date_format'
 require_all 'app'

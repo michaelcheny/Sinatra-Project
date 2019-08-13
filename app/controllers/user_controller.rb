@@ -21,10 +21,10 @@ class UserController < ApplicationController
   ## update users info like age, height, weight, activity level
   patch '/home/:id' do
 
-    check_if_user_authorized?
+    authenticate
     
     @current_user.update(params[:user])
-    binding.pry
+    # binding.pry
 
     redirect :"/home/#{@current_user.id}"
   end

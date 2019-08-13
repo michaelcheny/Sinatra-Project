@@ -11,6 +11,7 @@ class ApplicationController < Sinatra::Base
   
   ## the very first page of our app. Kind of like our welcome page that leads to log in or registration
   get '/' do
+    check_if_user_authorized?
     erb :index
   end
 

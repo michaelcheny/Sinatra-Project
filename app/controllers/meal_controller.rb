@@ -21,9 +21,9 @@ class MealController < ApplicationController
 
   ## Edit page for meals
   get '/meals/:id/edit' do
-    authenticate
     
     @meal = Meal.find_by(id: params[:id])
+    authenticate_user(@meal)
     if @meal
       erb :"meals/edit"
     else
@@ -45,6 +45,13 @@ class MealController < ApplicationController
       @error_message = "You messed up, bro"
       erb :"/meals/new"
     end
+  end
+
+  patch '/meals' do
+    @meal = Meal.find_by(id: params[:id])
+    authenticate_user(@meal)
+    
+
   end
 
 

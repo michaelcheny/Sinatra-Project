@@ -44,6 +44,15 @@ class ApplicationController < Sinatra::Base
       !!logged_in? && !current_user.nil?
     end
 
+    ## authenticates and also checks if user was the one who added that meal so they can edit.
+    def authenticate_user(meal)
+      authenticate
+      redirect '/meals' if !meal
+      redirect '/meals' if current_user != meal.user
+      
+    end
+
+
   end
 
   

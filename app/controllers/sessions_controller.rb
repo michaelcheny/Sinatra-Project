@@ -46,11 +46,12 @@ class SessionsController < ApplicationController
   end
 
 
+  ###### BAD PRACTICE DONT DO THIS #######
   ## Clears the session hash to let user log out.
-  get '/logout' do
-    session.clear if logged_in?
-    redirect '/'
-  end
+  # get '/logout' do
+  #   session.clear if logged_in?
+  #   redirect '/'
+  # end
 
 
   ## The D in CRUD.

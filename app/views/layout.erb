@@ -19,12 +19,16 @@
       <a class="nav_bar" href="/users/<%= @current_user.id %>/edit">Edit User</a> |
       <a class="nav_bar" href="/meals">Logged Meals</a> |
       <a class="nav_bar" href="/meals/new">Add a Meal</a> | 
+
+
+      <!-- THIS IS FROWNED UPON 
       <a class="nav_bar" href="/logout">Log Out</a> | 
+      -->
 
       <!--wtf logout button-->
-      <form action="/logout" method="post">
+      <form class="nav_bar" action="/logout" method="post">
         <input id="hidden" type="hidden" name="_method" value="delete">
-        <input class="nav_bar" type="submit" value="Log Out">
+        <input type="submit" value="Log Out">
       </form> 
         
       <br>

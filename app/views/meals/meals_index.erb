@@ -5,14 +5,17 @@
 
 <% else %>
 
-  <h3>Logged Meals</h3>
+  <h3>Logged Meals for <%= Date.today.strftime("%A, %B %d, %Y") %></h3>
+
+    <a href="/meals/today">sort by meals from today only</a>
+
 
   
-    <% @meals.each do |meal| %>
+    <% @meals.sort_by{|m| m.created_at}.reverse.each do |meal| %>
       <div class="meals">
         <p class="meal_content">Name: <%= meal.name %></p>
         <p class="meal_content">Calories: <%= meal.calories %> Calories.</p>
-        <p class="meal_content">Time Added: <%= meal.created_at %></p> 
+        <p class="meal_content">Added on: <%= meal.created_at.strftime("%A, %B %d, %Y") %></p> 
         <a  class="meal_content" href="/meals/<%= meal.id %>/edit">Edit</a>
         <br><br>
       </div>

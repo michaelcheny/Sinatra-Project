@@ -24,12 +24,22 @@ class MealController < ApplicationController
     
     @meal = Meal.find_by(id: params[:id])
     authenticate_user(@meal)
-    if @meal
-      erb :"meals/edit"
-    else
-      erb :"error"
-    end
+    # if @meal
+      erb :"/meals/edit"
+    # else
+    #   erb :"error"
+    # end
   end
+
+
+  ## Display page with meal from today only
+  get '/meals/today' do
+    authenticate
+    @meals = current_user.meals
+    binding.pry
+    erb :"/meals/today"
+  end
+
   
   ## post request from new meal form
   post '/meals' do
@@ -50,7 +60,7 @@ class MealController < ApplicationController
   patch '/meals' do
     @meal = Meal.find_by(id: params[:id])
     authenticate_user(@meal)
-    
+
 
   end
 
@@ -67,6 +77,8 @@ class MealController < ApplicationController
 
     end
   end
+
+
 
 
 end

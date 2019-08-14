@@ -11,7 +11,7 @@ main {
 
 /* Header portion */
 header {
-  background-color: #4e6479;
+  background-color: #6284a3;
   position: fixed;
   top: 0;
   left: 0;
@@ -23,13 +23,14 @@ header {
 /* Make our nav links  */
 header li {
   /* display: inline; */
-  margin: 13px;
+  margin-left: 15px;
+  margin-right: 5px;
   display: inline-block;
-  background: gray;
+  background: #f8fcff;
   border-radius: 4px;
   font-size: 14px;
   color: #FFF;
-  padding: 8px 12px; 
+  padding: 5px 10px; 
 }
 
 header li a {

@@ -67,10 +67,10 @@ body {
 }
 
 /* For each individual meal */
-/* .meal_content{
+.meal_content{
   margin: 10px;
   padding: 10px;
-} */
+}
 
 
 /* For the forms with inputs */

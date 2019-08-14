@@ -51,6 +51,11 @@ class ApplicationController < Sinatra::Base
       redirect '/meals' if current_user != meal.user
     end
 
+
+    def check_if_integer(user_params)
+      (user_params[:age].is_a? Integer) || (user_params[:height].is_a? Integer) || (user_params[:weight].is_a? Integer)
+    end
+
     # def authenticate_user_for_editing_user(user)
     #   authenticate
     #   redirect "/home/#{user.id}" if !user

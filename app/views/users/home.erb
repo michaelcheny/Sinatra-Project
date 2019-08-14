@@ -3,7 +3,7 @@
 
 <!-- This conditional may need to get updated later. test again after new users -->
 
-<% if !current_user.bmr.nil?  %>
+<% if !current_user.tdee.nil?  %>
 
   <p>Your current weight is <%= current_user.weight %> pounds</p>
 
@@ -27,6 +27,9 @@
   <input type="text" name="user[height]" id="height" value="<%= @current_user.height %>" placeholder="Height in inches" required><br><br>
   <input type="text" name="user[weight]" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds" required><br><br>
 
+  <% if @failed %>
+    <p class="errors">Must be numbers, bro ^^</p>
+  <% end %>
 
   <label for="gender">Gender:</label><br>
   <input type="radio" name="user[gender]" id="gender" value="male" required>

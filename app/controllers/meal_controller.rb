@@ -26,6 +26,7 @@ class MealController < ApplicationController
   get '/meals/:id/edit' do
     
     @meal = Meal.find_by(id: params[:id])
+    ## only the creator can edit
     authenticate_user_for_editing_meals(@meal)
     # if @meal
       erb :"/meals/edit"

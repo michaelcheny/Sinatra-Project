@@ -7,6 +7,9 @@ class MealController < ApplicationController
     # binding.pry
     ## Grabs the meals for the current user only
     @meals = current_user.meals
+
+    @failed = false
+
     erb :"/meals/index"
   end
 
@@ -44,14 +47,15 @@ class MealController < ApplicationController
   post '/meals' do
     authenticate
 
-    meal = Meal.new(params[:meal])
-    current_user.meals << meal
-    if meal.save
+    @meal = Meal.new(params[:meal])
+    binding.pry
+    current_user.meals << @meal
+    if @meal.save
       current_user.save
       # binding.pry
       redirect '/meals'
     else
-      @error_message = "You messed up, bro"
+      @failed = true
       erb :"/meals/new"
     end
   end

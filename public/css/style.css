@@ -3,38 +3,78 @@
 html {
   background-color: #778899;
 }
+
+/* Main body portion (all the yields) */
+main {
+
+}
+
+/* Header portion */
+header {
+  background-color: #4e6479;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  box-shadow: 0 0 20px 0 black;
+}
+
+/* Make our nav links  */
+header li {
+  /* display: inline; */
+  margin: 13px;
+  display: inline-block;
+  background: gray;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #FFF;
+  padding: 8px 12px; 
+}
+
+header li a {
+  color: black;
+  text-decoration: none;
+}
+
+.nav_bar {
+  margin-left: 30px
+}
+
+/* For the Nav bar selections */
+.logout_button {
+  /* display: inline-block; */
+
+}
+
+/* Body of the page */
+body {
+  margin-top: 100px;
+  padding: 40px;
+}
+
 /* For error text */
 .errors {
   color: red; 
 }
+
 /* for the meals page */
 .meals {
   margin: 5px;
   padding: 10px;
   border: 1px solid #000;
 }
+
 /* For each individual meal */
 .meal_content{
   margin: 10px;
   padding: 10px;
 }
-/* For the top nav bar with title and title selectors */
-#nav {
-  padding: 10px;
-  margin: 5px;
-  background-color: #657485;
-  border: 2px solid black;
-  display: inline-block;
-}
+
+
 /* For the forms with inputs */
 .forms {
   margin: 5px;
   padding: 10px; 
 }
-/* For the Nav bar selections */
-.nav_bar {
-  margin: 3px;
-  display: inline-block;
-  align-items: center;
-  text-align: center;
-}
+

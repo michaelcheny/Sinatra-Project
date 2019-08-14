@@ -8,48 +8,43 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<div id="nav">
-  <!-- Titlebar.. remember to change this -->
-  <h1 class="nav">HUBBADUBBA (think of a clever name)</h1>
+
+  <header>
+    <h1 class="nav_bar">HUBBADUBBA (think of a clever name)</h1>
+    <nav>
+      <ul>
+        <% if logged_in? %>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/user/edit">Edit User</a></li>
+          <li><a href="/meals">Logged Meals</a></li>
+          <li><a href="/meals/new">Add a Meal</a></li>
+          <li><form class="logout_button" action="/logout" method="post">
+          <input id="hidden" type="hidden" name="_method" value="delete">
+          <input type="submit" value="Log Out">
+          </form></li>
+
+          <!-- Greet by username -->
+          <h4>Welcome! <%= @current_user.username.capitalize %></h4> 
+        <% else %>
+          <li><a href="/">Welcome</a></li>
+          <li><a href="/login">Log in</a></li> 
+          <li><a href="/register">Register</a></li>
+          <h4>Welcome!</h4>        
+        <% end %>
+      </ul>
+
+    </nav>
+  
+  
+  </header>
 
 
-   <!-- Ghetto navigation bar.. for now -->
-  <% if logged_in? %>
-    
-    <p class="nav_bar">
-      <a href="/home">Home</a> |
-      <a href="/user/edit">Edit User</a> |
-      <a href="/meals">Logged Meals</a> |
-      <a href="/meals/new">Add a Meal</a> | 
-
-
-      <!-- THIS IS FROWNED UPON 
-      <a class="nav_bar" href="/logout">Log Out</a> | 
-      -->
-
-      <!--wtf logout button-->
-      <form class="nav_bar" action="/logout" method="post">
-        <input id="hidden" type="hidden" name="_method" value="delete">
-        <input type="submit" value="Log Out">
-      </form> 
-    </p>    
-      
-      <h3><%= @current_user.username.capitalize %>'s profile</h3>
-    
-  <% else %>
-    <p class="nav">
-    <a href="/">Welcome</a> | 
-    <a href="/login">Log in</a> |
-    <a href="/register">Register</a>
-    </p>
-  <% end %>
-  </div>
 
   <br>
-
+  <main>
   <!-- Every page in the app follows this layout -->
   <%= yield %>
-
+  </main>
   <br><br><br><br><br>
   <p>Major key, don’t fall for the trap, stay focused. It’s the ones closest to you that want to see you fail. We don’t see them, we will never see them. Let’s see what Chef Dee got that they don’t want us to eat. The other day the grass was brown, now it’s green because I ain’t give up. Never surrender. It’s on you how you want to live your life. Everyone has a choice. I pick my choice, squeaky clean. Special cloth alert.</p><br>
   

@@ -1,9 +1,5 @@
 
-<% if !!@error_message %>
 
-  <p class="errors"><%= @error_message %></p>
-
-<% end %>
 
 <form action="/meals" method="post" class="forms">
 
@@ -12,6 +8,14 @@
   <input type="text" name="meal[name]" id="name" placeholder="Name of Meal" required><br>
   
   <input type="text" name="meal[calories]" id="calories" placeholder="Amount of Calories" required><br>
+
+<% if @failed %>
+
+  <% @meal.errors.full_messages.each do |error| %>
+    <p class="errors"><%= error %></p>
+    <% end %>
+
+<% end %>
 
   <input type="submit" value="Submit Meal">
 

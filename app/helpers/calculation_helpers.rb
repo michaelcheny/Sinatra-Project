@@ -1,17 +1,6 @@
 class CalculationHelpers
 
-  ## calculates basal metabolic rate using the Harris-Benedict equation
-  def self.calculate_bmr(gender, age, height, weight)
-    if gender == "male"
-      @bmr = (10 * (weight * 0.4535934)) + (6.25 * (height * 2.54)) - (5 * age) + 5
-    elsif gender == "female"
-      @bmr = (10 * (weight * 0.4535934)) + (6.25 * (height * 2.54)) - (5 * age) - 161
-    end
-    return @bmr.to_i
-  end
 
-
-  ###### USE THIS INSTEADDDDDDDDDDDD########
   ## calculates basal metabolic rate using the Harris-Benedict equation
   def self.calculate_user_bmr(user)
     if user.gender == "male"
@@ -19,31 +8,11 @@ class CalculationHelpers
     elsif user.gender == "female"
       bmr = (10 * (user.weight * 0.4535934)) + (6.25 * (user.height * 2.54)) - (5 * user.age) - 161
     end
-    bmr.to_i
+    return bmr.to_i
 
   end
 
-  ## calculates total daily energy expedenture using BMR and activity level of user
-  def self.calculate_tdee(activity_level, bmr)
-    case activity_level
-    when "1"
-      multiplier = 1.25
-    when "2" 
-      multiplier = 1.475
-    when "3"
-      multiplier = 1.72
-    when "4"
-      multiplier = 2.35
-    end
 
-    tdee = bmr * multiplier
-
-    return tdee.to_i
-    
-  end
-
-
-  ### USE THIS ONE# ## # # #
   ## calculates total daily energy expedenture using BMR and activity level of user
   def self.calculate_user_tdee(user)
     case user.activity_level
@@ -56,11 +25,8 @@ class CalculationHelpers
     when "4"
       multiplier = 2.35
     end
-
     tdee = user.bmr * multiplier
-
     return tdee.to_i
-    
   end
 
 

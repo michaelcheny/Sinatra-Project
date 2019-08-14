@@ -3,16 +3,16 @@
 
 <!-- This conditional may need to get updated later. test again after new users -->
 
-<% if !@current_user.weight.nil? %>
+<% if !current_user.bmr.nil?  %>
 
-  <p>You current weight is <%= @current_user.weight %> pounds</p>
+  <p>You current weight is <%= current_user.weight %> pounds</p>
 
   <!--<p>You are <%= @current_user.height %> inches tall.</p>-->
   
 
-  <p>Your BMR is <%= bmr = CalculationHelpers.calculate_bmr(@current_user.gender, @current_user.age, @current_user.height, @current_user.weight)  %> Calories. (Your body naturally burns that much in a day!)</p>
+  <p>Your BMR is <%= current_user.bmr %> Calories. (Your basal metabolic rate - Your body naturally burns that much in a day!)</p>
 
-  <p>Your TDEE is <%= CalculationHelpers.calculate_tdee(@current_user.activity_level, bmr) %> Calories. (This is your total daily energy expedenture - You caloric maintenace.) </p>
+  <p>Your TDEE is <%= current_user.tdee %> Calories. (This is your total daily energy expedenture - Your caloric maintenace.) </p>
 
 <% else %>
 

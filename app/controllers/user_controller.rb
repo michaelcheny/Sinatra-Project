@@ -28,21 +28,20 @@ class UserController < ApplicationController
     # binding.pry
     if !check_if_integer(params[:user])
       
-    # binding.pry
       @failed = true
       erb :"/users/home"
+
     else
       
-    current_user.update(params[:user])
-    ## updates bmr based on those params
-    current_user.update(bmr: CalculationHelpers.calculate_user_bmr(current_user))
+      current_user.update(params[:user])
+      ## updates bmr based on those params
+      current_user.update(bmr: CalculationHelpers.calculate_user_bmr(current_user))
+      ## updates tdee based on bmr and activity lvl
+      current_user.update(tdee: CalculationHelpers.calculate_user_tdee(current_user))
 
-    ## updates tdee based on bmr and activity lvl
-    current_user.update(tdee: CalculationHelpers.calculate_user_tdee(current_user))
+      binding.pry
 
-    binding.pry
-
-    redirect :"/home"
+      redirect :"/home"
 
     end
   end

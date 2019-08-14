@@ -10,8 +10,13 @@
 
 <input type="text" name="user[age]" id="age" value="<%= @current_user.age %>" placeholder="Age"><br><br>
 <input type="text" name="user[height]" id="height" value="<%= @current_user.height %>" placeholder="Height in inches"><br><br>
-<input type="text" name="user[weight]" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds"><br><br>
+<input type="text" name="user[weight]" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds">
 
+<!-- if age, height, or weight are not numbers, error-->
+<% if @failed %>
+  <p class="errors">Must be numbers, bro ^^</p>
+<% end %>
+<br><br>
 
 <label for="gender">Gender:</label><br>
 <input type="radio" name="user[gender]" id="gender" value="male">

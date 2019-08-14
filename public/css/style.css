@@ -1,40 +1,40 @@
+
+/* For the entire page */
 html {
   background-color: #778899;
 }
-
+/* For error text */
 .errors {
   color: red; 
 }
-
+/* for the meals page */
 .meals {
   margin: 5px;
   padding: 10px;
   border: 1px solid #000;
 }
-
+/* For each individual meal */
 .meal_content{
   margin: 10px;
   padding: 10px;
 }
-
+/* For the top nav bar with title and title selectors */
 #nav {
-
   padding: 10px;
   margin: 5px;
   background-color: #657485;
   border: 2px solid black;
+  display: inline-block;
 }
-
+/* For the forms with inputs */
 .forms {
   margin: 5px;
   padding: 10px; 
 }
-
+/* For the Nav bar selections */
 .nav_bar {
-
   margin: 3px;
   display: inline-block;
   align-items: center;
-  text-align: center
-  
+  text-align: center;
 }

@@ -7,7 +7,7 @@ class MealController < ApplicationController
     # binding.pry
     ## Grabs the meals for the current user only
     @meals = current_user.meals
-    erb :"/meals/meals_index"
+    erb :"/meals/index"
   end
 
 
@@ -68,7 +68,7 @@ class MealController < ApplicationController
   delete '/meals/:id' do
     authenticate
     meal = Meal.find_by(id: params[:id])
-    if meal
+    if meal ## if found, delete it
       meal.destroy
       redirect "/meals"
     end

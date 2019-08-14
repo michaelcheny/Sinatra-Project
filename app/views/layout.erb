@@ -8,17 +8,19 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-
+<div id="nav">
   <!-- Titlebar.. remember to change this -->
-  <h1 class="nav_bar">HUBBADUBBA (think of a clever name)</h1>
+  <h1 class="nav">HUBBADUBBA (think of a clever name)</h1>
+
 
    <!-- Ghetto navigation bar.. for now -->
   <% if logged_in? %>
-    <div id="nav">
-      <a class="nav_bar" href="/home">Home</a> |
-      <a class="nav_bar" href="/user/edit">Edit User</a> |
-      <a class="nav_bar" href="/meals">Logged Meals</a> |
-      <a class="nav_bar" href="/meals/new">Add a Meal</a> | 
+    
+    <p class="nav_bar">
+      <a href="/home">Home</a> |
+      <a href="/user/edit">Edit User</a> |
+      <a href="/meals">Logged Meals</a> |
+      <a href="/meals/new">Add a Meal</a> | 
 
 
       <!-- THIS IS FROWNED UPON 
@@ -30,8 +32,8 @@
         <input id="hidden" type="hidden" name="_method" value="delete">
         <input type="submit" value="Log Out">
       </form> 
-        
-      <br>
+    </p>    
+      
       <h3><%= @current_user.username.capitalize %>'s profile</h3>
     
   <% else %>

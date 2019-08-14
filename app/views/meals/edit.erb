@@ -25,7 +25,7 @@
 </form>
 
 <% if @meal.user == current_user %>
-  <form action="/meals/<%= @meal.id %>/delete" method="post">
+  <form action="/meals/<%= @meal.id %>" method="post">
   
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete Meal">

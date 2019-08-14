@@ -10,7 +10,7 @@
 <body>
 
   <!-- Titlebar.. remember to change this -->
-  <h1>HUBBADUBBA (think of a clever name)</h1>
+  <h1 class="nav_bar">HUBBADUBBA (think of a clever name)</h1>
 
    <!-- Ghetto navigation bar.. for now -->
   <% if logged_in? %>
@@ -33,7 +33,7 @@
         
       <br>
       <h3><%= @current_user.username.capitalize %>'s profile</h3>
-    </div>
+    
   <% else %>
     <p class="nav">
     <a href="/">Welcome</a> | 
@@ -41,8 +41,10 @@
     <a href="/register">Register</a>
     </p>
   <% end %>
+  </div>
+
   <br>
-  
+
   <!-- Every page in the app follows this layout -->
   <%= yield %>
 

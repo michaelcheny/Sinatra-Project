@@ -46,14 +46,6 @@ class SessionsController < ApplicationController
   end
 
 
-  ###### BAD PRACTICE DONT DO THIS #######
-  ## Clears the session hash to let user log out.
-  # get '/logout' do
-  #   session.clear if logged_in?
-  #   redirect '/'
-  # end
-
-
   ## The D in CRUD.
   ## Uncomment this block if I decide to use ugly log out button
   delete '/logout' do

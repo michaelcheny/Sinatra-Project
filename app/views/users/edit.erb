@@ -8,19 +8,19 @@
 <input id="hidden" type="hidden" name="_method" value="patch">
 
 
-<input type="text" name="user[age]" id="age" value="<%= @current_user.age %>" placeholder="Age" required><br><br>
-<input type="text" name="user[height]" id="height" value="<%= @current_user.height %>" placeholder="Height in inches" required><br><br>
-<input type="text" name="user[weight]" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds" required><br><br>
+<input type="text" name="user[age]" id="age" value="<%= @current_user.age %>" placeholder="Age"><br><br>
+<input type="text" name="user[height]" id="height" value="<%= @current_user.height %>" placeholder="Height in inches"><br><br>
+<input type="text" name="user[weight]" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds"><br><br>
 
 
 <label for="gender">Gender:</label><br>
-<input type="radio" name="user[gender]" id="gender" value="male" required>
+<input type="radio" name="user[gender]" id="gender" value="male">
 <label for="gender">Male</label><br>
 <input type="radio" name="user[gender]" id="gender" value="female">
 <label for="gender">Female</label><br><br>
 
 <label for="activity_level">Activity level:</label><br>
-<input type="radio" name="user[activity_level]" id="activity_level_1" value="1" required>
+<input type="radio" name="user[activity_level]" id="activity_level_1" value="1">
 <label for="activity_level_1">Sedentary</label><br>
 <input type="radio" name="user[activity_level]" id="activity_level_2" value="2">
 <label for="activity_level_2">Low-Active</label><br>

@@ -32,6 +32,8 @@ class UserController < ApplicationController
     ## updates tdee based on bmr and activity lvl
     current_user.update(tdee: CalculationHelpers.calculate_user_tdee(current_user))
 
+    binding.pry
+
     redirect :"/home"
   end
 

@@ -16,7 +16,7 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  height: 150px;
+  height: 160px;
   box-shadow: 0 0 20px 0 black;
 }
 
@@ -26,10 +26,10 @@ header li {
   margin-left: 15px;
   margin-right: 5px;
   display: inline-block;
-  background: #f8fcff;
+  background: #b5b9bd;
   border-radius: 4px;
   font-size: 14px;
-  color: #FFF;
+  color: rgb(95, 0, 0);
   padding: 5px 10px; 
 }
 
@@ -38,8 +38,8 @@ header li a {
   text-decoration: none;
 }
 
-.nav_bar {
-  margin-left: 30px
+.title {
+  margin-left: 35px
 }
 
 /* For the Nav bar selections */
@@ -50,8 +50,8 @@ header li a {
 
 /* Body of the page */
 body {
-  margin-top: 100px;
-  padding: 40px;
+  margin-top: 150px;
+  padding: 50px;
 }
 
 /* For error text */
@@ -61,21 +61,21 @@ body {
 
 /* for the meals page */
 .meals {
-  margin: 5px;
-  padding: 10px;
+  /* margin: 5px;
+  padding: 10px; */
   border: 1px solid #000;
 }
 
 /* For each individual meal */
-.meal_content{
+/* .meal_content{
   margin: 10px;
   padding: 10px;
-}
+} */
 
 
 /* For the forms with inputs */
-.forms {
+/* .forms {
   margin: 5px;
   padding: 10px; 
-}
+} */
 

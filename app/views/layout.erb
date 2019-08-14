@@ -15,8 +15,8 @@
    <!-- Ghetto navigation bar.. for now -->
   <% if logged_in? %>
     <div id="nav">
-      <a class="nav_bar" href="/home/<%= @current_user.id %>">Home</a> |
-      <a class="nav_bar" href="/users/<%= @current_user.id %>/edit">Edit User</a> |
+      <a class="nav_bar" href="/home">Home</a> |
+      <a class="nav_bar" href="/user/edit">Edit User</a> |
       <a class="nav_bar" href="/meals">Logged Meals</a> |
       <a class="nav_bar" href="/meals/new">Add a Meal</a> | 
 

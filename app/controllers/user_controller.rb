@@ -4,7 +4,7 @@ class UserController < ApplicationController
   get '/home' do
     # @users = User.all
     authenticate
-    # binding.pry
+
     @failed = false
     erb :'/users/home'
   end
@@ -25,23 +25,17 @@ class UserController < ApplicationController
     authenticate
     
     ## gets params for gender,age,height,weight
-    # binding.pry
-    if !check_if_integer(params[:user])
-      
+    if !check_if_integer(params[:user])      
       @failed = true
       erb :"/users/home"
-
-    else
-      
+    else      
       current_user.update(params[:user])
       ## updates bmr based on those params
       current_user.update(bmr: CalculationHelpers.calculate_user_bmr(current_user))
       ## updates tdee based on bmr and activity lvl
       current_user.update(tdee: CalculationHelpers.calculate_user_tdee(current_user))
 
-
       redirect :"/home"
-
     end
   end
 

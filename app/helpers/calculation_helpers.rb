@@ -31,5 +31,15 @@ class CalculationHelpers
 
 
   ## calculates 
+  ## gets the calories for today
+  def self.calculate_current_calories(user)
+    cals = 0
+    meals = MealHelper.grab_meals_from_today(user.meals)
+    meals.each do |meal|
+      cals += meal.calories
+    end
+    cals
+  end
+
 
 end

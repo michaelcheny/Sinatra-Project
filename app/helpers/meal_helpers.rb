@@ -4,10 +4,9 @@ class MealHelper
   # %D ====>>>> 08/30/19
 
   ## returns the meal from today
-  def self.meals_from_today(meals)
+  def self.grab_meals_from_today(meals)
     today_meals = []
     meals.each do |meal|
-      # binding.pry
       if meal.created_at.strftime("%D") == Date.today.strftime("%D")
         today_meals << meal
       end
@@ -16,6 +15,9 @@ class MealHelper
   end
 
 
-
+  ## Sorts the meals by newest on top
+  def self.sort_meals(meals)
+     meals.sort_by{|m| m.created_at}.reverse
+  end
 
 end

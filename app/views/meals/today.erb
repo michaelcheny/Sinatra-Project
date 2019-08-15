@@ -1,9 +1,17 @@
-<h3><%= @cc %> Calories so far. You are <%= current_user.tdee - @cc %> Calories away from from <%= current_user.tdee %></h3>
+<% if current_user.meals.empty? %>
+
+  <h3>You need to add a meal, hungry child.</h3>
+
+<% end %>
+
+
+
+<h3><%= @current_calories %> Calories so far. You are <%= current_user.tdee - @current_calories %> Calories away from from <%= current_user.tdee %></h3>
 
 <h3>Logged Meals for <%= Date.today.strftime("%A, %B %d, %Y") %></h3>
 
 
-<% MealHelper.meals_from_today(@meals).sort_by{|m| m.created_at}.reverse.each do |meal| %>
+<% @sorted_meals.each do |meal| %>
   <div class="meals">
     <p class="meal_content">Name: <%= meal.name %></p>
     <p class="meal_content">Calories: <%= meal.calories %> Calories.</p>

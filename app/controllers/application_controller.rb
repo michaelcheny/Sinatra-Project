@@ -62,16 +62,6 @@ class ApplicationController < Sinatra::Base
     #   redirect "/home/#{user.id}" if current_user.id != user.id
     # end
 
-    ## gets the calories for today
-    def current_calories(user)
-      cals = 0
-      meals = MealHelper.meals_from_today(user.meals)
-      meals.each do |meal|
-        cals += meal.calories
-      end
-      cals
-    end
-
   
   end
 

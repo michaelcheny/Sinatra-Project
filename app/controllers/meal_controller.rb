@@ -4,9 +4,10 @@ class MealController < ApplicationController
   get '/meals' do
     ## checks if user is logged in and if current user is current user
     authenticate
-    # binding.pry
     ## Grabs the meals for the current user only
     @meals = current_user.meals
+    ## Sorts meal by newest on top
+    @sorted_meals = MealHelper.sort_meals(@meals)
 
     @failed = false
 
@@ -40,10 +41,13 @@ class MealController < ApplicationController
   ## Display page with meal from today only
   get '/meals/today' do
     authenticate
-    @meals = current_user.meals
+
+    meals = MealHelper.grab_meals_from_today(current_user.meals) 
+
+    @sorted_meals = MealHelper.sort_meals(meals)
 
     ## gets the current_cals for the user.
-    @cc = current_calories(current_user)
+    @current_calories = CalculationHelpers.calculate_current_calories(current_user)
 
     # binding.pry
 

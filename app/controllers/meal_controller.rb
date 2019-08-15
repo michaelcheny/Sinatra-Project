@@ -42,10 +42,10 @@ class MealController < ApplicationController
     authenticate
     @meals = current_user.meals
 
+    ## gets the current_cals for the user.
+    @cc = current_calories(current_user)
 
-    cc = current_calories(current_user)
-
-    binding.pry
+    # binding.pry
 
     erb :"/meals/today"
   end
@@ -76,7 +76,7 @@ class MealController < ApplicationController
   end
 
 
-  ## DELETE THIS 
+  ## DELETE CURRENT MEAL
   delete '/meals/:id' do
     authenticate
     meal = Meal.find_by(id: params[:id])

@@ -39,3 +39,8 @@ make the text forms bigger
 
 
 TIL if I put password confirmation thing, I need to seed my users with password: "blahblah", password_confirmation: "blahblah" as well
+
+activerecord defaults at UTC time it kept effing up my 'sort by today' page. 
+## changes timezone to local, instead of UTC
+ActiveRecord::Base.default_timezone = :local
+fixed the timezone issue.

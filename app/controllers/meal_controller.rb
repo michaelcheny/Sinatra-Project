@@ -87,17 +87,18 @@ class MealController < ApplicationController
 
   patch '/meals/:id' do
     @meal = Meal.find_by(id: params[:id])
-    binding.pry
-    authenticate_user_for_editing_meals(@meal)
     # binding.pry
+    authenticate_user_for_editing_meals(@meal)
+    binding.pry
 
     if @meal.update(params[:meal])
-
+      binding.pry
       redirect '/meals'
 
     else
-      @failed = true
-      erb :"/meals/#{@meal.id}/edit"
+      # binding.pry
+      # @messedup = true
+      erb :"/meals/edit"
     end
 
   end

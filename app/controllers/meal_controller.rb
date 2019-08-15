@@ -29,7 +29,7 @@ class MealController < ApplicationController
     ## only the creator can edit
     authenticate_user_for_editing_meals(@meal)
     # if @meal
-    binding.pry
+    # binding.pry
       erb :"/meals/edit"
     # else
     #   erb :"error"
@@ -41,6 +41,12 @@ class MealController < ApplicationController
   get '/meals/today' do
     authenticate
     @meals = current_user.meals
+
+
+    cc = current_calories(current_user)
+
+    binding.pry
+
     erb :"/meals/today"
   end
 
@@ -54,7 +60,7 @@ class MealController < ApplicationController
     current_user.meals << @meal
     if @meal.save
       current_user.save
-      binding.pry
+      # binding.pry
       redirect '/meals'
     else
       @failed = true

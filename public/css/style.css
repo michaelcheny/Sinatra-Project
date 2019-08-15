@@ -1,7 +1,8 @@
 
 /* For the entire page */
 html {
-  background-color: #778899;
+  background-color: #36393F;
+  color: #F8F8F8;
 }
 
 /* Main body portion (all the yields) */
@@ -11,13 +12,13 @@ main {
 
 /* Header portion */
 header {
-  background-color: #6284a3;
+  background-color: #2F3136;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 160px;
-  box-shadow: 0 0 20px 0 black;
+  box-shadow: 0 0 20px 0 #202225;
 }
 
 /* Make our nav links  */

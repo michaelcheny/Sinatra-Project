@@ -73,11 +73,11 @@ class MealController < ApplicationController
     authenticate
 
     @meal = Meal.new(params[:meal])
-    # binding.pry
+    
     current_user.meals << @meal
+
     if @meal.save
       current_user.save
-      # binding.pry
       redirect '/meals'
     else
       @failed = true
@@ -85,22 +85,18 @@ class MealController < ApplicationController
     end
   end
 
+
+  ## Edits the choosen meal
   patch '/meals/:id' do
-    @meal = Meal.find_by(id: params[:id])
-    # binding.pry
-    authenticate_user_for_editing_meals(@meal)
-    binding.pry
+    meal = Meal.find_by(id: params[:id])
 
-    if @meal.update(params[:meal])
-      binding.pry
+    authenticate_user_for_editing_meals(meal)
+
+    if meal.update(params[:meal])
       redirect '/meals'
-
     else
-      # binding.pry
-      # @messedup = true
       erb :"/meals/edit"
     end
-
   end
 
 

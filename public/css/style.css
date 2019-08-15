@@ -23,15 +23,15 @@ header {
 
 /* Make our nav links  */
 header li {
-  /* display: inline; */
-  margin-left: 15px;
-  margin-right: 5px;
   display: inline-block;
-  background: #b5b9bd;
+  margin-left: 12px;
+  margin-right: 4px;
+  /*display: inline-block;
+  background: #E1E1E1;
   border-radius: 4px;
   font-size: 14px;
   color: rgb(95, 0, 0);
-  padding: 5px 10px; 
+  padding: 5px 10px;  */
 }
 
 /* For the Text in the nav bar */
@@ -70,7 +70,14 @@ body {
 
 /* for the submission buttons */
 .submissionbutton {
-  
+  margin-top: 5px;
+  margin-left: 8px;
+  background: #E1E1E1;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 5px 10px; 
+  text-decoration: none;
+  color: #000;
 }
 
 /* for the meals page */
@@ -78,12 +85,14 @@ body {
   /* margin: 5px;
   padding: 10px; */
   border: 1px solid #000;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 /* For each individual meal */
 .meal_content{
-  margin: 10px;
-  padding: 10px;
+  margin: 8px;
+  padding: 4px;
 }
 
 

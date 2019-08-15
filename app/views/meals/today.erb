@@ -4,7 +4,7 @@
 
 <% else %>
 
-  <h3><%= @current_calories %> Calories so far. You are <%= current_user.tdee - @current_calories %> Calories away from from <%= current_user.tdee %></h3>
+  <h3><%= @current_calories %> Calories so far. You are <%= current_user.tdee - @current_calories %> Calories away from from <%= current_user.tdee %></h3><br>
 
   <h3>Logged Meals for <%= Date.today.strftime("%A, %B %d, %Y") %></h3>
 
@@ -13,12 +13,9 @@
       <p class="meal_content">Name: <%= meal.name %></p>
       <p class="meal_content">Calories: <%= meal.calories %> Calories.</p>
       <p class="meal_content">Added on: <%= meal.created_at %></p> 
-      <a  class="meal_content" href="/meals/<%= meal.id %>/edit">Edit</a>
+      <a class="submissionbutton" class="meal_content" href="/meals/<%= meal.id %>/edit">Edit</a>
       <br><br>
     </div>
   <% end %>
-
-
-  <input class="submissionfield" type="text" name="test" placeholder="testing">
 
 <% end %>

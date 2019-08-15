@@ -13,15 +13,6 @@
   
   <input type="text" name="meal[calories]" id="calories" placeholder="Calories: <%= @meal.calories %>" value="<%= @meal.calories %>"><br>
 
-  <!--
-  <input type="text" name="meal[created_at]" id="created_at" placeholder="Added at: <%= @meal.created_at %>"><br>
-  
-<% if !!@messedup %>
-
-  <p class="errors">You messed up </p>
-
-<% end %>
--->
 
 <% if @meal && @meal.errors.any? %>
   <% @meal.errors.full_messages.each do |error| %>
@@ -31,8 +22,7 @@
   <% end %>
 <% end %>
 
-
-  <input type="submit" value="Edit Meal">
+  <input class="submissionbutton" type="submit" value="Edit Meal">
 
 </form>
 
@@ -40,7 +30,7 @@
   <form action="/meals/<%= @meal.id %>" method="post">
   
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete Meal">
+    <input class="submissionbutton" type="submit" value="Delete Meal">
   
   </form>
 <% end %>

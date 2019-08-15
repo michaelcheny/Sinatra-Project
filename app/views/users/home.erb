@@ -1,3 +1,6 @@
+<% if @not_filled %>
+  <h3 class="errors">You need to complete your profile before you can add meals</h3>
+<% end %>
 
 <p>Hello, <%= @current_user.name %>!</p>
 

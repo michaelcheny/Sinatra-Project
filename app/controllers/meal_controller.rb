@@ -5,21 +5,33 @@ class MealController < ApplicationController
     ## checks if user is logged in and if current user is current user
     authenticate
     ## Grabs the meals for the current user only
-    @meals = current_user.meals
-    ## Sorts meal by newest on top
-    @sorted_meals = MealHelper.sort_meals(@meals)
 
-    @failed = false
+    
+    # if current_user.tdee.nil?
+    #   @not_filled = true
+    #   erb :"/users/home"
+    # else
+      @meals = current_user.meals
+      ## Sorts meal by newest on top
+      @sorted_meals = MealHelper.sort_meals(@meals)
 
-    erb :"/meals/index"
+      @failed = false
+
+      erb :"/meals/index"
+    # end
   end
 
 
   ## Page to add a new meal
   get '/meals/new' do
     authenticate
-
+    ## CHECK TO SEE IF CURRENTUSER HAS NIL STILL
+    if current_user.tdee.nil?
+      @not_filled = true
+      erb :"/users/home"
+    else
     erb :'/meals/new'
+    end
   end
 
 

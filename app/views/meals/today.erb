@@ -2,21 +2,20 @@
 
   <h3>You need to add a meal, hungry child.</h3>
 
-<% end %>
+<% else %>
 
+  <h3><%= @current_calories %> Calories so far. You are <%= current_user.tdee - @current_calories %> Calories away from from <%= current_user.tdee %></h3>
 
+  <h3>Logged Meals for <%= Date.today.strftime("%A, %B %d, %Y") %></h3>
 
-<h3><%= @current_calories %> Calories so far. You are <%= current_user.tdee - @current_calories %> Calories away from from <%= current_user.tdee %></h3>
+  <% @sorted_meals.each do |meal| %>
+    <div class="meals">
+      <p class="meal_content">Name: <%= meal.name %></p>
+      <p class="meal_content">Calories: <%= meal.calories %> Calories.</p>
+      <p class="meal_content">Added on: <%= meal.created_at %></p> 
+      <a  class="meal_content" href="/meals/<%= meal.id %>/edit">Edit</a>
+      <br><br>
+    </div>
+  <% end %>
 
-<h3>Logged Meals for <%= Date.today.strftime("%A, %B %d, %Y") %></h3>
-
-
-<% @sorted_meals.each do |meal| %>
-  <div class="meals">
-    <p class="meal_content">Name: <%= meal.name %></p>
-    <p class="meal_content">Calories: <%= meal.calories %> Calories.</p>
-    <p class="meal_content">Added on: <%= meal.created_at %></p> 
-    <a  class="meal_content" href="/meals/<%= meal.id %>/edit">Edit</a>
-    <br><br>
-  </div>
 <% end %>

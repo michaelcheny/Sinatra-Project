@@ -16,15 +16,17 @@
         <% if logged_in? %>
           <li><a href="/home">Home</a></li>
           <li><a href="/user/edit">Edit User</a></li>
-          <li><a href="/meals">Logged Meals</a></li>
-          <li><a href="/meals/new">Add a Meal</a></li>
+          <li><a href="/meals/new">Add a Meal</a></li>          
+          <li><a href="/meals/today">Logged Meals From Today</a></li>
+          <li><a href="/meals">All Logged Meals</a></li>
           <li><form class="logout_button" action="/logout" method="post">
           <input id="hidden" type="hidden" name="_method" value="delete">
           <input type="submit" value="Log Out">
           </form></li>
 
           <!-- Greet by username -->
-          <h4>Welcome! <%= @current_user.username.capitalize %></h4> 
+          <h4>Welcome! <%= @current_user.username.capitalize %></h4>
+
         <% else %>
           <li><a href="/">Welcome</a></li>
           <li><a href="/login">Log in</a></li> 

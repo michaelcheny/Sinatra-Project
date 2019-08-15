@@ -52,8 +52,9 @@ class ApplicationController < Sinatra::Base
     end
 
 
-    def check_if_integer(user_params)
-      (user_params[:age].is_a? Integer) || (user_params[:height].is_a? Integer) || (user_params[:weight].is_a? Integer)
+    def check_if_integer?(params)
+      (params[:user][:age].to_i.is_a? Integer) || (params[:user][:height].to_i.is_a? Integer) || (params[:user][:weight].to_i.is_a? Integer)
+      
     end
 
     # def authenticate_user_for_editing_user(user)

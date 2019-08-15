@@ -3,14 +3,16 @@
 
 <form action="/home" method="post" class="forms">
 
-<p>Edit User Info Here</p>
+<h3>Edit User Info Here</h3>
 
 <input id="hidden" type="hidden" name="_method" value="patch">
 
-
-<input type="text" name="user[age]" id="age" value="<%= @current_user.age %>" placeholder="Age"><br><br>
-<input type="text" name="user[height]" id="height" value="<%= @current_user.height %>" placeholder="Height in inches"><br><br>
-<input type="text" name="user[weight]" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds">
+<label for="age">Age:</label><br>
+<input class="submissionfield" type="text" name="user[age]" id="age" value="<%= @current_user.age %>" placeholder="Age"><br>
+<label for="height">Height in inches:</label><br>
+<input class="submissionfield" type="text" name="user[height]" id="height" value="<%= @current_user.height %>" placeholder="Height in inches"><br>
+<label for="weight">Weight in pounds:</label><br>
+<input class="submissionfield" type="text" name="user[weight]" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds">
 
 <!-- if age, height, or weight are not numbers, error-->
 <% if @failed %>

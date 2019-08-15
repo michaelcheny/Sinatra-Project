@@ -5,9 +5,9 @@
 
 <h3>Hello <%= @current_user.name %>, add a new meal</h3>
   
-  <input type="text" name="meal[name]" id="name" placeholder="Name of Meal" required><br>
+  <input class="submissionfield" type="text" name="meal[name]" id="name" placeholder="Name of Meal" required><br>
   
-  <input type="text" name="meal[calories]" id="calories" placeholder="Amount of Calories" required><br>
+  <input class="submissionfield" type="text" name="meal[calories]" id="calories" placeholder="Amount of Calories"><br>
 
 <% if @failed %>
 

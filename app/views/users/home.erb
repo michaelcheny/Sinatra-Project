@@ -26,13 +26,13 @@
   <input id="hidden" type="hidden" name="_method" value="patch">
 
 
-  <input type="text" name="user[age]" id="age" value="<%= @current_user.age %>" placeholder="Age" required><br><br>
-  <input type="text" name="user[height]" id="height" value="<%= @current_user.height %>" placeholder="Height in inches" required><br><br>
-  <input type="text" name="user[weight]" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds" required>
+  <input class="submissionfield" type="text" name="user[age]" id="age" value="<%= @current_user.age %>" placeholder="Age" required><br><br>
+  <input class="submissionfield" type="text" name="user[height]" id="height" value="<%= @current_user.height %>" placeholder="Height in inches" required><br><br>
+  <input class="submissionfield" type="text" name="user[weight]" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds" required>
 
   <!-- if age, height, or weight are not numbers, error-->
   <% if @failed %>
-    <p class="errors">Must be numbers, bro ^^</p>
+    <p class="errors">Must be numbers ^^</p>
   <% end %>
   <br><br>
   

@@ -1,14 +1,10 @@
-<% if !!@error_message %>
 
-  <p class="errors"><%= @error_message %></p>
-
-<% end %>
 
 
 <div class="meals">
 
 
-<form action="/meals" method="post" class="forms">
+<form action="/meals/<%= @meal.id %>" method="post" class="forms">
 
   <input type="hidden" name="_method" value="patch">
   <h3>Hello <%= @current_user.name %>, edit your meal</h3>
@@ -20,6 +16,12 @@
   <!--
   <input type="text" name="meal[created_at]" id="created_at" placeholder="Added at: <%= @meal.created_at %>"><br>
   -->
+<% if !!@failed %>
+
+  <p class="errors">You messed up </p>
+
+<% end %>
+
 
   <input type="submit" value="Edit Meal">
 

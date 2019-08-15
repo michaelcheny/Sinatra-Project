@@ -39,6 +39,7 @@ class MealController < ApplicationController
   get '/meals/:id/edit' do
     
     @meal = Meal.find_by(id: params[:id])
+    # binding.pry
     ## only the creator can edit
     authenticate_user_for_editing_meals(@meal)
     # if @meal
@@ -84,10 +85,20 @@ class MealController < ApplicationController
     end
   end
 
-  patch '/meals' do
+  patch '/meals/:id' do
     @meal = Meal.find_by(id: params[:id])
+    binding.pry
     authenticate_user_for_editing_meals(@meal)
+    # binding.pry
 
+    if @meal.update(params[:meal])
+
+      redirect '/meals'
+
+    else
+      @failed = true
+      erb :"/meals/#{@meal.id}/edit"
+    end
 
   end
 

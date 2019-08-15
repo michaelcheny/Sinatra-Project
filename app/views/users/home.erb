@@ -30,10 +30,15 @@
   <input class="submissionfield" type="text" name="user[height]" id="height" value="<%= @current_user.height %>" placeholder="Height in inches" required><br><br>
   <input class="submissionfield" type="text" name="user[weight]" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds" required>
 
-  <!-- if age, height, or weight are not numbers, error-->
-  <% if @failed %>
+  <!-- if age, height, or weight are not numbers, error
+  <% if !!@failed %>
     <p class="errors">Must be numbers ^^</p>
+  <% end %>-->
+
+  <% @errors.each do |error| %>
+    <p class="errors"><%= error %></p>
   <% end %>
+
   <br><br>
   
   <label for="gender">Gender:</label><br>

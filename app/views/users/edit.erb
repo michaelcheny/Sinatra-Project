@@ -1,23 +1,23 @@
 
 
 
-<form action="/home" method="post" class="forms">
+<form action="/home/:<%= @user.id %>" method="post" class="forms">
 
 <h3>Edit User Info Here</h3>
 
 <input id="hidden" type="hidden" name="_method" value="patch">
 
 <label for="age">Age:</label><br>
-<input class="submissionfield" type="text" name="user[age]" id="age" value="<%= @current_user.age %>" placeholder="Age"><br>
+<input class="submissionfield" type="text" name="user[age]" id="age" value="<%= @user.age %>" placeholder="Age"><br>
 <label for="height">Height in inches:</label><br>
-<input class="submissionfield" type="text" name="user[height]" id="height" value="<%= @current_user.height %>" placeholder="Height in inches"><br>
+<input class="submissionfield" type="text" name="user[height]" id="height" value="<%= @user.height %>" placeholder="Height in inches"><br>
 <label for="weight">Weight in pounds:</label><br>
-<input class="submissionfield" type="text" name="user[weight]" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds">
+<input class="submissionfield" type="text" name="user[weight]" id="weight" value="<%= @user.weight %>" placeholder="Weight in pounds">
 
-<!-- if age, height, or weight are not numbers, error-->
-<% if @failed %>
-  <p class="errors">Must be numbers, bro ^^</p>
+<% @errors.each do |error| %>
+  <p class="errors"><%= error %></p>
 <% end %>
+
 <br><br>
 
 <label for="gender">Gender:</label><br>

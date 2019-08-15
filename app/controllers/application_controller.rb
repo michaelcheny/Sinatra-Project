@@ -63,6 +63,7 @@ class ApplicationController < Sinatra::Base
     #   redirect "/home/#{user.id}" if current_user.id != user.id
     # end
 
+    
   
   end
 

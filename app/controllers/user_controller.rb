@@ -21,26 +21,29 @@ class UserController < ApplicationController
 
 
   ## update users info like age, height, weight, activity level
-  patch '/home' do
+  patch '/home/:id' do
     authenticate
     
     ## gets params for gender,age,height,weight
-    binding.pry
-    if check_if_integer?(params)
-      @failed = true
-      erb :"/users/home"
+
+    @user = current_user
+
+    @user.update(params[:user])
+
+    if @user.errors.any?
+
+      @errors = @user.errors.full_messages
+
+      erb :"/users/edit"
     else      
-      # binding.pry
-      current_user.update(params[:user])
+      ## drop another conditional here 
+      @user.update(params[:user])
 
-      binding.pry
       ## updates bmr based on those params
-      current_user.update(bmr: CalculationHelpers.calculate_user_bmr(current_user))
+      @user.update(bmr: CalculationHelpers.calculate_user_bmr(@user))
+      binding.pry
       ## updates tdee based on bmr and activity lvl
-      
-      current_user.update(tdee: CalculationHelpers.calculate_user_tdee(current_user))
-
-      # binding.pry
+      @user.update(tdee: CalculationHelpers.calculate_user_tdee(@user))
 
       redirect :"/home"
     end

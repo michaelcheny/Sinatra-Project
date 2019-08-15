@@ -16,6 +16,11 @@ if ENV['SINATRA_ENV'] == 'development'
   require_relative '../secrets.rb'
 end
 
+
 require_relative '../constants'
 require_relative './initializers/date_format'
+
+## changes timezone to local, instead of UTC
+ActiveRecord::Base.default_timezone = :local
+
 require_all 'app'

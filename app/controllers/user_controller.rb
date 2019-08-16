@@ -11,40 +11,38 @@ class UserController < ApplicationController
 
 
   ## edit user info like weight, height, etc.
-  get '/user/edit' do
-    authenticate
-    # check_if_user_authorized?
+  get '/user/:id/edit' do
+    ## makes sure the user doesn't do anything sketchy
+    user = User.find_by(id: params[:id])
+    authenticate_user_for_editing_user(user)
+    # binding.pry
+    check_and_show_errors(current_user)
     # authenticate_user_for_editing_user(current_user)
-
     erb :'/users/edit'
   end
 
 
   ## update users info like age, height, weight, activity level
   patch '/home/:id' do
-    authenticate
-    
+    user = User.find_by(id: params[:id])
+    authenticate_user_for_editing_user(user)
     ## gets params for gender,age,height,weight
-
     @user = current_user
-
     @user.update(params[:user])
-
-    if @user.errors.any?
-
-      @errors = @user.errors.full_messages
-
+    ## if any errors, display edit form with errors
+    if any_errors?(@user)
+      get_error_messages(@user)
       erb :"/users/edit"
-    else      
-      ## drop another conditional here 
+    else
+    # if @user.errors.any?
+    #   @errors = @user.errors.full_messages
+    #   erb :"/users/edit"
+    # else      
       @user.update(params[:user])
-
       ## updates bmr based on those params
       @user.update(bmr: CalculationHelpers.calculate_user_bmr(@user))
-      binding.pry
       ## updates tdee based on bmr and activity lvl
       @user.update(tdee: CalculationHelpers.calculate_user_tdee(@user))
-
       redirect :"/home"
     end
   end

@@ -52,10 +52,18 @@ class ApplicationController < Sinatra::Base
     end
 
 
-    def check_if_integer?(params)
-      (params[:user][:age].to_i.is_a? Integer) || (params[:user][:height].to_i.is_a? Integer) || (params[:user][:weight].to_i.is_a? Integer)
-      
+    ## authenticates user to edit user info, if not, redirect
+    def authenticate_user_for_editing_user(user)
+      authenticate
+      redirect '/home' if !user
+      redirect '/home' if current_user != user
     end
+
+
+    # def check_if_integer?(params)
+    #   (params[:user][:age].to_i.is_a? Integer) || (params[:user][:height].to_i.is_a? Integer) || (params[:user][:weight].to_i.is_a? Integer)
+      
+    # end
 
     # def authenticate_user_for_editing_user(user)
     #   authenticate
@@ -63,7 +71,21 @@ class ApplicationController < Sinatra::Base
     #   redirect "/home/#{user.id}" if current_user.id != user.id
     # end
 
-    
+    def check_and_show_errors(user)
+      @errors = user.errors.full_messages
+      if user.errors.any?
+        @errors
+        erb :"/users/edit"
+      end
+    end
+
+    def any_errors?(thing)
+      thing.errors.any?
+    end
+
+    def get_error_messages(thing)
+      @errors = thing.errors.full_messages
+    end
   
   end
 

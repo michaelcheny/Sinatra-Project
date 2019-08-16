@@ -55,8 +55,8 @@ class ApplicationController < Sinatra::Base
     ## authenticates user to edit user info, if not, redirect
     def authenticate_user_for_editing_user(user)
       authenticate
-      redirect '/home' if !user
-      redirect '/home' if current_user != user
+      redirect "/user/#{current_user.id}/edit" if !user
+      redirect "/user/#{current_user.id}/edit" if current_user != user
     end
 
 

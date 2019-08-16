@@ -25,6 +25,9 @@ class MealController < ApplicationController
   ## Page to add a new meal
   get '/meals/new' do
     authenticate
+
+    ## for the if @user.errors.any on form
+    @user = current_user
     ## CHECK TO SEE IF CURRENTUSER HAS NIL STILL
     if current_user.tdee.nil?
       @not_filled = true

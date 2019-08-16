@@ -2,9 +2,8 @@
   <h3 class="errors">You need to complete your profile before you can add meals</h3>
 <% end %>
 
-<p>Hello, <%= @current_user.name %>!</p>
+<h3>Hello, <%= @current_user.name %>!</h3>
 
-<!-- This conditional may need to get updated later. test again after new users -->
 
 <% if !current_user.tdee.nil?  %>
 
@@ -19,7 +18,7 @@
 <% else %>
 
 
-  <p>You need to complete filling up your profile:</p>
+  <p>Please fill out profile:</p>
   <%= erb :"/users/_form" %>
 
   <!-- insert partials thingy here and comment the bottom away 

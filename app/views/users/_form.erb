@@ -6,11 +6,11 @@
 <input id="hidden" type="hidden" name="_method" value="patch">
 
 <label for="age">Age:</label><br>
-<input class="submissionfield" type="text" name="user[age]" id="age" value="<%= current_user.age %>" placeholder="Age"><br>
+<input class="submissionfield" type="text" name="user[age]" id="age" value="<%= current_user.age %>" placeholder="Age" required><br>
 <label for="height">Height in inches:</label><br>
-<input class="submissionfield" type="text" name="user[height]" id="height" value="<%= current_user.height %>" placeholder="Height in inches"><br>
+<input class="submissionfield" type="text" name="user[height]" id="height" value="<%= current_user.height %>" placeholder="Height in inches" required><br>
 <label for="weight">Weight in pounds:</label><br>
-<input class="submissionfield" type="text" name="user[weight]" id="weight" value="<%= current_user.weight %>" placeholder="Weight in pounds">
+<input class="submissionfield" type="text" name="user[weight]" id="weight" value="<%= current_user.weight %>" placeholder="Weight in pounds" required>
 
 <% if @user.errors.any? %>
   <% @errors.each do |error| %>
@@ -21,13 +21,13 @@
 <br><br>
 
 <label for="gender">Gender:</label><br>
-<input type="radio" name="user[gender]" id="gender" value="male">
+<input type="radio" name="user[gender]" id="gender" value="male" required>
 <label for="gender">Male</label><br>
 <input type="radio" name="user[gender]" id="gender" value="female">
 <label for="gender">Female</label><br><br>
 
 <label for="activity_level">Activity level:</label><br>
-<input type="radio" name="user[activity_level]" id="activity_level_1" value="1">
+<input type="radio" name="user[activity_level]" id="activity_level_1" value="1" required>
 <label for="activity_level_1">Sedentary</label><br>
 <input type="radio" name="user[activity_level]" id="activity_level_2" value="2">
 <label for="activity_level_2">Low-Active</label><br>

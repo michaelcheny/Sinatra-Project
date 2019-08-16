@@ -33,16 +33,15 @@ class UserController < ApplicationController
     @user = current_user
     @user.update(params[:user])
     ## if any errors, display edit form with errors
-    if any_errors?(@user)
-      get_error_messages(@user)
-      erb :"/users/edit"
-    else
-
-    # binding.pry
-    # if @user.errors.any?
-    #   @errors = @user.errors.full_messages
+    # if any_errors?(@user)
+    #   get_error_messages(@user)
     #   erb :"/users/edit"
-    # else      
+    # else
+
+    if @user.errors.any?
+      @errors = @user.errors.full_messages
+      erb :"/users/edit"
+    else      
       @user.update(params[:user])
       ## updates bmr based on those params
       @user.update(bmr: CalculationHelpers.calculate_user_bmr(@user))

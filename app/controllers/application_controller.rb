@@ -59,6 +59,11 @@ class ApplicationController < Sinatra::Base
       redirect "/user/#{current_user.id}/edit" if current_user != user
     end
 
+    def check_user_authorization
+      @user = User.find_by(id: params[:id])
+      authenticate_user_for_editing_user(@user)
+    end
+
 
     # def check_if_integer?(params)
     #   (params[:user][:age].to_i.is_a? Integer) || (params[:user][:height].to_i.is_a? Integer) || (params[:user][:weight].to_i.is_a? Integer)

@@ -4,7 +4,6 @@ class UserController < ApplicationController
   get '/home' do
     # @users = User.all
     authenticate
-
     ## to be able to use _form.erb
     @user = current_user
 
@@ -16,8 +15,14 @@ class UserController < ApplicationController
   ## edit user info like weight, height, etc.
   get '/user/:id/edit' do
     ## makes sure the user doesn't do anything sketchy
-    @user = User.find_by(id: params[:id])
-    authenticate_user_for_editing_user(@user)
+    # @user = User.find_by(id: params[:id])
+    # authenticate_user_for_editing_user(@user)
+
+
+    check_user_authorization
+
+
+
     # binding.pry
     check_and_show_errors(current_user)
     # authenticate_user_for_editing_user(current_user)
@@ -27,17 +32,16 @@ class UserController < ApplicationController
 
   ## update users info like age, height, weight, activity level
   patch '/home/:id' do
-    user = User.find_by(id: params[:id])
-    authenticate_user_for_editing_user(user)
+    # user = User.find_by(id: params[:id])
+    # authenticate_user_for_editing_user(user)
+
+    check_user_authorization
     ## gets params for gender,age,height,weight
     @user = current_user
+
+
     @user.update(params[:user])
     ## if any errors, display edit form with errors
-    # if any_errors?(@user)
-    #   get_error_messages(@user)
-    #   erb :"/users/edit"
-    # else
-
     if @user.errors.any?
       @errors = @user.errors.full_messages
       erb :"/users/edit"

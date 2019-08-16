@@ -4,66 +4,21 @@
 
 <h3>Hello, <%= @current_user.name %>!</h3>
 
-
+<!--If tdee is filled up, display info-->
 <% if !current_user.tdee.nil?  %>
 
   <p>Your current weight is <%= current_user.weight %> pounds</p>
-
-  <!--<p>You are <%= @current_user.height %> inches tall.</p>-->
 
   <p>Your BMR is <%= current_user.bmr %> Calories. (Your basal metabolic rate - Your body naturally burns that much in a day!)</p>
 
   <p>Your TDEE is <%= current_user.tdee %> Calories. (This is your total daily energy expedenture - Your caloric maintenace.) </p>
 
-<% else %>
-
+<% else %> <!--if tdee still nil, make user complete filling out profile-->
 
   <p>Please fill out profile:</p>
+
+  <!--Loads the form for editing user-->
   <%= erb :"/users/_form" %>
 
-  <!-- insert partials thingy here and comment the bottom away 
-
-  
-
-  <form action="/home" method="post">
-
-  <input id="hidden" type="hidden" name="_method" value="patch">
-
-  <label for="age">Age:</label><br>
-  <input class="submissionfield" type="text" name="user[age]" id="age" value="<%= @current_user.age %>" placeholder="Age" required><br><br>
-  <label for="height">Height in inches:</label><br>
-  <input class="submissionfield" type="text" name="user[height]" id="height" value="<%= @current_user.height %>" placeholder="Height in inches" required><br><br>
-  <label for="weight">Weight in pounds:</label><br>
-  <input class="submissionfield" type="text" name="user[weight]" id="weight" value="<%= @current_user.weight %>" placeholder="Weight in pounds" required>
-
- 
-  <% if current_user.errors.any? %>
-    <% @errors.each do |error| %>
-      <p class="errors"><%= error %></p>
-    <% end %>
-  <% end %>
-
-  <br><br>
-  
-  <label for="gender">Gender:</label><br>
-  <input type="radio" name="user[gender]" id="gender" value="male" required>
-  <label for="gender">Male</label><br>
-  <input type="radio" name="user[gender]" id="gender" value="female">
-  <label for="gender">Female</label><br><br>
-
-  <label for="activity_level">Activity level:</label><br>
-  <input type="radio" name="user[activity_level]" id="activity_level_1" value="1" required>
-  <label for="activity_level_1">Sedentary</label><br>
-  <input type="radio" name="user[activity_level]" id="activity_level_2" value="2">
-  <label for="activity_level_2">Low-Active</label><br>
-  <input type="radio" name="user[activity_level]" id="activity_level_3" value="3">
-  <label for="activity_level_3">Active</label><br>
-  <input type="radio" name="user[activity_level]" id="activity_level_4" value="4">
-  <label for="activity_level_4">Very Active</label><br><br>
-  <input class="submissionbutton" type="submit" value="Complete Profile">
-
-  </form><br>
-
-  -->
 
 <% end %>

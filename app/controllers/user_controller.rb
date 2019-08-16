@@ -16,36 +16,28 @@ class UserController < ApplicationController
   get '/user/:id/edit' do
     ## makes sure the user doesn't do anything sketchy
     # @user = User.find_by(id: params[:id])
-    # authenticate_user_for_editing_user(@user)
 
-
+    ## checks if the current user have access to edit
     check_user_authorization
-
-
-
-    # binding.pry
-    check_and_show_errors(current_user)
-    # authenticate_user_for_editing_user(current_user)
+   
     erb :'/users/edit'
   end
 
 
   ## update users info like age, height, weight, activity level
   patch '/home/:id' do
-    # user = User.find_by(id: params[:id])
-    # authenticate_user_for_editing_user(user)
-
+    ##authorizes and checks if that current user can edit their own and not others
     check_user_authorization
+
     ## gets params for gender,age,height,weight
     @user = current_user
-
 
     @user.update(params[:user])
     ## if any errors, display edit form with errors
     if @user.errors.any?
-      @errors = @user.errors.full_messages
       erb :"/users/edit"
     else      
+      ## error-free updating
       @user.update(params[:user])
       ## updates bmr based on those params
       @user.update(bmr: CalculationHelpers.calculate_user_bmr(@user))

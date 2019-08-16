@@ -5,20 +5,12 @@ class MealController < ApplicationController
     ## checks if user is logged in and if current user is current user
     authenticate
     ## Grabs the meals for the current user only
+    @meals = current_user.meals
+    ## Sorts meal by newest on top
+    @sorted_meals = MealHelper.sort_meals(@meals)
 
-    
-    # if current_user.tdee.nil?
-    #   @not_filled = true
-    #   erb :"/users/home"
-    # else
-      @meals = current_user.meals
-      ## Sorts meal by newest on top
-      @sorted_meals = MealHelper.sort_meals(@meals)
-
-      @failed = false
-
-      erb :"/meals/index"
-    # end
+    @failed = false
+    erb :"/meals/index"
   end
 
 
@@ -33,23 +25,18 @@ class MealController < ApplicationController
       @not_filled = true
       erb :"/users/home"
     else
-    erb :'/meals/new'
+      @failed = false
+      erb :'/meals/new'
     end
   end
 
 
   ## Edit page for meals
   get '/meals/:id/edit' do
-    
     @meal = Meal.find_by(id: params[:id])
     ## only the creator can edit
     authenticate_user_for_editing_meals(@meal)
-    # if @meal
-    # binding.pry
-      erb :"/meals/edit"
-    # else
-    #   erb :"error"
-    # end
+    erb :"/meals/edit"
   end
 
 
@@ -64,8 +51,6 @@ class MealController < ApplicationController
     ## gets the current_cals for the user.
     @current_calories = CalculationHelpers.calculate_current_calories(current_user)
 
-    # binding.pry
-
     erb :"/meals/today"
   end
 
@@ -74,14 +59,15 @@ class MealController < ApplicationController
   post '/meals' do
     authenticate
 
+    ## Creates the new meal
     @meal = Meal.new(params[:meal])
-    
+    ## dumps the meal into current user's meals array
     current_user.meals << @meal
-
+    ## if meal saves with no error, save current user's meal array and go to index for meals
     if @meal.save
       current_user.save
       redirect '/meals'
-    else
+    else  ## if meal doesn't save cause of error
       @failed = true
       erb :"/meals/new"
     end
@@ -91,9 +77,9 @@ class MealController < ApplicationController
   ## Edits the choosen meal
   patch '/meals/:id' do
     @meal = Meal.find_by(id: params[:id])
-
+    ## only lets creator of meal edit
     authenticate_user_for_editing_meals(@meal)
-
+    ## if meal updates, redirect to meal index page
     if @meal.update(params[:meal])
       redirect '/meals'
     else

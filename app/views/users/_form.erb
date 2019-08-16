@@ -12,8 +12,8 @@
 <label for="weight">Weight in pounds:</label><br>
 <input class="submissionfield" type="text" name="user[weight]" id="weight" value="<%= current_user.weight %>" placeholder="Weight in pounds" required>
 
-<% if @user.errors.any? %>
-  <% @errors.each do |error| %>
+<% if @user && @user.errors.any? %>
+  <% @user.errors.full_messages.each do |error| %>
     <p class="errors"><%= error %></p>
   <% end %>
 <% end %>

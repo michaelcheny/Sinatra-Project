@@ -59,23 +59,14 @@ class ApplicationController < Sinatra::Base
       redirect "/user/#{current_user.id}/edit" if current_user != user
     end
 
+    ## gets user from :id and authenticates that user
     def check_user_authorization
       @user = User.find_by(id: params[:id])
       authenticate_user_for_editing_user(@user)
     end
 
 
-    # def check_if_integer?(params)
-    #   (params[:user][:age].to_i.is_a? Integer) || (params[:user][:height].to_i.is_a? Integer) || (params[:user][:weight].to_i.is_a? Integer)
-      
-    # end
-
-    # def authenticate_user_for_editing_user(user)
-    #   authenticate
-    #   redirect "/home/#{user.id}" if !user
-    #   redirect "/home/#{user.id}" if current_user.id != user.id
-    # end
-
+    
     def check_and_show_errors(user)
       @errors = user.errors.full_messages
       if user.errors.any?
@@ -84,13 +75,7 @@ class ApplicationController < Sinatra::Base
       end
     end
 
-    def any_errors?(thing)
-      thing.errors.any?
-    end
 
-    def get_error_messages(thing)
-      @errors = thing.errors.full_messages
-    end
   
   end
 

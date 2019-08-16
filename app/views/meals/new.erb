@@ -10,11 +10,9 @@
   <input class="submissionfield" type="text" name="meal[calories]" id="calories" placeholder="Amount of Calories" required><br>
 
 <% if @failed %>
-
   <% @meal.errors.full_messages.each do |error| %>
     <p class="errors"><%= error %></p>
     <% end %>
-
 <% end %>
 
   <input class="submissionbutton" type="submit" value="Submit Meal">

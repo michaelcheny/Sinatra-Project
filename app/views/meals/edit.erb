@@ -7,11 +7,12 @@
 <form action="/meals/<%= @meal.id %>" method="post" class="forms">
 
   <input type="hidden" name="_method" value="patch">
+
   <h3>Hello <%= @current_user.name %>, edit your meal</h3>
   
-  <input type="text" name="meal[name]" id="name" placeholder="Name: <%= @meal.name %>" value="<%= @meal.name %>"><br>
+  <input type="text" name="meal[name]" id="name" placeholder="Name: <%= @meal.name %>" value="<%= @meal.name %>" required><br>
   
-  <input type="text" name="meal[calories]" id="calories" placeholder="Calories: <%= @meal.calories %>" value="<%= @meal.calories %>"><br>
+  <input type="text" name="meal[calories]" id="calories" placeholder="Calories: <%= @meal.calories %>" value="<%= @meal.calories %>" required><br>
 
 
 <% if @meal && @meal.errors.any? %>

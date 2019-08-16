@@ -5,6 +5,9 @@ class UserController < ApplicationController
     # @users = User.all
     authenticate
 
+    ## to be able to use _form.erb
+    @user = current_user
+
     @failed = false
     erb :'/users/home'
   end
@@ -13,8 +16,8 @@ class UserController < ApplicationController
   ## edit user info like weight, height, etc.
   get '/user/:id/edit' do
     ## makes sure the user doesn't do anything sketchy
-    user = User.find_by(id: params[:id])
-    authenticate_user_for_editing_user(user)
+    @user = User.find_by(id: params[:id])
+    authenticate_user_for_editing_user(@user)
     # binding.pry
     check_and_show_errors(current_user)
     # authenticate_user_for_editing_user(current_user)
@@ -34,6 +37,8 @@ class UserController < ApplicationController
       get_error_messages(@user)
       erb :"/users/edit"
     else
+
+    # binding.pry
     # if @user.errors.any?
     #   @errors = @user.errors.full_messages
     #   erb :"/users/edit"

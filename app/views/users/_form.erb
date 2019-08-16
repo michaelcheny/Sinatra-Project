@@ -2,7 +2,6 @@
 
 <form action="/home/<%= current_user.id %>" method="post" class="forms">
 
-<h3>Edit User Info Here</h3>
 
 <input id="hidden" type="hidden" name="_method" value="patch">
 
@@ -13,7 +12,7 @@
 <label for="weight">Weight in pounds:</label><br>
 <input class="submissionfield" type="text" name="user[weight]" id="weight" value="<%= current_user.weight %>" placeholder="Weight in pounds">
 
-<% if current_user.errors.any? %>
+<% if @user.errors.any? %>
   <% @errors.each do |error| %>
     <p class="errors"><%= error %></p>
   <% end %>

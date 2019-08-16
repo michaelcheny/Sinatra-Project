@@ -2,15 +2,13 @@
 
 michael = User.create(name: "Michael", username: "michael", password: "password1", password_confirmation: "password1", created_at: '2019-08-11 06:15:09 UTC')
 
-fat_michael = User.create(name: "Future Michael", username: "fat michael", password: "password1", password_confirmation: "password1", gender: "male", age: 57, height: 69, weight: 288, activity_level: "1", created_at: '2019-08-11 06:15:09 UTC')
+fat_michael = User.create(name: "Future Michael", username: "future michael", password: "password1", password_confirmation: "password1", gender: "male", age: 57, height: 69, weight: 288, activity_level: "1", bmr: 2121, tdee: 2651, created_at: '2019-08-11 06:15:09 UTC')
 
-hodor = User.create(name: "Hodor", username: "hodor", password: "holdthedoor", password_confirmation: "holdthedoor", gender: "male", age: 38, height: 81, weight: 308, activity_level: "3", created_at: '2019-08-11 06:15:09 UTC')
+hodor = User.create(name: "Hodor", username: "hodor", password: "holdthedoor", password_confirmation: "holdthedoor", gender: "male", age: 38, height: 81, weight: 308, activity_level: "3", bmr: 2497, tdee: 4294, created_at: '2019-08-11 06:15:09 UTC')
 
-witch = User.create(name: "Wanda Maximoff", username: "scarlet witch", password: "ripvision",  password_confirmation: "ripvision", gender: "female", age: 30, height: 67, weight: 132, activity_level: "2", created_at: '2019-08-11 06:15:09 UTC')
+draymond = User.create(name: "Draymond Green", username: "dayday", password: "watchyournuts", password_confirmation: "watchyournuts", gender: "male", age: 29, height: 79, weight: 230, activity_level: "4", bmr: 2157, tdee: 5068, created_at: '2019-08-11 06:15:09 UTC')
 
-draymond = User.create(name: "Draymond Green", username: "dayday", password: "watchyournuts", password_confirmation: "watchyournuts", gender: "male", age: 29, height: 79, weight: 230, activity_level: "4", created_at: '2019-08-11 06:15:09 UTC')
-
-simone = User.create(name: "Simone Biles", username: "spin2win", password: "password1", password_confirmation: "password1", gender: "female", age: 22, height: 57, weight: 115, activity_level: "4", created_at: '2019-08-11 06:15:09 UTC')
+simone = User.create(name: "Simone Biles", username: "spin2win", password: "password1", password_confirmation: "password1", gender: "female", age: 22, height: 57, weight: 115, activity_level: "4", bmr: 1155, tdee: 2714, created_at: '2019-08-11 06:15:09 UTC')
 
 hotdog = User.create(name: "Joey Chestnut", username: "hot dog eater", password: "hotdogs", password_confirmation: "hotdogs", gender: "male", age: 35, height: 73, weight: 230, activity_level: "3", created_at: '2019-08-11 06:15:09 UTC')
 

@@ -105,8 +105,8 @@ class ApplicationController < Sinatra::Base
 
 
     ## gets recommended calories for weightloss based on tdee, recommended 500 Calories deficit
-    def lose_a_pound_a_week(tdee)
-      rec_cal = tdee * 0.82
+    def lose_a_pound_a_week(user)
+      rec_cal = user.tdee * 0.82
       return rec_cal.to_i
     end
 

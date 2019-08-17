@@ -11,8 +11,8 @@
   <% @sorted_meals.each do |meal| %>
     <div class="meals">
       <p class="meal_content">Name: <%= meal.name %></p>
-      <p class="meal_content">Calories: <%= meal.calories %> Calories.</p>
-      <p class="meal_content">Added on: <%= meal.created_at %></p> 
+      <p class="meal_content">Calories: <%= meal.calories %></p>
+      <p class="meal_content">Added at: <%= meal.created_at.strftime("%l:%M%p") %></p> 
       <a class="submissionbutton" class="meal_content" href="/meals/<%= meal.id %>/edit">Edit</a>
       <br><br>
     </div>

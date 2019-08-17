@@ -93,6 +93,15 @@ class ApplicationController < Sinatra::Base
       meals.sort_by{|m| m.created_at}.reverse
     end
 
+    def get_current_calories(user)
+      cals = 0
+      meals = grab_meals_from_today(user.meals)
+      meals.each do |meal|
+        cals += meal.calories
+      end
+      @current_calories = cals
+    end
+
   
   end
 

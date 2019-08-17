@@ -11,8 +11,8 @@ html {
 main {
   width: 100%;
   margin: auto;
+  font-size: 18px;
   
-
 }
 
 /* Header portion */
@@ -46,12 +46,12 @@ header li a {
 }
 
 .headerbuttons{
-  margin-top: 5px;
+  margin-top: 3px;
   margin-left: 8px;
   background: #E1E1E1;
   border-radius: 4px;
-  font-size: 14px;
-  padding: 5px 10px; 
+  font-size: 18px;
+  padding: 3px 10px; 
   text-decoration: none;
   color: #000;
 }
@@ -62,22 +62,30 @@ header li a {
 }
 
 /* For the Nav bar selections */
-.logout_button {
-  /* display: inline-block; */
+/* .logout_button {
+  display: inline-block;
   
-}
+} */
 
 /* Body of the page */
 body {
-  margin-top: 130px;
+  margin-top: 120px;
 
-  padding: 120px;
+  padding: 110px;
   
 }
 
 /* For error text */
 .errors {
   color: red; 
+}
+
+/* For bolded font, like calories/date */
+.biggerfont {
+  font-size: 20px;
+}
+.bold {
+  font-weight: bold;
 }
 
 /* for all the text inputs */
@@ -107,6 +115,7 @@ body {
   border: 1px solid #000;
   margin-top: 5px;
   margin-bottom: 5px;
+  font-size: 20px;
 }
 
 /* For each individual meal */

@@ -2,10 +2,11 @@ class UserController < ApplicationController
 
   ## Home page for the user. Checks to see if user is logged in, if not, will redirect to login page ##
   get '/home' do
-    # @users = User.all
     authenticate
     ## to be able to use _form.erb
     @user = current_user
+
+    @current_calories = get_current_calories(@user)
 
     @failed = false
     erb :'/users/home'
@@ -14,9 +15,6 @@ class UserController < ApplicationController
 
   ## edit user info like weight, height, etc.
   get '/user/:id/edit' do
-    ## makes sure the user doesn't do anything sketchy
-    # @user = User.find_by(id: params[:id])
-
     ## checks if the current user have access to edit
     check_user_authorization
    

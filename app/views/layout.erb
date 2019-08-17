@@ -17,9 +17,9 @@
           <li><a class="headerbuttons" href="/home">Home</a></li>
           <li><a class="headerbuttons" href="/user/<%= current_user.id %>/edit">Edit User</a></li>
           <li><a class="headerbuttons" href="/meals/new">Add a Meal</a></li>          
-          <li><a class="headerbuttons" href="/meals/today">Logged Meals From Today</a></li>
+          <li><a class="headerbuttons" href="/meals/today">Meals From Today</a></li>
           <li><a class="headerbuttons" href="/meals">All Logged Meals</a></li>
-          <li><a class="headerbuttons" href="/meals/all_users">See What Other Users are Eating</a></li>
+          <li><a class="headerbuttons" href="/meals/all_users">Meals From All Users</a></li>
           <li><form class="logout_button" action="/logout" method="post">
           <input id="hidden" type="hidden" name="_method" value="delete">
           <input class="headerbuttons" type="submit" value="Log Out">

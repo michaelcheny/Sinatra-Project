@@ -14,7 +14,8 @@
 
     <p>Your TDEE is <span class="bold"><%= current_user.tdee %></span> Calories. (This is your total daily energy expedenture - Your caloric maintenace.) </p>
 
-    <p><span class="bold"><%= @current_calories %></span> Calories so far. You are <span class="bold"><%= current_user.tdee - @current_calories %></span> Calories away from from <span class="bold"><%= current_user.tdee %></span></p><br>
+    <p>You have consumed <span class="bold"><%= @current_calories %></span> Calories so far. You are <span class="bold"><%= current_user.tdee - @current_calories %></span> Calories away from from <span class="bold"><%= current_user.tdee %></span></p><br>
+
   </div>
 <% else %> <!--if tdee still nil, make user complete filling out profile-->
 

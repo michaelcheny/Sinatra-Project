@@ -2,9 +2,11 @@
 
 <h3>Hello <%= @current_user.name %>, add a new meal</h3>
   
-  <input class="submissionfield" type="text" name="meal[name]" id="name" placeholder="Name of Meal" required><br>
+  <label for="name">Name:</label><br>
+  <input class="submissionfield" type="text" name="meal[name]" id="name" placeholder="Example: Chicken With Rice" required><br>
   
-  <input class="submissionfield" type="text" name="meal[calories]" id="calories" placeholder="Amount of Calories" required><br>
+  <label for="calories">Calories:</label><br>
+  <input class="submissionfield" type="text" name="meal[calories]" id="calories" placeholder="Example: 700" required><br>
 
 <% if @failed %>
   <% @meal.errors.full_messages.each do |error| %>

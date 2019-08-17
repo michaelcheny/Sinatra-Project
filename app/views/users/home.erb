@@ -16,7 +16,7 @@
 
     <p>You have consumed <span class="bold"><%= @current_calories %></span> Calories so far. You are <span class="bold"><%= current_user.tdee - @current_calories %></span> Calories away from <span class="bold"><%= current_user.tdee %></span></p>
 
-    <p>Recommended Calories for weightloss is <span class="bold"><%= lose_a_pound_a_week(@current_user) %></span> Calories a day to lose a pound a week. (STAY SAFE!!!!!)</p>
+    <p>Recommended Calories for weightloss is <span class="bold"><%= lose_a_pound_a_week(@current_user) %></span> Calories a day to lose a pound a week. (STAY SAFE AND DON'T STARVE!!!!!)</p>
 
   </div>
 <% else %> <!--if tdee still nil, make user complete filling out profile-->

@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(version: 2019_08_07_221222) do
 
   create_table "meals", force: :cascade do |t|
     t.string "name"
-    t.integer "serving_size"
     t.integer "calories"
+    t.string "notes"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_221222) do
     t.integer "height"
     t.integer "weight"
     t.string "activity_level"
+    t.string "goal"
     t.integer "bmr"
     t.integer "tdee"
     t.datetime "created_at", null: false

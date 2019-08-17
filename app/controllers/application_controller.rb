@@ -66,14 +66,14 @@ class ApplicationController < Sinatra::Base
     end
 
 
-
-    def check_and_show_errors(user)
-      @errors = user.errors.full_messages
-      if user.errors.any?
-        @errors
-        erb :"/users/edit"
-      end
-    end
+      ## might delete if not used
+    # def check_and_show_errors(user)
+    #   @errors = user.errors.full_messages
+    #   if user.errors.any?
+    #     @errors
+    #     erb :"/users/edit"
+    #   end
+    # end
 
     # "%A, %B %d, %Y" ====>>>>> Monday, August 30, 2019
     # %D ====>>>> 08/30/19

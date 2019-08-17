@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.integer :height
       t.integer :weight
       t.string :activity_level
+      t.string :goal
       t.integer :bmr
       t.integer :tdee
       t.timestamps

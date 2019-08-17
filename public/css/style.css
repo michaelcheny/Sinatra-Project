@@ -29,8 +29,8 @@ header {
 /* Make our nav links  */
 header li {
   display: inline-block;
-  margin-left: 12px;
-  margin-right: 4px;
+  /* margin-left: 12px;
+  margin-right: 4px; */
   /*display: inline-block;
   background: #E1E1E1;
   border-radius: 4px;
@@ -58,7 +58,7 @@ header li a {
 
 /* For the Big H1 title */
 .title {
-  margin-left: 35px
+  margin-left: 40px
 }
 
 /* For the Nav bar selections */
@@ -82,7 +82,7 @@ body {
 
 /* For bolded font, like calories/date */
 .biggerfont {
-  font-size: 20px;
+  font-size: 14px;
 }
 .bold {
   font-weight: bold;
@@ -115,7 +115,7 @@ body {
   border: 1px solid #000;
   margin-top: 5px;
   margin-bottom: 5px;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 /* For each individual meal */

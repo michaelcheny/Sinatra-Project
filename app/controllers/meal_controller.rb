@@ -99,6 +99,14 @@ class MealController < ApplicationController
     end
   end
 
+  ## shows all the meals for all users
+  get '/meals/all_users' do
+    authenticate
+    @meals = sort_meals(Meal.all) 
+   
+    erb :"/meals/other_people"
+  end
+
 
 
 

@@ -5,7 +5,7 @@
   <div class="meals">
     <p class="meal_content">Name: <span class="bold"><%= meal.name %></span></p>
     <p class="meal_content">Calories: <span class="bold"><%= meal.calories %></span></p>
-    <p class="meal_content">Date Added: <span class="bold"><%= meal.created_at.strftime("%A, %B %d, %Y") %></span></p>
+    <p class="meal_content">Date Added: <%= meal.created_at.strftime("%A, %B %d, %Y") %></p>
     <p class="meal_content">Added by: <span class="bold"><%= meal.user.username %></span></p>
 
     <!--only shows edit open if meal created by current user-->

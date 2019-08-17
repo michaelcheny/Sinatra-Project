@@ -8,15 +8,22 @@
 <!--If tdee is filled up, display info-->
 <% if !current_user.tdee.nil?  %>
   <div class="biggerfont">
-    <p>Your current weight is <span class="bold"><%= current_user.weight %></span> pounds</p>
+    <p>Your current weight:</p>
+    <p> <span class="bold"><%= current_user.weight %></span> pounds</p>
 
-    <p>Your BMR is <span class="bold"><%= current_user.bmr %></span> Calories. (Your basal metabolic rate - Your body naturally burns that much in a day!)</p>
+    <p>Your consumption for today  
+    <p><span class="bold"><%= @current_calories %></span> Calories</p>
 
-    <p>Your TDEE is <span class="bold"><%= current_user.tdee %></span> Calories. (This is your total daily energy expedenture - Your caloric maintenace.) </p>
 
-    <p>You have consumed <span class="bold"><%= @current_calories %></span> Calories so far. You are <span class="bold"><%= current_user.tdee - @current_calories %></span> Calories away from <span class="bold"><%= current_user.tdee %></span></p>
+    <p>Your basal metabolic rate - Your body naturally burns that much in a day!</p>
+    <p> <span class="bold"><%= current_user.bmr %></span> Calories</p>
 
-    <p>Recommended Calories for weightloss is <span class="bold"><%= lose_a_pound_a_week(@current_user) %></span> Calories a day to lose a pound a week. (STAY SAFE AND DON'T STARVE!!!!!)</p>
+    <p>Your total daily energy expedenture - Your caloric maintenace.</p>
+    <p> <span class="bold"><%= current_user.tdee %></span> Calories</p>
+
+
+    <p>Recommended Calories for weightloss (about a pound a week): </p>
+    <p><span class="bold"><%= lose_a_pound_a_week(@current_user) %></span> Calories</p>
 
   </div>
 <% else %> <!--if tdee still nil, make user complete filling out profile-->

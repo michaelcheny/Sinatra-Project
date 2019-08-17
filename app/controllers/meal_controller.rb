@@ -43,9 +43,11 @@ class MealController < ApplicationController
   get '/meals/today' do
     authenticate
 
-    meals = MealHelper.grab_meals_from_today(current_user.meals) 
+    ## Collects meal from today
+    meals = grab_meals_from_today(current_user.meals)
 
-    @sorted_meals = MealHelper.sort_meals(meals)
+    ## sort newest meal on top
+    @sorted_meals = sort_meals(meals)
 
     ## gets the current_cals for the user.
     @current_calories = CalculationHelpers.calculate_current_calories(current_user)

@@ -14,41 +14,31 @@
     <nav>
       <ul>
         <% if logged_in? %>
-          <li><a class="submissionbutton" href="/home">Home</a></li>
-          <li><a class="submissionbutton" href="/user/<%= current_user.id %>/edit">Edit User</a></li>
-          <li><a class="submissionbutton" href="/meals/new">Add a Meal</a></li>          
-          <li><a class="submissionbutton" href="/meals/today">Logged Meals From Today</a></li>
-          <li><a class="submissionbutton" href="/meals">All Logged Meals</a></li>
+          <li><a class="headerbuttons" href="/home">Home</a></li>
+          <li><a class="headerbuttons" href="/user/<%= current_user.id %>/edit">Edit User</a></li>
+          <li><a class="headerbuttons" href="/meals/new">Add a Meal</a></li>          
+          <li><a class="headerbuttons" href="/meals/today">Logged Meals From Today</a></li>
+          <li><a class="headerbuttons" href="/meals">All Logged Meals</a></li>
           <li><form class="logout_button" action="/logout" method="post">
           <input id="hidden" type="hidden" name="_method" value="delete">
-          <input class="submissionbutton" type="submit" value="Log Out">
+          <input class="headerbuttons" type="submit" value="Log Out">
           </form></li>
-
           <!-- Greet by username -->
           <h4>Welcome! <%= @current_user.username.capitalize %></h4>
-
         <% else %>
-          <li><a class="submissionbutton" href="/">Welcome</a></li>
-          <li><a class="submissionbutton" href="/login">Log in</a></li> 
-          <li><a class="submissionbutton" href="/register">Register</a></li>
+          <li><a class="headerbuttons" href="/">Welcome</a></li>
+          <li><a class="headerbuttons" href="/login">Log in</a></li> 
+          <li><a class="headerbuttons" href="/register">Register</a></li>
           <h4>Welcome!</h4>        
         <% end %>
       </ul>
-
     </nav>
-  
-  
   </header>
-
-
-
   <br>
   <main>
   <!-- Every page in the app follows this layout -->
   <%= yield %>
   </main>
-  <br><br><br><br><br>
-  <p>Major key, don’t fall for the trap, stay focused. It’s the ones closest to you that want to see you fail. We don’t see them, we will never see them. Let’s see what Chef Dee got that they don’t want us to eat. The other day the grass was brown, now it’s green because I ain’t give up. Never surrender. It’s on you how you want to live your life. Everyone has a choice. I pick my choice, squeaky clean. Special cloth alert.</p><br>
-  
+  <br>
 </body>
 </html>

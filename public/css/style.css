@@ -45,6 +45,17 @@ header li a {
   text-decoration: none;
 }
 
+.headerbuttons{
+  margin-top: 5px;
+  margin-left: 8px;
+  background: #E1E1E1;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 5px 10px; 
+  text-decoration: none;
+  color: #000;
+}
+
 /* For the Big H1 title */
 .title {
   margin-left: 35px
@@ -53,6 +64,7 @@ header li a {
 /* For the Nav bar selections */
 .logout_button {
   /* display: inline-block; */
+  
 }
 
 /* Body of the page */
@@ -70,13 +82,14 @@ body {
 
 /* for all the text inputs */
 .submissionfield {
-  width: 240px;
+  width: 300px;
   padding: 5px;
   margin: 5px
 }
 
 /* for the submission buttons */
 .submissionbutton {
+  width: 300px;
   margin-top: 5px;
   margin-left: 8px;
   background: #E1E1E1;

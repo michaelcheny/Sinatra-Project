@@ -15,6 +15,4 @@ class User < ActiveRecord::Base
   validates :height, presence: true, numericality: { only_integer: true}, unless: ->(u){ u.height.blank? }
   validates :weight, presence: true, numericality: { only_integer: true}, unless: ->(u){ u.weight.blank? }
   
- 
-  
 end

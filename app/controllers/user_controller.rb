@@ -8,6 +8,8 @@ class UserController < ApplicationController
 
     @current_calories = get_current_calories(@user)
 
+    @lose_a_pound = lose_a_pound_a_week(current_user.tdee)
+
     @failed = false
     erb :'/users/home'
   end

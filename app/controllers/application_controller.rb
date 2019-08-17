@@ -93,6 +93,7 @@ class ApplicationController < Sinatra::Base
       meals.sort_by{|m| m.created_at}.reverse
     end
 
+    ## gets the current calories for the user for today
     def get_current_calories(user)
       cals = 0
       meals = grab_meals_from_today(user.meals)
@@ -101,6 +102,14 @@ class ApplicationController < Sinatra::Base
       end
       @current_calories = cals
     end
+
+
+    ## gets recommended calories for weightloss based on tdee, recommended 500 Calories deficit
+    def lose_a_pound_a_week(tdee)
+      rec_cal = tdee * 0.82
+      return rec_cal.to_i
+    end
+
 
   
   end

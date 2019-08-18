@@ -122,6 +122,59 @@ class ApplicationController < Sinatra::Base
     end
 
 
+    ## calculates basal metabolic rate using the Harris-Benedict equation
+    # def calculate_user_bmr(user)
+    #   if user.gender == "male"
+    #     bmr = (10 * (user.weight * 0.4535934)) + (6.25 * (user.height * 2.54)) - (5 * user.age) + 5
+    #   elsif user.gender == "female"
+    #     bmr = (10 * (user.weight * 0.4535934)) + (6.25 * (user.height * 2.54)) - (5 * user.age) - 161
+    #   end
+    #   return bmr.to_i
+    # end    
+
+    def calculate_user_bmr(user)
+      if user.gender == "male"
+        bmr = 66 + (user.weight * 6.23) + (12.7 * user.height) - (6.8 * user.age)
+      elsif user.gender == "female"
+        bmr = 655 + (user.weight * 4.35) + (4.7 * user.height ) - (4.7 * user.age) 
+      end
+      return bmr.to_i
+    end      
+
+
+    ## calculates total daily energy expedenture using BMR and activity level of user
+    def calculate_user_tdee(user)
+      # case user.activity_level
+      # when "1"
+      #   multiplier = 1.25
+      # when "2" 
+      #   multiplier = 1.475
+      # when "3"
+      #   multiplier = 1.72
+      # when "4"
+      #   multiplier = 2.35
+      # end
+      # tdee = user.bmr * multiplier
+      # return tdee.to_i
+
+
+      if user.activity_level == "1"
+        multiplier = 1.25
+      elsif user.activity_level == "2"
+        multiplier = 1.475
+      elsif user.activity_level == "3"
+        multiplier = 1.72
+      elsif user.activity_level == "4"
+        multiplier = 2.25
+      end
+      tdee = user.bmr * multiplier
+      return tdee.to_i
+
+
+
+
+    end    
+
   
   end
 

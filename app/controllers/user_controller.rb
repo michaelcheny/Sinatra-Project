@@ -34,11 +34,18 @@ class UserController < ApplicationController
       erb :"/users/edit"
     else      
       ## error-free updating
-      # @user.update(params[:user])
       ## updates bmr based on those params
-      @user.update(bmr: CalculationHelpers.calculate_user_bmr(@user))
+
+
+      @user.update(bmr: calculate_user_bmr(@user))
+
+      # @user.update(bmr: CalculationHelpers.calculate_user_bmr(@user))
+
+      binding.pry
       ## updates tdee based on bmr and activity lvl
-      @user.update(tdee: CalculationHelpers.calculate_user_tdee(@user))
+      @user.update(tdee: calculate_user_tdee(@user))
+
+      binding.pry
       redirect :"/home"
     end
   end

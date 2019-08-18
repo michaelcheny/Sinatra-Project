@@ -7,7 +7,7 @@ class MealController < ApplicationController
     ## Grabs the meals for the current user only
     @meals = current_user.meals
     ## Sorts meal by newest on top
-    @sorted_meals = MealHelper.sort_meals(@meals)
+    @sorted_meals = sort_meals(@meals)
 
     @failed = false
     erb :"/meals/index"
@@ -50,7 +50,7 @@ class MealController < ApplicationController
     @sorted_meals = sort_meals(meals)
 
     ## gets the current_cals for the user.
-    @current_calories = CalculationHelpers.calculate_current_calories(current_user)
+    @current_calories = get_current_calories(current_user)
 
     erb :"/meals/today"
   end

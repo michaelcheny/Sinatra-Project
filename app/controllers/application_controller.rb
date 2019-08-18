@@ -44,6 +44,7 @@ class ApplicationController < Sinatra::Base
       !!logged_in? && !current_user.nil?
     end
 
+
     ## authenticates and also checks if user was the one who added that meal so they can edit.
     def authenticate_user_for_editing_meals(meal)
       authenticate
@@ -65,15 +66,6 @@ class ApplicationController < Sinatra::Base
       authenticate_user_for_editing_user(@user)
     end
 
-
-      ## might delete if not used
-    # def check_and_show_errors(user)
-    #   @errors = user.errors.full_messages
-    #   if user.errors.any?
-    #     @errors
-    #     erb :"/users/edit"
-    #   end
-    # end
 
     # "%A, %B %d, %Y" ====>>>>> Monday, August 30, 2019
     # %D ====>>>> 08/30/19
@@ -122,16 +114,7 @@ class ApplicationController < Sinatra::Base
     end
 
 
-    ## calculates basal metabolic rate using the Harris-Benedict equation
-    # def calculate_user_bmr(user)
-    #   if user.gender == "male"
-    #     bmr = (10 * (user.weight * 0.4535934)) + (6.25 * (user.height * 2.54)) - (5 * user.age) + 5
-    #   elsif user.gender == "female"
-    #     bmr = (10 * (user.weight * 0.4535934)) + (6.25 * (user.height * 2.54)) - (5 * user.age) - 161
-    #   end
-    #   return bmr.to_i
-    # end    
-
+    ## calculates basal metabolic rate using the Harris-Benedict equation 
     def calculate_user_bmr(user)
       if user.gender == "male"
         bmr = 66 + (user.weight * 6.23) + (12.7 * user.height) - (6.8 * user.age)
@@ -144,39 +127,21 @@ class ApplicationController < Sinatra::Base
 
     ## calculates total daily energy expedenture using BMR and activity level of user
     def calculate_user_tdee(user)
-      # case user.activity_level
-      # when "1"
-      #   multiplier = 1.25
-      # when "2" 
-      #   multiplier = 1.475
-      # when "3"
-      #   multiplier = 1.72
-      # when "4"
-      #   multiplier = 2.35
-      # end
-      # tdee = user.bmr * multiplier
-      # return tdee.to_i
-
-
       if user.activity_level == "1"
-        multiplier = 1.25
+        multiplier = 1.2
       elsif user.activity_level == "2"
-        multiplier = 1.475
+        multiplier = 1.375
       elsif user.activity_level == "3"
-        multiplier = 1.72
+        multiplier = 1.55
       elsif user.activity_level == "4"
-        multiplier = 2.25
+        multiplier = 1.725
+      elsif user.activity_level == "5"
+        multiplier = 1.95
       end
       tdee = user.bmr * multiplier
       return tdee.to_i
-
-
-
-
     end    
 
-  
   end
 
-  
 end

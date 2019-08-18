@@ -1,4 +1,4 @@
-class CalculationHelpers
+# class CalculationHelpers
 
 
   # ## calculates basal metabolic rate using the Harris-Benedict equation
@@ -42,4 +42,4 @@ class CalculationHelpers
   # end
 
 
-end
+# end

@@ -22,7 +22,7 @@ class MealController < ApplicationController
     ## CHECK TO SEE IF CURRENTUSER HAS NIL STILL
     if current_user.tdee.nil?
       @not_filled = true
-      erb :"/users/home"
+      erb :"/users/edit"
     else
       @failed = false
       erb :'/meals/new'
@@ -42,7 +42,6 @@ class MealController < ApplicationController
   ## Display page with meal from today only
   get '/meals/today' do
     authenticate
-
     ## Collects meal from today
     meals = grab_meals_from_today(current_user.meals)
 
@@ -103,13 +102,17 @@ class MealController < ApplicationController
   get '/meals/all_users' do
     authenticate
 
-    @meals = Meal.all 
-
+    meals = Meal.all 
+   
     ## if there are meals, show them, else show error and go to add meal page
-    if @meals
-      @sorted_meals = sort_meals(@meals)
-    end
-    erb :"/meals/other_people"
+    # if !meals.empty?
+      @sorted_meals = sort_meals(meals)
+      erb :"/meals/other_people"
+    # else
+    #   @empty = true
+    #   erb :"/meals/new"
+    # end
+    
   end
 
 

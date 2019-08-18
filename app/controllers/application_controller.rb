@@ -115,16 +115,17 @@ class ApplicationController < Sinatra::Base
       return cal.to_i
     end
 
-
-    ## calculates basal metabolic rate using the Harris-Benedict equation 
+    
+    ## calculates basal metabolic rate using the Mifflin St. Jeor Equation
     def calculate_user_bmr(user)
       if user.gender == "male"
-        bmr = 66 + (user.weight * 6.23) + (12.7 * user.height) - (6.8 * user.age)
+        bmr = (10 * (user.weight * 0.4535934)) + (6.25 * (user.height * 2.54)) - (5 * user.age) + 5
       elsif user.gender == "female"
-        bmr = 655 + (user.weight * 4.35) + (4.7 * user.height ) - (4.7 * user.age)
+        bmr = (10 * (user.weight * 0.4535934)) + (6.25 * (user.height * 2.54)) - (5 * user.age) - 161
       end
       return bmr.to_i
-    end      
+
+    end 
 
 
     ## calculates total daily energy expedenture using BMR and activity level of user

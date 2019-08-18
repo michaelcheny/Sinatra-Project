@@ -51,6 +51,26 @@ Women: BMR = 655 + (4.35 x weight in pounds) + (4.7 x height in inches) - (4.7 x
 
 Men: BMR = 66 + (6.23 x weight in pounds) + (12.7 x height in inches) - (6.8 x age in years)
 
+     ## calculates basal metabolic rate using the Harris-Benedict equation 
+     def calculate_user_bmr(user)
+       if user.gender == "male"
+         bmr = 66 + (user.weight * 6.23) + (12.7 * user.height) - (6.8 * user.age)
+       elsif user.gender == "female"
+         bmr = 655 + (user.weight * 4.35) + (4.7 * user.height ) - (4.7 * user.age)
+       end
+       return bmr.to_i
+     end
+
+    ## calculates basal metabolic rate using the Mifflin St. Jeor equation
+    def self.calculate_user_bmr(user)
+        if user.gender == "male"
+        bmr = (10 * (user.weight * 0.4535934)) + (6.25 * (user.height * 2.54)) - (5 * user.age) + 5
+        elsif user.gender == "female"
+        bmr = (10 * (user.weight * 0.4535934)) + (6.25 * (user.height * 2.54)) - (5 * user.age) - 161
+        end
+        return bmr.to_i
+    end
+
 
 
 Harris Benedict Formula

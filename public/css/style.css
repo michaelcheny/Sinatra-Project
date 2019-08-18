@@ -87,7 +87,7 @@ body {
 }
 .bold {
   font-weight: bold;
-  font-size: 22px;
+  font-size: 16px;
 }
 
 /* for all the text inputs */
@@ -124,6 +124,7 @@ body {
 .meal_content{
   margin: 8px;
   padding: 4px;
+  font-size: 15px;
 }
 
 

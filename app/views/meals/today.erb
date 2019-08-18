@@ -11,6 +11,9 @@
       <p class="meal_content">Name: <span class="bold"><%= meal.name %></span></p>
       <p class="meal_content">Calories: <span class="bold"><%= meal.calories %></span></p>
       <p class="meal_content">Added at: <span class="bold"><%= meal.created_at.strftime("%l:%M%p") %></span></p> 
+      <% if meal.notes %>
+      <p class="meal_content">Notes: <%= meal.notes %></p>
+      <% end %>
       <a class="submissionbutton" class="meal_content" href="/meals/<%= meal.id %>/edit">Edit</a>
       <br><br>
     </div>

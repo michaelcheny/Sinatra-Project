@@ -33,6 +33,7 @@ class SessionsController < ApplicationController
   ## Post request for after a user is created. If user is able to save, then session id is linked to current user and gets redirected to home.
   post '/register' do
     redirect '/home' if authorized?
+    
     @user = User.new(params[:user])
 
     if @user.save

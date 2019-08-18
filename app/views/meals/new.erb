@@ -8,6 +8,9 @@
   <label for="calories">Calories:</label><br>
   <input class="submissionfield" type="text" name="meal[calories]" id="calories" placeholder="Example: 700" required><br>
 
+  <label for="notes">Notes:</label><br>
+  <input class="submissionfield" type="text" name="meal[notes]" id="notes" placeholder="Write your notes here"><br>
+
 <% if @failed %>
   <% @meal.errors.full_messages.each do |error| %>
     <p class="errors"><%= error %></p>

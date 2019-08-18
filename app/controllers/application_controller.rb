@@ -45,6 +45,12 @@ class ApplicationController < Sinatra::Base
     end
 
 
+    ## removes special characters from username
+    # def clean_username(name)
+    #   name.downcase.gsub.(/[^0-9A-Za-z]/, '')
+    # end
+
+
     ## authenticates and also checks if user was the one who added that meal so they can edit.
     def authenticate_user_for_editing_meals(meal)
       authenticate
@@ -59,6 +65,7 @@ class ApplicationController < Sinatra::Base
       redirect "/user/#{current_user.id}/edit" if !user
       redirect "/user/#{current_user.id}/edit" if current_user != user
     end
+
 
     ## gets user from :id and authenticates that user
     def check_user_authorization

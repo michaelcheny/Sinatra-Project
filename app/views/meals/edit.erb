@@ -10,6 +10,8 @@
   <input class="submissionfield" type="text" name="meal[name]" id="name" placeholder="Exmaple: Beef Wellington <%= @meal.name %>" value="<%= @meal.name %>" required><br>
   <label for="calories">Amount of Calories</label><br>
   <input class="submissionfield" type="text" name="meal[calories]" id="calories" placeholder="Example: 650 <%= @meal.calories %>" value="<%= @meal.calories %>" required><br>
+  <label for="notes">Notes:</label><br>
+  <input class="submissionfield" type="text" name="meal[notes]" id="notes" placeholder="Write your notes here" value="<%= @meal.notes %>"><br>
 
 
 <% if @meal && @meal.errors.any? %>

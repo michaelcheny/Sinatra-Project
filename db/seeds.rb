@@ -2,13 +2,13 @@
 
 michael = User.create(name: "Michael", username: "michael", password: "password1", password_confirmation: "password1", created_at: '2019-08-11 06:15:09 UTC')
 
-hodor = User.create(name: "Hodor", username: "hodor", password: "holdthedoor", password_confirmation: "holdthedoor", gender: "male", age: 38, height: 81, weight: 308, activity_level: "4", bmr: 2497, tdee: 4294, created_at: '2019-08-11 06:15:09 UTC')
+hodor = User.create(name: "Hodor", username: "hodor", password: "holdthedoor", password_confirmation: "holdthedoor", gender: "male", age: 38, height: 81, weight: 308, activity_level: "4", bmr: 2497, tdee: 3870, goal: "maintaining weight", created_at: '2019-08-11 06:15:09 UTC')
 
-draymond = User.create(name: "Draymond Green", username: "draymond", password: "watchyournuts", password_confirmation: "watchyournuts", gender: "male", age: 29, height: 79, weight: 230, activity_level: "5", bmr: 2157, tdee: 5068, created_at: '2019-08-11 06:15:09 UTC')
+draymond = User.create(name: "Draymond Green", username: "draymond", password: "watchyournuts", password_confirmation: "watchyournuts", gender: "male", age: 29, height: 79, weight: 230, activity_level: "5", bmr: 2157, tdee: 4206, goal: "maintaining weight", created_at: '2019-08-11 06:15:09 UTC')
 
-simone = User.create(name: "Simone Biles", username: "simonebiles", password: "password1", password_confirmation: "password1", gender: "female", age: 22, height: 57, weight: 115, activity_level: "5", bmr: 1155, tdee: 2714, created_at: '2019-08-11 06:15:09 UTC')
+simone = User.create(name: "Simone Biles", username: "simonebiles", password: "password1", password_confirmation: "password1", gender: "female", age: 22, height: 57, weight: 115, activity_level: "5", bmr: 1155, tdee: 2252, goal: "maintaining weight", created_at: '2019-08-11 06:15:09 UTC')
 
-gordon = User.create(name: "Gordon Ramsay", username: "gordon ramsay", password: "itsfuckingraw", password_confirmation: "itsfuckingraw", gender: "male", age: 50, height: 74, weight: 176, activity_level: "3", bmr: 1155, tdee: 2714, created_at: '2019-08-11 06:15:09 UTC')
+gordon = User.create(name: "Gordon Ramsay", username: "gordon ramsay", password: "itsfuckingraw", password_confirmation: "itsfuckingraw", gender: "male", age: 50, height: 74, weight: 176, activity_level: "3", bmr: 1728, tdee: 2678, goal: "maintaining weight", created_at: '2019-08-11 06:15:09 UTC')
 
 food1 = Meal.create(name: "scrambled eggs cooked in bacon fat", calories: 800, notes: "saved the bacon grease to cook with later", created_at: '2019-08-11 06:17:09 UTC')
 

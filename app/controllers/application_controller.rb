@@ -104,10 +104,21 @@ class ApplicationController < Sinatra::Base
     end
 
 
-    ## gets recommended calories for weightloss based on tdee, recommended 500 Calories deficit
-    def lose_a_pound_a_week(user)
-      rec_cal = user.tdee * 0.82
-      return rec_cal.to_i
+    ## returns recommended calories for weight control based on user goals. 
+    def recommended_calories_for_goal(user)
+      if user.goal == "losing a pound a week"
+        multiplier = 0.80
+      elsif user.goal == "losing half a pound a week"
+        multiplier = 0.90
+      elsif user.goal == "maintaining weight"
+        multiplier = 1
+      elsif user.goal == "gaining half a pound a week"
+        multiplier = 1.10
+      elsif user.goal == "gaining a pound a week"
+        multiplier = 1.20
+      end    
+      cal = user.tdee * multiplier
+      return cal.to_i
     end
 
 

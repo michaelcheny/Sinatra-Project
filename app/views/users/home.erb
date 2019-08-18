@@ -15,15 +15,17 @@
     <p><span class="bold"><%= @current_calories %></span> Calories</p>
 
 
+    <p>Recommended Calories for reaching your goal of <span class="bold"><%= current_user.goal %></span>:</p>
+
+    <p><span class="bold"><%= recommended_calories_for_goal(@user) %></span> Calories</p>
+
+
+
     <p>Your basal metabolic rate - Your body naturally burns that much in a day!</p>
     <p> <span class="bold"><%= current_user.bmr %></span> Calories</p>
 
     <p>Your total daily energy expedenture - Your caloric maintenace.</p>
     <p> <span class="bold"><%= current_user.tdee %></span> Calories</p>
-
-
-    <p>Recommended Calories for weightloss (about a pound a week): </p>
-    <p><span class="bold"><%= lose_a_pound_a_week(@current_user) %></span> Calories</p>
 
   </div>
 <% else %> <!--if tdee still nil, make user complete filling out profile-->

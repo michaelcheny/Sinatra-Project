@@ -40,7 +40,7 @@ class ApplicationController < Sinatra::Base
 
 
     ## checks to see if user is logged in and current user is available
-    def check_if_user_authorized?
+    def authorized?
       !!logged_in? && !current_user.nil?
     end
 
@@ -80,10 +80,12 @@ class ApplicationController < Sinatra::Base
       today_meals
     end    
 
+
     ## Sorts the meals by newest on top
     def sort_meals(meals)
       meals.sort_by{|m| m.created_at}.reverse
     end
+
 
     ## gets the current calories for the user for today
     def get_current_calories(user)
@@ -119,7 +121,7 @@ class ApplicationController < Sinatra::Base
       if user.gender == "male"
         bmr = 66 + (user.weight * 6.23) + (12.7 * user.height) - (6.8 * user.age)
       elsif user.gender == "female"
-        bmr = 655 + (user.weight * 4.35) + (4.7 * user.height ) - (4.7 * user.age) 
+        bmr = 655 + (user.weight * 4.35) + (4.7 * user.height ) - (4.7 * user.age)
       end
       return bmr.to_i
     end      

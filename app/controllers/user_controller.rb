@@ -7,7 +7,6 @@ class UserController < ApplicationController
     @user = current_user
 
     @current_calories = get_current_calories(@user)
-    # binding.pry
     @failed = false
     erb :'/users/home'
   end
@@ -17,14 +16,13 @@ class UserController < ApplicationController
   get '/user/:id/edit' do
     ## checks if the current user have access to edit
     check_user_authorization
-   
     erb :'/users/edit'
   end
 
 
   ## update users info like age, height, weight, activity level
   patch '/home/:id' do
-    ##authorizes and checks if that current user can edit their own and not others
+    ## authorizes and checks if that current user can edit their own and not others
     check_user_authorization
     ## updates the user with params passed in
     @user = current_user
@@ -35,17 +33,9 @@ class UserController < ApplicationController
     else      
       ## error-free updating
       ## updates bmr based on those params
-
-
       @user.update(bmr: calculate_user_bmr(@user))
-
-      # @user.update(bmr: CalculationHelpers.calculate_user_bmr(@user))
-
-      binding.pry
       ## updates tdee based on bmr and activity lvl
       @user.update(tdee: calculate_user_tdee(@user))
-
-      binding.pry
       redirect :"/home"
     end
   end

@@ -1,8 +1,5 @@
 
-
 <form class="biggerfont" action="/home/<%= current_user.id %>" method="post" class="forms">
-
-
 <input id="hidden" type="hidden" name="_method" value="patch">
 
 <label for="age">Age:</label><br>
@@ -26,7 +23,7 @@
 <input type="radio" name="user[gender]" id="gender" value="female">
 <label for="gender">Female</label><br><br>
 
-<label for="activity_level">Activity level:</label><br>
+<label>Activity level:</label><br>
 <input type="radio" name="user[activity_level]" id="activity_level_1" value="1" required>
 <label for="activity_level_1">Sedentary (little or no exercise)</label><br>
 <input type="radio" name="user[activity_level]" id="activity_level_2" value="2">
@@ -37,7 +34,6 @@
 <label for="activity_level_4">Very Active (hard exercise or sports 6-7x a week)</label><br>
 <input type="radio" name="user[activity_level]" id="activity_level_5" value="5">
 <label for="activity_level_5">Extra Active (very hard exercise or professional athlete)</label><br><br>
-
 
 <label>Goal:</label><br>
 <input type="radio" name="user[goal]" id="goal_1" value="losing a pound a week" required>
@@ -50,7 +46,6 @@
 <label for="goal_4">Gain half a pound a week</label><br>
 <input type="radio" name="user[goal]" id="goal_5" value="gaining a pound a week">
 <label for="goal_5">Gain a pound a week</label><br><br>
-
 
 <input class="submissionbutton" type="submit" value="Edit User">
 </form><br>

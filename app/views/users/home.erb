@@ -14,12 +14,9 @@
     <p>Your consumption for today  
     <p><span class="bold"><%= @current_calories %></span> Calories</p>
 
-
     <p>Recommended Calories for reaching your goal of <span class="bold"><%= current_user.goal %></span>:</p>
 
     <p><span class="bold"><%= recommended_calories_for_goal(@user) %></span> Calories</p>
-
-
 
     <p>Your basal metabolic rate - Your body naturally burns that much in a day!</p>
     <p> <span class="bold"><%= current_user.bmr %></span> Calories</p>
@@ -34,6 +31,5 @@
 
   <!--Loads the form for editing user-->
   <%= erb :"/users/_form" %>
-
 
 <% end %>

@@ -2,15 +2,15 @@ class SessionsController < ApplicationController
 
   ## Registration page, allows user to create a new account ##
   get '/register' do
-    redirect '/home' if check_if_user_authorized?
-
+    redirect '/home' if authorized?
+    
     erb :"/users/register"
   end
 
 
   ## Log in page for user. If user is already logged in, redirects them to home page. ##
   get '/login' do
-    redirect '/home' if check_if_user_authorized? 
+    redirect '/home' if authorized?
 
     @failed = false ## for error message
 
@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
 
   ## Post request for after a user is created. If user is able to save, then session id is linked to current user and gets redirected to home.
   post '/register' do
-    redirect '/home' if check_if_user_authorized?
+    redirect '/home' if authorized?
 
     @user = User.new(params[:user])
     if @user.save

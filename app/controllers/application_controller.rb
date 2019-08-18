@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
   
   ## the very first page of our app. Kind of like our welcome page that leads to log in or registration
   get '/' do
-    authenticate
+    redirect '/home' if authorized?
     erb :index
   end
 
@@ -152,12 +152,6 @@ class ApplicationController < Sinatra::Base
       return tdee.to_i
     end    
 
-    # def check_if_user_complete(user)
-    #   if user.tdee.nil? || user.goals.nil? || user.bmr.nil?
-    #     @not_filled = true
-    #     erb :"users/edit"
-    #   end
-    # end
 
   end
 

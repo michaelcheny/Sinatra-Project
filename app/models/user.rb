@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :meals
-  has_many :workouts
+  # has_many :workouts
   has_secure_password
 
   ## validation for account creation

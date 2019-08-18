@@ -78,6 +78,7 @@ body {
 /* For error text */
 .errors {
   color: red; 
+  text-decoration: none;
 }
 
 /* For bolded font, like calories/date */

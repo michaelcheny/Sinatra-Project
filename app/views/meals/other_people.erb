@@ -1,8 +1,10 @@
-<h3>Meals Added By All Users</h3>
-
 <% if @meals.empty? %>
-  <p class="empty">There are no meals yet, be the first one to <a href="/meals/new">add one</a>.</p>
+
+  <h4 class="errors">There are no meals yet, be the first one to.</h4> <a class="submissionbutton" href="/meals/new">Add one now</a>
+
 <% else %>
+
+  <h3>Meals Added By All Users</h3>
 
   <% @sorted_meals.each do |meal|  %>
     <div class="meals">
@@ -10,10 +12,12 @@
       <p class="meal_content">Calories: <span class="bold"><%= meal.calories %></span></p>
       <p class="meal_content">Date Added: <%= meal.created_at.strftime("%A, %B %d, %Y") %></p>
       <p class="meal_content">Added by: <span class="bold"><%= meal.user.username %></span></p>
+
       <!--only shows edit option if meal created by current user-->
       <% if current_user == meal.user %>
         <a class="submissionbutton" class="meal_content" href="/meals/<%= meal.id %>/edit">Edit</a><br><br>
       <% end %>
+
     </div>
   <% end %>
 

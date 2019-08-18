@@ -83,7 +83,7 @@ class ApplicationController < Sinatra::Base
 
     ## Sorts the meals by newest on top
     def sort_meals(meals)
-      meals.sort_by{|m| m.created_at}.reverse
+      meals.sort_by{|meal| meal.created_at}.reverse
     end
 
 

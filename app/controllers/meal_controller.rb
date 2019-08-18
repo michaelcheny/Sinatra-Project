@@ -102,8 +102,13 @@ class MealController < ApplicationController
   ## shows all the meals for all users
   get '/meals/all_users' do
     authenticate
-    @meals = sort_meals(Meal.all) 
-   
+
+    @meals = Meal.all 
+
+    ## if there are meals, show them, else show error and go to add meal page
+    if @meals
+      @sorted_meals = sort_meals(@meals)
+    end
     erb :"/meals/other_people"
   end
 

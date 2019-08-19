@@ -155,4 +155,14 @@ class ApplicationController < Sinatra::Base
 
   end
 
+
+  ## For errors like visiting invalid route
+  not_found do
+    'You need jesus.'
+  end
+
+  error ActiveRecord::RecordNotFound do
+    status 404
+  end
+
 end

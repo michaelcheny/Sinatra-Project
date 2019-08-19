@@ -72,8 +72,6 @@ Men: BMR = 66 + (6.23 x weight in pounds) + (12.7 x height in inches) - (6.8 x a
     end
 
 
-
-Harris Benedict Formula
 To determine your total daily calorie needs, multiply your BMR by the appropriate activity factor, as follows:
 
 If you are sedentary (little or no exercise) : Calorie-Calculation = BMR x 1.2

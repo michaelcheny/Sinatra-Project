@@ -5,13 +5,17 @@
 
 <h3>Register Here</h3>
 
-<input type="text" name="user[name]" placeholder="Name" required><br>
+<label for="name">Name:</label><br>
+<input class="submissionfield" type="text" name="user[name]" id="name" placeholder="Name" required><br>
 
-<input type="text" name="user[username]" placeholder="Username" required><br>
+<label for="username">Username:</label><br>
+<input class="submissionfield" type="text" name="user[username]" id="username" placeholder="Username" required><br>
 
-<input type="password" name="user[password]" placeholder="Password(6-20)" required><br>
+<label for="password">Password:</label><br>
+<input class="submissionfield" type="password" name="user[password]" id="password" placeholder="Password(6-20)" required><br>
 
-<input type="password" name="user[password_confirmation]" placeholder="Confirm your password" required><br>
+<label for="confirm_password">Password(To Confirm)</label><br>
+<input class="submissionfield" type="password" name="user[password_confirmation]" id="confirm_password" placeholder="Confirm your password" required><br>
 
 <% if @user && @user.errors.any? %>
   <% @user.errors.full_messages.each do |error| %>

@@ -3,16 +3,19 @@
 
   <!-- the form for logging in -->
   <h3>Please Sign In</h3>
-  <input type="text" name="username" id="username" placeholder="Username"><br>
 
-  <input type="password" name="password" id="password" placeholder="Password"><br>
+  <label for="username">Username:</label><br>
+  <input class="submissionfield" type="text" name="username" id="username" placeholder="Username"><br>
+
+  <label for="password">Password:</label><br>
+  <input class="submissionfield" type="password" name="password" id="password" placeholder="Between 6-20 letters"><br>
 
   <!-- Error message for when user messes up their log in. -->
   <% if @failed %>
     <p class="errors">You messed up bro, try again</p>
   <% end %>
 
-  <input type="submit" value="Login">
+  <input class="submissionbutton" type="submit" value="Login">
 
 
 

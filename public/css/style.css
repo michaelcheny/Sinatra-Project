@@ -5,13 +5,24 @@ html {
   color: #F8F8F8;
   
   
+  
 }
 
 /* Main body portion (all the yields) */
 main {
-  width: 100%;
-  margin: auto;
+  /* width: 100%; */
+  /* margin: auto; */
   font-size: 18px;
+  /* width: 1200px; */
+  margin: auto;
+  border: 2px solid red;
+
+}
+
+/* Body of the page */
+body {
+  margin-top: 120px;
+  padding: 110px;
   
 }
 
@@ -45,6 +56,23 @@ header li a {
   text-decoration: none;
 }
 
+
+/* center the div */
+/* .center-container{
+  width: 1200px;
+  margin: 0 auto;
+  border: 2px solid red;
+  
+} */
+
+.center-container{
+  margin: 0 auto;
+  width: 60%;
+  border: 2px solid blue;
+  /* position: relative; */
+  padding-left: 20px;
+}
+
 .headerbuttons{
   margin-top: 3px;
   margin-left: 8px;
@@ -67,13 +95,7 @@ header li a {
   
 } */
 
-/* Body of the page */
-body {
-  margin-top: 120px;
 
-  padding: 110px;
-  
-}
 
 /* For error text */
 .errors {
@@ -82,9 +104,11 @@ body {
 }
 
 /* For bolded font, like calories/date */
-.biggerfont {
+/* .biggerfont {
   font-size: 18px;
-}
+} */
+
+
 .bold {
   font-weight: bold;
   font-size: 16px;

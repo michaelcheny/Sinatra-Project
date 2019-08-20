@@ -158,7 +158,7 @@ class ApplicationController < Sinatra::Base
 
   ## For errors like visiting invalid route
   not_found do
-    erb :"error"
+    erb :"error", layout: false
   end
 
   error ActiveRecord::RecordNotFound do

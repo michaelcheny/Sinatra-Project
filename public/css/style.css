@@ -67,8 +67,9 @@ body {
 } */
 
 .center-container{
+  /* float: center; */
   margin:  auto;
-  width: 50%;
+  width: 800px;
   /* border: 2px solid blue; */
   /* position: relative; */
   padding: 40px;
@@ -133,7 +134,7 @@ body {
   padding: 5px 10px; 
   text-decoration: none;
   color: #000;
-  display: block;
+  /* display: block; */
 }
 
 /* hug left side of div */
@@ -151,7 +152,8 @@ body {
 .meals {
   /* margin: 5px;
   padding: 10px; */
-  border: 1px solid #000;
+  border: 2px solid gray;
+  border-radius: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
   /* margin: auto; */
@@ -167,10 +169,19 @@ body {
   font-size: 15px;
 }
 
+#error {
+  font-size: 50px;
+}
 
-/* For the forms with inputs */
-/* .forms {
-  margin: 5px;
-  padding: 10px; 
-} */
-
+.parent {
+  margin: auto;
+  position: relative;
+}
+.center {
+  width: 800px;
+  position: relative;
+  text-align: center;
+  margin: auto;
+  display: inline-block;
+  border: 1px;
+}

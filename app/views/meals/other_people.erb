@@ -12,8 +12,8 @@
       <p class="meal_content">Calories: <span class="bold"><%= meal.calories %></span></p>
       <p class="meal_content">Added by: <span class="bold"><%= meal.user.username %></span></p>
       <p class="meal_content">Date Added: <span class="bold"><%= meal.created_at.strftime("%A, %B %d, %Y") %></span></p>
-      <% if meal.notes %>
-      <p class="meal_content">Notes: <%= meal.notes %></p>
+      <% if meal.notes != "" %>
+        <p class="meal_content">Notes: <%= meal.notes %></p>
       <% end %>
       <!--only shows edit option if meal created by current user-->
       <% if current_user == meal.user %>

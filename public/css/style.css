@@ -42,7 +42,6 @@ main {
   font-size: 18px;
   width: 95%;
   margin: auto;
-  background-color: #36393F;
 
 }
 
@@ -50,10 +49,10 @@ main {
 
 /* Body of the page */
 body {
-  margin-top: 100px;
+  margin-top: 140px;
   padding-top: 100px;
   padding-bottom: 100px;
-  background-color: #2F3136;
+  background-color: #36393F;
 }
 
 
@@ -114,27 +113,38 @@ body {
 
 .bold {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* for all the text inputs */
 .submissionfield {
-  width: 300px;
+  width: 320px;
   padding: 5px;
   margin: 5px
 }
 
 /* for the submission buttons */
 .submissionbutton {
-  width: 300px;
+  width: 335px;
   margin-top: 5px;
-  margin-left: 8px;
   background: #E1E1E1;
   border-radius: 4px;
   font-size: 14px;
   padding: 5px 10px; 
   text-decoration: none;
   color: #000;
+  display: block;
+}
+
+/* hug left side of div */
+.move-left {
+  /* width: 600px; */
+  padding-left: 75px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  /* border: 2px solid red; */
 }
 
 /* for the meals page */

@@ -5,7 +5,7 @@
       <h3 class="errors">You need to complete your profile before you can add meals.</h3>
     <% end %>
 
-    <form class="biggerfont" action="/home/<%= current_user.id %>" method="post" class="forms">
+    <form action="/home/<%= current_user.id %>" method="post" class="forms">
     <input id="hidden" type="hidden" name="_method" value="patch">
 
     <label for="age">Age:</label><br>
@@ -22,6 +22,8 @@
     <% end %>
 
     <br><br>
+
+    <div class="move-left">
 
     <label for="gender">Gender:</label><br>
     <input type="radio" name="user[gender]" id="gender" value="male" required>
@@ -52,7 +54,6 @@
     <label for="goal_4">Gain half a pound a week</label><br>
     <input type="radio" name="user[goal]" id="goal_5" value="gaining a pound a week">
     <label for="goal_5">Gain a pound a week</label><br><br>
-
     <input class="submissionbutton" type="submit" value="Edit User">
     </form><br>
 

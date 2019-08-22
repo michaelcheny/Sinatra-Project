@@ -10,7 +10,7 @@ simone = User.create(name: "Simone Biles", username: "simonebiles", password: "p
 
 gordon = User.create(name: "Gordon Ramsay", username: "gordon ramsay", password: "itsfuckingraw", password_confirmation: "itsfuckingraw", gender: "male", age: 50, height: 74, weight: 176, activity_level: "3", bmr: 1728, tdee: 2678, goal: "maintaining weight", created_at: '2019-08-11 06:15:09 UTC')
 
-food1 = Meal.create(name: "scrambled eggs cooked in bacon fat", calories: 800, notes: "saved the bacon grease to cook with later", created_at: '2019-08-11 06:17:09 UTC')
+food1 = Meal.create(name: "scrambled eggs cooked in bacon fat", calories: 800, notes: "saved the bacon grease to cook with later")
 
 food2 = Meal.create(name: "4 mini chocolate chip cookies", calories: 240, notes: "these were addicting, next time I need to limit myself to 2 a day", created_at: '2019-08-11 06:17:09 UTC')
 

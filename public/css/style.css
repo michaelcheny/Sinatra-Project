@@ -106,12 +106,6 @@ body {
   text-decoration: none;
 }
 
-/* For bolded font, like calories/date */
-/* .biggerfont {
-  font-size: 18px;
-} */
-
-
 .bold {
   font-weight: bold;
   font-size: 18px;
@@ -167,21 +161,9 @@ body {
   /* margin: auto; */
   padding: 6px;
   font-size: 15px;
+  text-align: left;
 }
 
 #error {
   font-size: 50px;
-}
-
-.parent {
-  margin: auto;
-  position: relative;
-}
-.center {
-  width: 800px;
-  position: relative;
-  text-align: center;
-  margin: auto;
-  display: inline-block;
-  border: 1px;
 }

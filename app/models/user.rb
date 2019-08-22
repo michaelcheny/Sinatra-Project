@@ -4,8 +4,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   ## validation for account creation
-  validates :name, length: { minimum: 2 }, presence: true
-  validates :username, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true, length: { minimum: 2}, format: { with: /\A[a-zA-Z0-9_-]+\z/, message: "cannot contain blank space or symbols" }
   validates :password_confirmation, presence: true, on: :create
   validates :password, presence: true, length: { in: 6..20 }, confirmation: true, unless: ->(u){ u.password.blank? }
 

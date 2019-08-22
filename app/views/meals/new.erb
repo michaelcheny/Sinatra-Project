@@ -1,6 +1,6 @@
 <form action="/meals" method="post" class="forms">
 
-<h3>Hello <%= @current_user.name %>, add a new meal</h3>
+<h3>Hello <%= @current_user.username.capitalize %>, add a new meal</h3>
   
   <label for="name">Name:</label><br>
   <input class="submissionfield" type="text" name="meal[name]" id="name" placeholder="Example: Chicken With Rice" required><br>

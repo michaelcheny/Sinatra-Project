@@ -13,7 +13,7 @@
       <p class="meal_content">Calories: </p>
       <span class="bold"><%= meal.calories %></span>
       <p class="meal_content">Added by: </p>
-      <span class="bold"><%= meal.user.username %></span>
+      <span class="bold"><%= meal.user.username.capitalize %></span>
       <p class="meal_content">Date Added: </p>
       <span class="bold"><%= meal.created_at.strftime("%A, %B %d, %Y") %></span>
       <% if meal.notes != "" %>

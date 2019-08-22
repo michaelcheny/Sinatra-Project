@@ -18,7 +18,7 @@ food3 = Meal.create(name: "Pasta with meat sauce", calories: 760, notes: "used w
 
 food4 = Meal.create(name: "Overnight Oats with Blueberries", calories: 550, notes: "forgot to add chia seeds and greek yogurt", created_at: '2019-08-11 06:17:09 UTC')
 
-food5 = Meal.create(name: "Swedish Meatballs", calories: 800, notes: "had a spicy kick to it", created_at: '2019-08-17 06:17:09 UTC')
+food5 = Meal.create(name: "Swedish Meatballs", calories: 800, notes: "had a spicy kick to it")
 
 food6 = Meal.create(name: "Banana", calories: 170, notes: "too ripe :(", created_at: '2019-08-11 08:17:09 UTC')
 

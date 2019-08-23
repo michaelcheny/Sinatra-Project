@@ -3,11 +3,11 @@ class UserController < ApplicationController
   ## Home page for the user. Checks to see if user is logged in, if not, will redirect to login page ##
   get '/home' do
     authenticate
-
+    
     @user = current_user
     @current_calories = get_current_calories(@user)
 
-    if @user.tdee.nil? || @user.goal.nil?
+    if @user.tdee.nil? || @user.goal.nil?  ## usually right after registration theyre nill
       erb :"/users/edit"
     else
 

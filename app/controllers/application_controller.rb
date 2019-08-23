@@ -150,7 +150,6 @@ class ApplicationController < Sinatra::Base
 
   ## For errors like visiting invalid route
   not_found do
-    status 404
     erb :"error", layout: false
   end
 

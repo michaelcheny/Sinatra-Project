@@ -70,6 +70,12 @@ body {
   padding: 3px 10px; 
   text-decoration: none;
   color: #000;
+  display: inline;
+}
+
+/* for the logout button */
+.logout_button {
+  display: inline;
 }
 
 /* For the Big H1 title */

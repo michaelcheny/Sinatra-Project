@@ -8,21 +8,21 @@
 
   <% @sorted_meals.each do |meal|  %>
     <div class="meals">
-      <p class="meal_content">Name: </p>
-      <span class="bold"><%= meal.name %></span>
-      <p class="meal_content">Calories: </p>
-      <span class="bold"><%= meal.calories %></span>
-      <p class="meal_content">Added by: </p>
-      <span class="bold"><%= meal.user.username.capitalize %></span>
-      <p class="meal_content">Date Added: </p>
-      <span class="bold"><%= meal.created_at.strftime("%A, %B %d, %Y") %></span>
+      <p class="meal_content">Name: <span class="bold"><%= meal.name %></span></p>
+      
+      <p class="meal_content">Calories: <span class="bold"><%= meal.calories %></span></p>
+      
+      <p class="meal_content">Added by: <span class="bold"><%= meal.user.username.capitalize %></span></p>
+      
+      <p class="meal_content">Date Added: <span class="bold"><%= meal.created_at.strftime("%A, %B %d, %Y") %></span></p>
+      
       <% if meal.notes != "" %>
-        <p class="meal_content">Notes:</p>
-       <%= meal.notes %> 
+        <p class="meal_content">Notes: <%= meal.notes %></p>
+        
       <% end %>
       <!--only shows edit option if meal created by current user-->
       <% if current_user == meal.user %>
-        <br><br><a class="submissionbutton" class="meal_content" href="/meals/<%= meal.id %>/edit">Edit</a><br><br>
+        <a class="submissionbutton" class="meal_content" href="/meals/<%= meal.id %>/edit">Edit</a><br><br>
       <% end %>
     </div>
 

@@ -1,12 +1,10 @@
 ## Create some dummy models
 
-michael = User.create(username: "michael", password: "password1", password_confirmation: "password1", created_at: '2019-08-11 06:15:09 UTC')
+michael = User.create(username: "michael", password: "password1", password_confirmation: "password1", gender: "male", age: 27, height:69, weight: 188, activity_level: "3", bmr: 1818, tdee: 2817, goal: "lose half a pound a week",  created_at: '2019-08-11 06:15:09 UTC')
 
 hodor = User.create(username: "hodor", password: "holdthedoor", password_confirmation: "holdthedoor", gender: "male", age: 38, height: 81, weight: 308, activity_level: "4", bmr: 2497, tdee: 3870, goal: "maintain weight", created_at: '2019-08-11 06:15:09 UTC')
 
 draymond = User.create(username: "draymondgreen23", password: "watchyournuts", password_confirmation: "watchyournuts", gender: "male", age: 29, height: 79, weight: 230, activity_level: "5", bmr: 2157, tdee: 4206, goal: "maintain weight", created_at: '2019-08-11 06:15:09 UTC')
-
-simone = User.create(username: "simonebiles", password: "password1", password_confirmation: "password1", gender: "female", age: 22, height: 57, weight: 115, activity_level: "5", bmr: 1155, tdee: 2252, goal: "maintain weight", created_at: '2019-08-11 06:15:09 UTC')
 
 gordon = User.create(username: "gordonramsay", password: "itsfuckingraw", password_confirmation: "itsfuckingraw", gender: "male", age: 50, height: 74, weight: 176, activity_level: "3", bmr: 1728, tdee: 2678, goal: "maintain weight", created_at: '2019-08-11 06:15:09 UTC')
 

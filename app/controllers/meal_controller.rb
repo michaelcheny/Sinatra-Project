@@ -8,7 +8,6 @@ class MealController < ApplicationController
     @meals = current_user.meals
     ## Sorts meal by newest on top
     @sorted_meals = sort_meals(@meals)
-
     @failed = false
     erb :"/meals/index"
   end
@@ -44,13 +43,10 @@ class MealController < ApplicationController
     authenticate
     ## Collects meal from today
     meals = grab_meals_from_today(current_user.meals)
-
     ## sort newest meal on top
     @sorted_meals = sort_meals(meals)
-
     ## gets the current_cals for the user.
     @current_calories = get_current_calories(current_user)
-
     erb :"/meals/today"
   end
 

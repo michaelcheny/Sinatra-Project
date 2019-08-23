@@ -2,9 +2,9 @@ class ApplicationController < Sinatra::Base
 
   ## sets everything up
   configure do
-    set :public_folder, 'public'  ## sets the location for public folder
-    set :views, 'app/views'   ## sets the location for views folder
-    enable :sessions  ## allows us to have sessions
+    set :public_folder, 'public' 
+    set :views, 'app/views'   
+    enable :sessions  
     set :session_secret, SESSION_SECRET  ## sets the secret hex key for password security
   end
 
@@ -43,12 +43,6 @@ class ApplicationController < Sinatra::Base
     def authorized?
       !!logged_in? && !current_user.nil?
     end
-
-
-    ## removes special characters from username
-    # def clean_username(name)
-    #   name.downcase.gsub.(/[^0-9A-Za-z]/, '')
-    # end
 
 
     ## authenticates and also checks if user was the one who added that meal so they can edit.
@@ -131,7 +125,6 @@ class ApplicationController < Sinatra::Base
         bmr = (10 * (user.weight * 0.4535934)) + (6.25 * (user.height * 2.54)) - (5 * user.age) - 161
       end
       return bmr.to_i
-
     end 
 
 
@@ -152,17 +145,14 @@ class ApplicationController < Sinatra::Base
       return tdee.to_i
     end    
 
-
   end
 
 
   ## For errors like visiting invalid route
   not_found do
+    status 404
     erb :"error", layout: false
   end
 
-  error ActiveRecord::RecordNotFound do
-    status 404
-  end
 
 end

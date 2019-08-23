@@ -29,33 +29,33 @@
 <div class="move-left">
 
 <label for="gender">Gender:</label><br>
-<input type="radio" name="user[gender]" id="gender" value="male" required>
+<input type="radio" name="user[gender]" id="gender" value="male" <%= "checked" if current_user.gender == "male" %> required>
 <label for="gender">Male</label><br>
-<input type="radio" name="user[gender]" id="gender" value="female">
+<input type="radio" name="user[gender]" id="gender" value="female" <%= "checked" if current_user.gender == "female" %>>
 <label for="gender">Female</label><br><br>
 
 <label>Activity level:</label><br>
-<input type="radio" name="user[activity_level]" id="activity_level_1" value="1" required>
+<input type="radio" name="user[activity_level]" id="activity_level_1" value="1" <%= "checked" if current_user.activity_level == "1" %> required>
 <label for="activity_level_1">Low (little or no exercise)</label><br>
-<input type="radio" name="user[activity_level]" id="activity_level_2" value="2">
+<input type="radio" name="user[activity_level]" id="activity_level_2" value="2" <%= "checked" if current_user.activity_level == "2" %>>
 <label for="activity_level_2">Light (light exercise or sports 1-3x a week)</label><br>
-<input type="radio" name="user[activity_level]" id="activity_level_3" value="3">
+<input type="radio" name="user[activity_level]" id="activity_level_3" value="3" <%= "checked" if current_user.activity_level == "3" %>>
 <label for="activity_level_3">Moderate (moderate exercise or sports 3-5x a week)</label><br>
-<input type="radio" name="user[activity_level]" id="activity_level_4" value="4">
+<input type="radio" name="user[activity_level]" id="activity_level_4" value="4" <%= "checked" if current_user.activity_level == "4" %>>
 <label for="activity_level_4">High (hard exercise or sports 6-7x a week)</label><br>
-<input type="radio" name="user[activity_level]" id="activity_level_5" value="5">
+<input type="radio" name="user[activity_level]" id="activity_level_5" value="5" <%= "checked" if current_user.activity_level == "5" %>>
 <label for="activity_level_5">Very High (very hard exercise or professional athlete)</label><br><br>
 
 <label>Goal:</label><br>
-<input type="radio" name="user[goal]" id="goal_1" value="lose a pound a week" required>
+<input type="radio" name="user[goal]" id="goal_1" value="lose a pound a week" <%= "checked" if current_user.goal == "lose a pound a week" %>" required>
 <label for="goal_1">Lose a pound a week</label><br>
-<input type="radio" name="user[goal]" id="goal_2" value="lose half a pound a week">
+<input type="radio" name="user[goal]" id="goal_2" value="lose half a pound a week" <%= "checked" if current_user.goal == "lose half a pound a week" %>>
 <label for="goal_2">Lose half a pound a week</label><br>
-<input type="radio" name="user[goal]" id="goal_3" value="maintain weight">
+<input type="radio" name="user[goal]" id="goal_3" value="maintain weight" <%= "checked" if current_user.goal == "maintain weight" %>>
 <label for="goal_3">Maintain current weight</label><br>
-<input type="radio" name="user[goal]" id="goal_4" value="gain half a pound a week">
+<input type="radio" name="user[goal]" id="goal_4" value="gain half a pound a week" <%= "checked" if current_user.goal == "gain half a pound a week" %>>
 <label for="goal_4">Gain half a pound a week</label><br>
-<input type="radio" name="user[goal]" id="goal_5" value="gain a pound a week">
+<input type="radio" name="user[goal]" id="goal_5" value="gain a pound a week" <%= "checked" if current_user.goal == "gain a pound a week" %>>
 <label for="goal_5">Gain a pound a week</label><br><br>
 <input class="submissionbutton" type="submit" value="Update">
 </form><br>

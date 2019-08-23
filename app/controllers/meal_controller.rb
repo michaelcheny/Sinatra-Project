@@ -86,8 +86,9 @@ class MealController < ApplicationController
 
   ## DELETE CURRENT MEAL
   delete '/meals/:id' do
-    authenticate
+    
     meal = Meal.find_by(id: params[:id])
+    authenticate_user_for_editing_meals(meal)
     if meal ## if found, delete it
       meal.destroy
       redirect "/meals"

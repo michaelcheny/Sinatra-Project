@@ -9,22 +9,22 @@
 <!--If tdee is filled up, display info-->
 <% if !@user.tdee.nil? %>
     
-    <p>These are your current stats for today.</p>
+    <p>These are your current stats.</p>
 
     <table>
       <tr>
         <th>Current Weight (lbs)</th>
         <th>Goal</th>
+        <th>Current (kcal)</th>
         <th>Recommended (kcal)</th>
-        <th>Today (kcal)</th>
         <th>BMR (kcal)</th>
         <th>TDEE (kcal)</th>
       </tr>
       <tr>
         <td><%= @user.weight %></td>
         <td><%= @user.goal %></td>
-        <td><%= recommended_calories_for_goal(@user) %></td>
         <td><%= @current_calories %></td>
+        <td><%= recommended_calories_for_goal(@user) %></td>
         <td><%= @user.bmr %></td>
         <td><%= @user.tdee %></td>
       </tr>

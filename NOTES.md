@@ -119,7 +119,7 @@ REST
 Environment Variables
 
 - What are they? 
-	It’s kind of like a hash with a key/value pair (KEY=VALUE) that we use to share configurations between programs, like making our app start in test/development/production mode. Can also tell our OS where to look for binary files, or telling Ruby where to look for gems. We use env in the terminal to see a list.
+	It’s kind of like a hash with a key/value pair (KEY=VALUE) that we use to share configurations between programs, like making our app start in test/development/production mode. Can also tell our OS where to look for binary files, or telling Ruby where to look for gems. We use `env` in the terminal to see a list.
 
 
 Sessions/Cookies
@@ -177,7 +177,7 @@ Sinatra Basics
 	class Assembly has_many_and_belongs_to_many :parts
   class Part has_and_belongs_to_many :assemblies
 
-We can also do a many_to_many using has_many :through to make the association indirectly, through a join model.
+  We can also do a many_to_many using has_many :through to make the association indirectly, through a join model.
 
 - How to rescue an error in Ruby?
     We wrap our code that raises the error in a  `begin`/`rescue` block. 
@@ -190,12 +190,12 @@ We can also do a many_to_many using has_many :through to make the association in
     ```
 
 - Difference between authentication and authorization?
-    authentication authenticates the the current user, checks if they're logged in and if they are the current user, else we can kick or redirect them to login
+    authentication authenticates the current user, checks if they're logged in and if they are the current user, else we can kick or redirect them to login
 
     authorization checks if they are authorized for action, like authorizing a user for editing something.
 
 - Walk through the logical progession process of a user asking for an HTML form to data being changed in the database (include user input validation and authentication/authorization)
-
+    User clicks on a link, or types in an HTML, that triggers a get request, then when they input whatever in the form, and submit, that triggers a post request. The post request then says wassap to the controller, it goes in has params and has to get through authentication or authorization, then the input validation will get triggered whenever a `.save` or `.update` method is called.
 
 - What is Rack?
     A gem - a Ruby Webserver Interface, that helps us create a web server at its simplest form. The building block of rails. Has a config rackup file.
@@ -216,7 +216,7 @@ We can also do a many_to_many using has_many :through to make the association in
 - How to use a .gitignore correctly?
     `touch .gitignore` then write the name of the files you want git to ignore when you add/push
 
-- What methods does ActiveRecord give you? How do we access associations? Show in rake console.
+- What methods do ActiveRecord give you? How do we access associations? Show in rake console.
     It gives us a bunch of methods like .create, .find, .new, .save, .update, .destroy_all, etc.
     ```
     u = User.find_by_id(1)

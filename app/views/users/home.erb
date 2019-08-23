@@ -8,22 +8,28 @@
 
 <!--If tdee is filled up, display info-->
 <% if !@user.tdee.nil? %>
-  <div class="biggerfont">
-    <p>Your current weight:</p>
-    <p> <span class="bold"><%= @user.weight %></span> pounds</p>
+    
+    <p>These are your current stats for today.</p>
 
-    <p>Your consumption for today  
-    <p><span class="bold"><%= @current_calories %></span> Calories</p>
+    <table>
+      <tr>
+        <th>Current Weight (lbs)</th>
+        <th>Goal</th>
+        <th>Recommended (kcal)</th>
+        <th>Today (kcal)</th>
+        <th>BMR (kcal)</th>
+        <th>TDEE (kcal)</th>
+      </tr>
+      <tr>
+        <td><%= @user.weight %></td>
+        <td><%= @user.goal %></td>
+        <td><%= recommended_calories_for_goal(@user) %></td>
+        <td><%= @current_calories %></td>
+        <td><%= @user.bmr %></td>
+        <td><%= @user.tdee %></td>
+      </tr>
+  </table> 
 
-    <p>Recommended Calories for reaching your goal of <span class="bold"><%= @user.goal %></span>:</p>
 
-    <p><span class="bold"><%= recommended_calories_for_goal(@user) %></span> Calories</p>
 
-    <p>Your basal metabolic rate - Your body naturally burns that much in a day!</p>
-    <p> <span class="bold"><%= @user.bmr %></span> Calories</p>
-
-    <p>Your total daily energy expedenture - Your caloric maintenace.</p>
-    <p> <span class="bold"><%= @user.tdee %></span> Calories</p>
-
-  </div>
 <% end %>

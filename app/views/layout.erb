@@ -13,6 +13,7 @@
     <h1 class="title">The De-Fat-O-Bot 3000</h1>
     <nav>
       <ul>
+
         <% if authorized? %>
           <li><a class="headerbuttons" href="/home">Home</a></li>
           <li><a class="headerbuttons" href="/user/<%= current_user.id %>/edit">Edit User</a></li>
@@ -26,12 +27,14 @@
           </form></li>
           <!-- Greet by username -->
           <h3>Welcome! <%= current_user.username.capitalize %></h3>
+
         <% else %>
           <li><a class="headerbuttons" href="/">Welcome</a></li>
           <li><a class="headerbuttons" href="/login">Log in</a></li> 
           <li><a class="headerbuttons" href="/register">Register</a></li>
           <h4>Welcome!</h4>        
         <% end %>
+        
       </ul>
     </nav>
   </header>

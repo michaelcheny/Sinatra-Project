@@ -149,8 +149,8 @@ th {
 
 /* For each individual meal */
 .meal_content{
-  margin: 6px;
-  padding: 6px;
+  margin: 3px;
+  padding: 2px;
   font-size: 15px;
   text-align: left;
 }

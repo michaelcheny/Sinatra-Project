@@ -30,7 +30,7 @@ food10 = Meal.create(name: "Sticky Toffee Pudding", calories: 950, notes: "neede
 
 food11 = Meal.create(name: "Lobster Ravioli", calories: 670, notes: "this was fucking raw", created_at: '2019-08-15 11:17:29 UTC')
 
-food12 = Meal.create(name: "Gourmet Mud Pie", calories: 1300, notes: "made with the blood of a dying giant")
+food12 = Meal.create(name: "Gourmet Mud Pie", calories: 1300, notes: "made with freshly squeezed giant's milk")
 
 food13 = Meal.create(name: "Braised Lamb with Rosemary", calories: 820, notes: "Kept the bones to make slow cooked broth for ramen")
 

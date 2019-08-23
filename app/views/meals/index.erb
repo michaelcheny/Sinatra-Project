@@ -13,7 +13,7 @@
       <p class="meal_content">Date Added: <span class="bold"><%= meal.created_at.strftime("%A, %B %d, %Y") %></span></p> 
 
       <% if meal.notes != "" %>
-      <p class="meal_content">Notes: <%= meal.notes %></p>
+      <p class="meal_content">Notes: <span class="bold"><%= meal.notes %></span></p>
       <% end %>
       
       <a class="submissionbutton" class="meal_content" href="/meals/<%= meal.id %>/edit">Edit</a>

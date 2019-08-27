@@ -18,14 +18,20 @@
         <th>Recommended (kcal)</th>
         <th>BMR (kcal)</th>
         <th>TDEE (kcal)</th>
+        <% if !@user.workouts.empty? %>
+          <th>TDEE w/ Workout (kcal)</th>
+        <%end %>
       </tr>
       <tr>
         <td><%= @user.weight %></td>
         <td><%= @user.goal %></td>
         <td><%= @current_calories %></td>
-        <td><%= recommended_calories_for_goal(@user) %></td>
+        <td><%= recommended_calories_for_goal(@user) + get_burned_cals(@user) %></td>
         <td><%= @user.bmr %></td>
         <td><%= @user.tdee %></td>
+        <% if !@user.workouts.empty? %>
+          <td><%= @user.tdee + get_burned_cals(@user) %></td>
+        <%end %>
       </tr>
   </table> 
 

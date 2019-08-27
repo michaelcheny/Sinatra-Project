@@ -10,19 +10,26 @@
 <body>
 
   <header>
-    <h1 class="title">The De-Fat-O-Bot 3000</h1>
+    <h1 class="title">The Health-Track-O-Bot 3000</h1>
     <nav>
       <ul>
 
         <% if authorized? %>
           <li><a class="headerbuttons" href="/home">Home</a></li>
           <li><a class="headerbuttons" href="/user/<%= current_user.id %>/edit">Edit User</a></li>
+          |
           <li><a class="headerbuttons" href="/meals/new">Add a Meal</a></li>          
           <li><a class="headerbuttons" href="/meals/today">Meals From Today</a></li>
           <li><a class="headerbuttons" href="/meals">All Logged Meals</a></li>
-          <li><a class="headerbuttons" href="/meals/all_users">Meals From All Users</a></li>
+          <li><a class="headerbuttons" href="/meals/all">Meals From All Users</a></li>
+          |
+          <li><a class="headerbuttons" href="/workouts/new">Add a Workout</a></li> 
+          <li><a class="headerbuttons" href="/workouts/today">Workouts From Today</a></li>
+          <li><a class="headerbuttons" href="/workouts">All Logged Workouts</a></li>
+          <li><a class="headerbuttons" href="/workouts/all">Workouts From All Users</a></li>
           <li><form class="logout_button" action="/logout" method="post">
           <input id="hidden" type="hidden" name="_method" value="delete">
+          |
           <input class="headerbuttons" type="submit" value="Log Out">
           </form></li>
           <!-- Greet by username -->

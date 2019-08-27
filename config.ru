@@ -8,4 +8,5 @@ use Rack::MethodOverride
 use SessionsController
 use UserController
 use MealController
+use WorkoutController
 run ApplicationController

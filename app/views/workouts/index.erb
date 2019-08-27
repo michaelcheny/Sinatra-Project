@@ -1,0 +1,25 @@
+<% if @workouts.empty? %>
+
+  <h4 class="errors">You need to add a workout.</h4><a class="submissionbutton" href="/workouts/new">Add one now</a>
+
+<% else %>
+
+  <h3>All Logged Workouts</h3>
+  
+  <% @sorted_workouts.each do |workout| %>
+    <div class="meals">
+      <p class="meal_content">Name: <span class="bold"><%= workout.name.split.map(&:capitalize).join(' ') %></span></p>
+      <p class="meal_content">Calories burned: <span class="bold"><%= calculate_cals_burned(workout) %></span></p>
+
+      <p class="meal_content">Date Added: <span class="bold"><%= workout.created_at.strftime("%A, %B %d, %Y") %></span></p> 
+
+      <% if workout.notes != "" %>
+      <p class="meal_content">Notes: <span class="bold"><%= workout.notes %></span></p>
+      <% end %>
+      
+      <a class="submissionbutton" class="meal_content" href="/workouts/<%= workout.id %>/edit">Edit</a>
+      <br><br>
+    </div>
+  <% end %>
+  
+<% end %>

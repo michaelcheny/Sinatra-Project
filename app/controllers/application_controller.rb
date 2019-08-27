@@ -61,6 +61,14 @@ class ApplicationController < Sinatra::Base
     end
 
 
+    ## authenticates and also checks if user was the one who added that meal so they can edit.
+    def authenticate_user_for_editing_workouts(workout)
+      authenticate
+      redirect '/workouts' if !workout
+      redirect '/workouts' if current_user != workout.user
+    end
+
+
     ## gets user from :id and authenticates that user
     def check_user_authorization
       @user = User.find_by(id: params[:id])
@@ -96,6 +104,16 @@ class ApplicationController < Sinatra::Base
         cals += meal.calories
       end
       @current_calories = cals
+    end
+
+    ## gets today cals burned for today
+    def get_burned_cals(user)
+      cals = 0
+      workouts = grab_meals_from_today(user.workouts)
+      workouts.each do |workout|
+        cals += (calculate_cals_burned(workout))
+      end
+      return cals
     end
 
 
@@ -144,6 +162,13 @@ class ApplicationController < Sinatra::Base
       tdee = user.bmr * multiplier
       return tdee.to_i
     end    
+
+
+    ## calculates calories burned working out
+    def calculate_cals_burned(workout)
+      cals = (workout.intensity.to_i * (workout.user.weight * 0.4535934)) / workout.duration
+      return cals.to_i
+    end
 
   end
 

@@ -5,7 +5,7 @@
 <% end %>
 
 <% if @not_filled %>
-  <h3 class="errors">You need to complete your profile before you can add meals.</h3>
+  <h3 class="errors">You need to complete your profile before unlocking all the features.</h3>
 <% end %>
 
 <form action="/home/<%= current_user.id %>" method="post" class="forms">

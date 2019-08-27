@@ -1,0 +1,51 @@
+<form action="/workouts" method="post" class="forms">
+
+<h3>Hello <%= @current_user.username.capitalize %>, add a new workout</h3>
+  
+  <label for="name">Name:</label><br>
+  <input class="submissionfield" type="text" name="workout[name]" id="name" placeholder="Example: Walk My Doge" required><br><br>
+
+  <label for="duration">Duration (in hours):</label><br>
+  <input class="submissionfield" type="text" name="workout[duration]" id="duration" placeholder="Example: 2" required><br><br>
+
+
+
+  
+<div class="move-left">
+
+  <label>Intensity Level:</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_1" value="1" required>
+  <label for="intensity_level_1">1 (Watching TV)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_2" value="2">
+  <label for="intensity_level_2">2 (Walking around the house)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_3" value="3">
+  <label for="intensity_level_3">3 (Walking the dog)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_4" value="4">
+  <label for="intensity_level_4">4 (Yard work, general, moderate effort)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_5" value="5">
+  <label for="intensity_level_5">5 (Light workout)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_6" value="6">
+  <label for="intensity_level_6">6 (Light swimming, light jog)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_7" value="7">
+  <label for="intensity_level_7">7 (Jogging, shoveling snow)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_8" value="8">
+  <label for="intensity_level_8">8 (Running, moderate weight training)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_9" value="9">
+  <label for="intensity_level_9">9 (Running stairs, weight training)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_10" value="10">
+  <label for="intensity_level_10">10 (Basketball, soccer, sprints)</label><br><br>
+</div><br>
+
+  <label for="notes">Notes:</label><br>
+  <input class="submissionfield" type="text" name="workout[notes]" id="notes" placeholder="Write your notes here"><br>
+
+<% if @failed %>
+  <% @workout.errors.full_messages.each do |error| %>
+    <p class="errors"><%= error %></p>
+    <% end %>
+<% end %>
+
+  <br>
+  <input class="submissionbutton" type="submit" value="Submit Workout">
+
+</form>

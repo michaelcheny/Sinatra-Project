@@ -34,7 +34,13 @@ food12 = Meal.create(name: "Gourmet Mud Pie", calories: 1300, notes: "made with 
 
 food13 = Meal.create(name: "Braised Lamb with Rosemary", calories: 820, notes: "Kept the bones to make slow cooked broth for ramen")
 
-## preload user's meal array with some food
+## create dummy workouts
+
+workout1 = Workout.create(name: "Carrying Bran Around", duration: 3, intensity: "7", notes: "This punk better not get me killed")
+
+workout2 = Workout.create(name: "Work on my project", duration: 3, intensity: "1", notes: "I was sitting the whole time.")
+
+## preload user's meal array with some food and workouts
 michael.meals << food3
 michael.meals << food1
 michael.meals << food2
@@ -48,3 +54,7 @@ gordon.meals << food10
 gordon.meals << food11
 michael.meals << food13
 hodor.meals << food12
+
+
+michael.workouts << workout2
+hodor.workouts << workout1

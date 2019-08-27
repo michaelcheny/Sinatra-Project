@@ -1,0 +1,65 @@
+
+<div class="meals">
+
+<form action="/workouts/<%= @workout.id %>" method="post" class="forms">
+  <input type="hidden" name="_method" value="patch">
+
+  <h3>Hello <%= @current_user.username.capitalize %>, edit your workout</h3>
+  
+  <label for="name">Name of workout:</label><br>
+  <input class="submissionfield" type="text" name="workout[name]" id="name" placeholder="Exmaple: Jog Around The Block <%= @workout.name %>" value="<%= @workout.name %>" required><br>
+  
+  <label for="duration">Duration (in hours):</label><br>
+  <input class="submissionfield" type="text" name="workout[duration]" id="duration" placeholder="Exmaple: 3 <%= @workout.duration %>" value="<%= @workout.duration %>" required><br><br>
+
+<div class="move-left">
+
+  <label>Intensity Level:</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_1" value="1" <%= "checked" if @workout.intensity == "1" %> required>
+  <label for="intensity_level_1">1 (Watching TV)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_2" value="2" <%= "checked" if @workout.intensity == "2" %>>
+  <label for="intensity_level_2">2 (Walking around the house)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_3" value="3" <%= "checked" if @workout.intensity == "3" %>>
+  <label for="intensity_level_3">3 (Walking the dog)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_4" value="4" <%= "checked" if @workout.intensity == "4" %>>
+  <label for="intensity_level_4">4 (Yard work, general, moderate effort)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_5" value="5" <%= "checked" if @workout.intensity == "5" %>>
+  <label for="intensity_level_5">5 (Light workout)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_6" value="6" <%= "checked" if @workout.intensity == "6" %>>
+  <label for="intensity_level_6">6 (Light swimming, light jog)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_7" value="7" <%= "checked" if @workout.intensity == "7" %>>
+  <label for="intensity_level_7">7 (Jogging, shoveling snow)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_8" value="8" <%= "checked" if @workout.intensity == "8" %>>
+  <label for="intensity_level_8">8 (Running, moderate weight training)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_9" value="9" <%= "checked" if @workout.intensity == "9" %>>
+  <label for="intensity_level_9">9 (Running stairs, weight training)</label><br>
+  <input type="radio" name="workout[intensity]" id="intensity_level_10" value="10" <%= "checked" if @workout.intensity == "10" %>>
+  <label for="intensity_level_10">10 (Basketball, soccer, sprints)</label><br><br>
+</div><br>
+
+  <label for="notes">Notes:</label><br>
+  <input class="submissionfield" type="text" name="workout[notes]" id="notes" placeholder="Write your notes here" value="<%= @workout.notes %>"><br><br>
+
+
+<% if @workout && @workout.errors.any? %>
+  <% @workout.errors.full_messages.each do |error| %>
+
+    <p class="errors"><%= error %></p>
+    
+  <% end %>
+<% end %>
+
+  <input class="submissionbutton" type="submit" value="Edit Workout">
+
+</form>
+
+<% if @workout.user == current_user %>
+  <form action="/workouts/<%= @workout.id %>" method="post">
+  
+    <input type="hidden" name="_method" value="delete">
+    <input class="submissionbutton" type="submit" value="Delete Workout">
+  
+  </form>
+<% end %>
+
+</div>
